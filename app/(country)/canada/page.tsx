@@ -43,44 +43,42 @@ const Canada = () => {
     <Header name="Canada" bg="/canadabg.jpg"/>
     <TracingBeam className="px-1">
       <Information/>
-      <section>
-      <div className="w-full mt-9 mx-auto px-4 md:px-8">
-                <div className="max-w-xl">
-                    <h1 className="text-xl font-bold sm:text-2xl">
-                        Jobs
-                    </h1>
-                    <p className="mt-5 leading-loose">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy.
-                    </p>
-                </div>
-                <div className="mt-12">
-                    <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        {
-                            Jobs.map((item, idx) => (
-                                <li key={idx} className="gap-8 flex flex-col">
-                                    <div className="w-full h-60 relative hover:cursor-pointer">
-                                        <Image
-                                            src={item.src}
-                                            className="w-full h-full object-cover object-center shadow-md rounded-xl"
-                                            alt="jobpic"
-                                            fill = {true}
-                                            
-                                        />
-                                    </div>
-                                    <div className="mt-4 sm:mt-0 hover:cursor-pointer">
-                                        <h4 className="text-lg font-semibold">{item.name}</h4>
-                                        <p className="text-primary">1000+ Jobs</p>
-                                        <p className="mt-2">{`Average Salary: ${item.avg}`}</p>
-                                    </div>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div>
-            </div>
+      <section className="w-full mt-36 mx-auto px-4 md:px-8">
+        <div className="max-w-xl">
+            <h1 className="text-2xl font-bold sm:text-2xl">
+                Jobs
+            </h1>
+            <p className="mt-5 leading-loose">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy.
+            </p>
+        </div>
+          <div className="mt-12">
+              <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                  {
+                      Jobs.map((item, idx) => (
+                          <li key={idx} className="gap-8 flex flex-col">
+                              <div className="w-full h-60 relative hover:cursor-pointer">
+                                  <Image
+                                      src={item.src}
+                                      className="w-full h-full object-cover object-center shadow-md rounded-xl"
+                                      alt="jobpic"
+                                      fill = {true}
+                                      
+                                  />
+                              </div>
+                              <div className="mt-4 sm:mt-0 hover:cursor-pointer">
+                                  <h4 className="text-lg font-semibold">{item.name}</h4>
+                                  <p className="text-primary">1000+ Jobs</p>
+                                  <p className="mt-2">{`Average Salary: ${item.avg}`}</p>
+                              </div>
+                          </li>
+                      ))
+                  }
+              </ul>
+          </div>
       </section>
-      <section className="h-screen">
-        <h1 className="mx-9 pt-12 font-bold text-2xl">Key Features</h1>
+      <section className="h-screen mt-36">
+        <h1 className="mx-9 font-bold text-2xl">Key Features</h1>
         <div className="flex justify-around gap-x-8 mt-9 p-10 bg-zinc-200 w-full rounded-lg">
           <div className="bg-white rounded-lg w-full h-[500px] p-5 flex flex-col items-center gap-y-6">
             <div className="rounded-full border-4 border-primary w-[200px] h-[200px] mt-2">
