@@ -39,17 +39,43 @@ const Canada = () => {
       src:"/more.jpg"
     }
   ]
+  const features = [
+    {
+        title: "Fast Refresh",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus."
+    },
+    {
+        title: "Analytics",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus."
+    },
+    {
+        title: "Datacenter security",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus."
+    },
+    {
+        title: "Build on your terms",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus."
+    },
+    {
+        title: "Safe to use",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus."
+    },
+    {
+        title: "Flexible",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus."
+    },
+]
   return (<div className="overflow-hidden">
     <Header name="Canada" bg="/canadabg.jpg"/>
     <TracingBeam className="px-1">
       <Information/>
-      <section className="w-full mt-36 mx-auto px-4 md:px-8">
+      <section className="w-full mt-28 mx-auto px-4 py-7 md:px-8">
         <div className="max-w-xl">
             <h1 className="text-2xl font-bold sm:text-2xl">
                 Jobs
             </h1>
             <p className="mt-5 leading-loose">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industrys standard dummy.
             </p>
         </div>
           <div className="mt-12">
@@ -77,29 +103,30 @@ const Canada = () => {
               </ul>
           </div>
       </section>
-      <section className="h-screen mt-36">
-        <h1 className="mx-9 font-bold text-2xl">Key Features</h1>
-        <div className="flex justify-around gap-x-8 mt-9 p-10 bg-zinc-200 w-full rounded-lg">
-          <div className="bg-white rounded-lg w-full h-[500px] p-5 flex flex-col items-center gap-y-6">
-            <div className="rounded-full border-4 border-primary w-[200px] h-[200px] mt-2">
-            </div>
-              <h1 className="text-xl font-bold mt-4">Lorem ipsum dolor </h1>
-              <p className="text-center text-semibold leading-relaxed">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid consectetur soluta nemo delectus dignissimos accusantium eaque quos exercitationem qui quaerat!</p>
-          </div>
-          <Separator className="font-semibold bg-zinc-400" orientation="vertical" />
-          <div className="bg-white rounded-lg w-full h-[500px] p-5 flex flex-col items-center gap-y-6">
-          <div className="rounded-full border-4 border-primary w-[200px] h-[200px] mt-2">
-            </div>
-              <h1 className="text-xl font-bold mt-4">Lorem ipsum dolor </h1>
-              <p className="text-center text-semibold leading-relaxed">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid consectetur soluta nemo delectus dignissimos accusantium eaque quos exercitationem qui quaerat!</p>
-          </div>
-          <Separator className="font-semibold bg-zinc-400" orientation="vertical" />
-          <div className="bg-white rounded-lg w-full h-[500px] flex p-5 flex-col items-center gap-y-6">
-          <div className="rounded-full border-4 border-primary w-[200px] h-[200px] mt-2">
-            </div>
-              <h1 className="text-xl font-bold mt-4">Lorem ipsum dolor </h1>
-              <p className="text-center text-semibold leading-relaxed">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid consectetur soluta nemo delectus dignissimos accusantium eaque quos exercitationem qui quaerat!</p>
-          </div>
+      <section className="h-screen mt-28 mx-10 py-7 ">
+        <h4 className="text-primary font-semibold text-lg">Checklist</h4>
+        <h1 className="mt-5 font-bold text-2xl">Things to Check before going to Canada</h1>
+        <p className="mt-5 font-md leading-loose">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, cum?</p>
+        <div className="mt-12 p-12 bg-zinc-200 w-full rounded-lg">
+        <ul className="grid gap-y-8 gap-x-16 sm:grid-cols-2 lg:grid-cols-3">
+            {
+                features.map((item, idx) => (
+                    <li key={idx} className="space-y-3">
+                        <div className="w-12 h-12 border text-indigo-600 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                            </svg>
+                        </div>
+                        <h4 className="text-lg text-gray-800 font-semibold">
+                            {item.title}
+                        </h4>
+                        <p>
+                            {item.desc}
+                        </p>
+                    </li>
+                ))
+            }
+        </ul>
         </div>
       </section>
     </TracingBeam>
