@@ -6,6 +6,7 @@ import Image from "next/image"
 import JobButton from "@/components/jobbutton";
 import FeatureCard from "@/components/featurecard";
 import { Separator } from "@/components/ui/separator";
+import CheckList from "@/components/checklist";
 
 const Canada = () => {
   const Jobs = [
@@ -55,15 +56,7 @@ const Canada = () => {
     {
         title: "Build on your terms",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus."
-    },
-    {
-        title: "Safe to use",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus."
-    },
-    {
-        title: "Flexible",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus."
-    },
+    }
 ]
   return (<div className="overflow-hidden">
     <Header name="Canada" bg="/canadabg.jpg"/>
@@ -71,8 +64,9 @@ const Canada = () => {
       <Information/>
       <section className="w-full mt-28 mx-auto px-4 py-7 md:px-8">
         <div className="max-w-xl">
-            <h1 className="text-2xl font-bold sm:text-2xl">
-                Jobs
+          <h4 className="text-primary font-semibold text-lg">Search</h4>
+            <h1 className="text-2xl font-bold mt-5 sm:text-2xl">
+              Jobs in Canada
             </h1>
             <p className="mt-5 leading-loose">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industrys standard dummy.
@@ -103,32 +97,7 @@ const Canada = () => {
               </ul>
           </div>
       </section>
-      <section className="h-screen mt-28 mx-10 py-7 ">
-        <h4 className="text-primary font-semibold text-lg">Checklist</h4>
-        <h1 className="mt-5 font-bold text-2xl">Things to Check before going to Canada</h1>
-        <p className="mt-5 font-md leading-loose">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, cum?</p>
-        <div className="mt-12 p-12 bg-zinc-200 w-full rounded-lg">
-        <ul className="grid gap-y-8 gap-x-16 sm:grid-cols-2 lg:grid-cols-3">
-            {
-                features.map((item, idx) => (
-                    <li key={idx} className="space-y-3">
-                        <div className="w-12 h-12 border text-indigo-600 rounded-lg flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                            </svg>
-                        </div>
-                        <h4 className="text-lg text-gray-800 font-semibold">
-                            {item.title}
-                        </h4>
-                        <p>
-                            {item.desc}
-                        </p>
-                    </li>
-                ))
-            }
-        </ul>
-        </div>
-      </section>
+      <CheckList features={features}/>
     </TracingBeam>
   </div>);
 };

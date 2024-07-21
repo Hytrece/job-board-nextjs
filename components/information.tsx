@@ -26,7 +26,8 @@ const Information = () => {
   return (
     <section className="relative overflow-y-visible">
       <div className="flex flex-col gap-y-3 mt-10 ml-10">
-        <h2 className="text-2xl font-bold">Working Holiday in Canada</h2>
+        <h4 className="text-primary font-semibold text-lg">Overview</h4>
+        <h2 className="text-2xl mt-2 font-bold">Working Holiday in Canada</h2>
         <div className="mt-10 pt-2 flex flex-col sm:flex-row sm:flex-wrap gap-y-10 justify-center items-center gap-x-3 lg:divide-x">
         {stats.map((stat)=>(
           <ul key={stat.title} className="text-center flex flex-col gap-y-2 px-12 md:px-16">
