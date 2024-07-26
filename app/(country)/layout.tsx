@@ -1,4 +1,5 @@
 import Container from "@/components/container";
+import Footer from "@/components/footer";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 export default function CountryLayout({
   children,
@@ -8,6 +9,7 @@ export default function CountryLayout({
   return (
     <Container>
       {children}
+      <Footer/>
     </Container>
   );
 }

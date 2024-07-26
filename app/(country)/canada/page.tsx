@@ -7,6 +7,7 @@ import JobButton from "@/components/jobbutton";
 import FeatureCard from "@/components/featurecard";
 import { Separator } from "@/components/ui/separator";
 import CheckList from "@/components/checklist";
+import Charts from "@/components/charts";
 
 const Canada = () => {
   const Jobs = [
@@ -98,6 +99,7 @@ const Canada = () => {
           </div>
       </section>
       <CheckList features={features}/>
+      <Charts/>
     </TracingBeam>
   </div>);
 };
