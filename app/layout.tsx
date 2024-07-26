@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
-const inter = Noto_Sans_KR({ subsets: ["latin"] });
+const inter = Noto_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "IMINI.IO",

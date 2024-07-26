@@ -2,6 +2,7 @@ import Image from "next/image";
 import ModeToggle from "@/components/togglemode";
 import { Separator } from "./ui/separator";
 import DrawDown from "./drawdown";
+import LoginButton from "./ui/loginbutton";
 const Bar = () => {
   return (
     <div className="w-screen">
@@ -28,14 +29,7 @@ const Bar = () => {
               alt="globe"
               className="hover:cursor-pointer"
             />
-            <Image
-              src="/person.svg"
-              width={40}
-              height={40}
-              alt="person"
-              className="hover:cursor-pointer"
-            />
-            <ModeToggle />
+            <LoginButton/>
           </div>
         </div>
       </div>

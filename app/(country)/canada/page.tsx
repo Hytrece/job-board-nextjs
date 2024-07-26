@@ -1,13 +1,10 @@
 import Header from "@/components/header";
 import Information from "@/components/information";
-import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import Image from "next/image"
-import JobButton from "@/components/jobbutton";
-import FeatureCard from "@/components/featurecard";
-import { Separator } from "@/components/ui/separator";
 import CheckList from "@/components/checklist";
 import Charts from "@/components/charts";
+import MoreJobs from "@/components/morejobs";
 
 const Canada = () => {
   const Jobs = [
@@ -66,9 +63,12 @@ const Canada = () => {
       <section className="w-full mt-28 mx-auto px-4 py-7 md:px-8">
         <div className="max-w-xl">
           <h4 className="text-primary font-semibold text-lg">Search</h4>
+          <div className="flex gap-x-7 items-center">
             <h1 className="text-2xl font-bold mt-5 sm:text-2xl">
               Jobs in Canada
             </h1>
+            <MoreJobs/>
+          </div>
             <p className="mt-5 leading-loose">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industrys standard dummy.
             </p>
@@ -77,7 +77,8 @@ const Canada = () => {
               <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                   {
                       Jobs.map((item, idx) => (
-                          <li key={idx} className="gap-8 flex flex-col">
+                          <li key={idx} className="gap-8 flex hover:cursor-pointer flex-col">
+                            
                               <div className="w-full h-60 relative hover:cursor-pointer">
                                   <Image
                                       src={item.src}
@@ -92,6 +93,7 @@ const Canada = () => {
                                   <p className="text-primary">1000+ Jobs</p>
                                   <p className="mt-2">{`Average Salary: ${item.avg}`}</p>
                               </div>
+                            
                           </li>
                       ))
                   }

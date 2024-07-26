@@ -1,9 +1,4 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { MoveRight } from "lucide-react";
 const Information = () => {
   const stats = [
     {
@@ -58,7 +53,7 @@ const Information = () => {
             hic nemo corporis.
           </li>
         </ul>
-        <div className="text-primary mt-3 font-bold text-lg outline-2 outline-primary rounded-xl">Checklist to Canada</div>
+        <div className="text-primary mt-3 group flex hover:cursor-pointer items-center gap-x-4 transition duration-100 font-bold text-lg outline-2 outline-primary rounded-xl">Checklist to Canada <MoveRight className="font-bold transition transform group-hover:translate-x-1 duration-150"/></div>
       </div>
     </section>
   );

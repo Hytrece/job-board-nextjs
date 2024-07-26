@@ -31,9 +31,9 @@ const Footer = () => {
                             {
                                 footerNavs.map((item, idx) => (
                                     <li key={idx} className="text-gray-800 hover:text-gray-500 duration-150">
-                                        <a key={idx} href={item.href}>
+                                        
                                             {item.name}
-                                        </a>
+                                       
                                     </li>
                                 ))
                             }
