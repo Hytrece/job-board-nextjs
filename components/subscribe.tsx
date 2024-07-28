@@ -2,6 +2,7 @@
 import { Mail } from 'lucide-react';
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button"
+import { useToast } from "@/components/ui/use-toast"
 import { z } from "zod"
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import {
@@ -22,6 +23,7 @@ const formSchema = z.object({
   })
 
 const Subscribe = ({country}:{country:String}) => {
+   const {toast} = useToast();
     const words = [
         {
           text: "Interested",
@@ -42,7 +44,8 @@ const Subscribe = ({country}:{country:String}) => {
       })
      
       function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values)
+        toast({ title: "Subscribed!",
+          description: "Now you will receive newletters from IMINI.IO",});
       }
     return(
         <section className="w-full mb-6 flex flex-col relative justify-center py-20 items-center">

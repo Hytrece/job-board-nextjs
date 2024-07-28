@@ -5,6 +5,7 @@ import LoginButton from "./ui/loginbutton";
 import Image from "next/image";
 import {cn} from "@/lib/utils";
 import {useState, useEffect} from "react";
+import UserBar from "./userbar";
 const BarforHeader = () => {
     const [scrolledDown, setScrolledDown] = useState(false);
     const [positionY, setpositionY] = useState(0);
@@ -47,7 +48,7 @@ const BarforHeader = () => {
               alt="globe"
               className="hover:cursor-pointer"
             />
-            <LoginButton/>
+            <UserBar/>
           </div>
         </div>
       </div>
