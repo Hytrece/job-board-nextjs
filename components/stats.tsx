@@ -42,7 +42,7 @@ const chartConfig = {
 
 export default function Stats() {
   return (
-    <Card className="w-[50%] mt-12">
+    <Card className="mt-12 max-h-[500px]">
       <CardHeader>
         <CardTitle>Stats</CardTitle>
         <CardDescription>Canada</CardDescription>
@@ -81,7 +81,7 @@ export default function Stats() {
             />
             <Bar
               dataKey="score"
-              radius={4}
+              radius={5}
             >
               <LabelList
                 dataKey="category"
@@ -102,8 +102,8 @@ export default function Stats() {
                   key={item.category}
                   fill={
                     item.score > 200
-                      ? "hsl(var(--primary))"
-                      : (item.score > 100 ? "hsl(var(--chart-1))":"hsl(var(--chart-2))")
+                      ? "hsl(var(--chart-1))"
+                      : (item.score > 100 ? "hsl(var(--chart-3))":"hsl(var(--chart-2))")
                   }
                   />
               ))}

@@ -1,4 +1,5 @@
 import Stats from "@/components/stats";
+import DonutChart from "./donutchart";
 
 const Charts = () => {
     return(
@@ -10,7 +11,10 @@ const Charts = () => {
         <p className="mt-5 leading-loose">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industrys standard dummy.
         </p>
+        <div className="grid grid-cols-1 justify-center md:grid-cols-2 gap-x-10 items-center">
         <Stats/>
+        <DonutChart/>
+        </div>
     </section>)
 };
 export default Charts;

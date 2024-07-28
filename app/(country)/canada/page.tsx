@@ -5,6 +5,7 @@ import Image from "next/image"
 import CheckList from "@/components/checklist";
 import Charts from "@/components/charts";
 import MoreJobs from "@/components/morejobs";
+import Subscribe from "@/components/subscribe";
 
 const Canada = () => {
   const Jobs = [
@@ -102,6 +103,7 @@ const Canada = () => {
       </section>
       <CheckList features={features}/>
       <Charts/>
+      <Subscribe country="Canada"/>
     </TracingBeam>
   </div>);
 };
