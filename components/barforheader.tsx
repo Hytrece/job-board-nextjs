@@ -23,11 +23,11 @@ const BarforHeader = () => {
     });
     const attribute =
     "transition transform duration-400" +
-    (scrolledDown ? " -translate-y-[100px]" : "");
+    (scrolledDown&& positionY >= 20   ? " -translate-y-[100px]" : "")
     return(
-        <div className={cn(attribute,"w-full max-w-[1400px] fixed z-40 bg-white flex justify-between items-center p-3 top-0")}>
-        <h1 className="font-bold text-gradient text-3xl">IMINI.IO</h1>
-        <div className="flex flex-nowrap text-center items-center ml-20 w-[60%] justify-between text-sm md:text-md invisible sm:visible font-semibold">
+        <div className={cn(attribute,"w-full fixed z-40 flex bg-white shadow-md shadow-b justify-between items-center p-3 top-0")}>
+        <h1 className="font-bold text-gradient ml-16 text-3xl">VIKB.IO</h1>
+        <div className="flex flex-nowrap text-center items-center w-max gap-x-12 text-sm md:text-md invisible sm:visible font-semibold">
           <div className="hover:cursor-pointer hover:text-primary">
             <DrawDown />
           </div>
@@ -40,7 +40,8 @@ const BarforHeader = () => {
             About Us
           </div>
           <Separator orientation="vertical" />
-          <div className="flex gap-5 justify-between">
+        </div>
+        <div className="flex gap-5 justify-between">
             <Image
               src="/language.svg"
               width={30}
@@ -50,7 +51,6 @@ const BarforHeader = () => {
             />
             <UserBar/>
           </div>
-        </div>
       </div>
     );
 }

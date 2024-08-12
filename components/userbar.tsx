@@ -22,6 +22,7 @@ import {
   AvatarImage,
 } from "@/components/ui/avatar"
 import Image from "next/image";
+import ModeToggle from "@/components/togglemode";
  
 const UserBar = () => {
     const elements = [
@@ -87,6 +88,7 @@ const UserBar = () => {
           <h1 className="font-semibold">AI Resume Generator</h1>
         </div>
       </div>
+      <ModeToggle/>
         </ul>
         </SheetContent>
       </Sheet>)

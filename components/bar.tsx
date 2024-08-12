@@ -7,7 +7,7 @@ const Bar = () => {
   return (
     <div className="w-screen">
       <div className="w-full flex justify-between p-10 border-4 ">
-        <h1 className="font-bold text-gradient text-3xl">IMINI.IO</h1>
+        <h1 className="font-bold text-gradient text-3xl">VIKB.IO</h1>
         <div className="flex flex-nowrap ml-20 w-[60%] justify-between text-md md:text-lg lg:text-xl invisible sm:visible font-semibold">
           <div className="hover:cursor-pointer hover:text-primary">
             <DrawDown />

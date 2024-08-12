@@ -6,7 +6,7 @@ import CheckList from "@/components/checklist";
 import Charts from "@/components/charts";
 import MoreJobs from "@/components/morejobs";
 import Subscribe from "@/components/subscribe";
-
+import Link from "next/link";
 const Canada = () => {
   const Jobs = [
     {
@@ -79,7 +79,7 @@ const Canada = () => {
                   {
                       Jobs.map((item, idx) => (
                           <li key={idx} className="gap-8 flex hover:cursor-pointer flex-col">
-                            
+                            <Link href={{pathname:"/canada/jobs", query:{category:(item.name).toLowerCase()}}}>
                               <div className="w-full h-60 relative hover:cursor-pointer">
                                   <Image
                                       src={item.src}
@@ -94,7 +94,7 @@ const Canada = () => {
                                   <p className="text-primary">1000+ Jobs</p>
                                   <p className="mt-2">{`Average Salary: ${item.avg}`}</p>
                               </div>
-                            
+                            </Link>
                           </li>
                       ))
                   }
