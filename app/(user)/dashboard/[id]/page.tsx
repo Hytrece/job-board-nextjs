@@ -206,7 +206,7 @@ const SidebarDemo = () => {
     </div>
   );
 }
-export const Logo = () => {
+const Logo = () => {
   return (
     <Link
       href="#"
@@ -223,7 +223,7 @@ export const Logo = () => {
     </Link>
   );
 };
-export const LogoIcon = () => {
+const LogoIcon = () => {
   return (
     <Link
       href="#"
