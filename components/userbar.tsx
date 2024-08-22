@@ -7,6 +7,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { User } from "lucide-react";
 import {
     Sheet,
     SheetContent,
@@ -16,6 +17,7 @@ import {
     SheetTrigger,
   } from "@/components/ui/sheet"
 import LoginButton from "./ui/loginbutton";
+import { SignInButton } from "@clerk/nextjs";
 import {
   Avatar,
   AvatarFallback,
@@ -23,7 +25,8 @@ import {
 } from "@/components/ui/avatar"
 import Image from "next/image";
 import ModeToggle from "@/components/togglemode";
- 
+import { SignedIn,SignedOut } from "@clerk/nextjs";
+import Link from "next/link";
 const UserBar = () => {
     const elements = [
       {
@@ -43,7 +46,16 @@ const UserBar = () => {
       },
     ]
     return (<Sheet>
-        <SheetTrigger><LoginButton/></SheetTrigger>
+        <SignedOut>
+          <Link href = "/sign-up" className="p-[3px] relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+            <div className="px-4 py-2 rounded-[6px] flex items-center gap-x-4 relative group transition duration-200 text-white bg-transparent">
+                <h1 className="text-semibold">Sign Up</h1>
+                <User/>
+            </div>
+          </Link>
+        </SignedOut>
+        <SignedIn><SheetTrigger><LoginButton/></SheetTrigger></SignedIn>
         <SheetContent side = "right" className="w-[400px] sm:w-[540px]">
         <DropdownMenu>
           <DropdownMenuTrigger className="w-full">

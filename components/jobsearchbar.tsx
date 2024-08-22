@@ -38,14 +38,14 @@ const JobsearchBar = () => {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-x-2 flex">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-x-2 flex shrink-1 ">
                 <FormField
                 control={form.control}
                 name="keyword"
                 render={({ field }) => (
                     <FormItem>
                     <FormControl>
-                        <Input placeholder="Job title:" {...field} className="w-[400px] border-zinc-400 border-2" />
+                        <Input placeholder="Job title:" {...field} className="md:w-[400px] w-[300px] border-zinc-400 border-2" />
                     </FormControl>
                     </FormItem>
                 )}

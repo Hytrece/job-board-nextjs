@@ -6,6 +6,7 @@ import Image from "next/image";
 import {cn} from "@/lib/utils";
 import {useState, useEffect} from "react";
 import UserBar from "./userbar";
+import { SignedIn,SignedOut } from "@clerk/nextjs";
 const BarforHeader = () => {
     const [scrolledDown, setScrolledDown] = useState(false);
     const [positionY, setpositionY] = useState(0);

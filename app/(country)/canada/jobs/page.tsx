@@ -20,6 +20,8 @@ import { SalaryCheckbox } from "@/components/checkbox";
 import { RadioGroupDemo } from "@/components/jobtype";
 import Categorybadge from "@/components/categorybadge";
 import ToKorean from "@/components/tokorean";
+import {BackgroundGradientDemo} from "@/components/cta";
+import { CareerJetCta } from "@/components/careerjetcta";
 async function connectToDB(){
         try {
         const connection = await mongoose.connect(
@@ -139,7 +141,7 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
           </div>
           <div className="w-full flex flex-col justify-start pt-5 pb-10 pl-4 col-span-3">
             <h1 className="font-bold text-xl ml-1">Job Search</h1>
-            <div className="bg-zinc-100 border-2 border-zinc-200 p-3 flex gap-x-5 py-5 w-full mt-3 ml-1 rounded-lg"><JobsearchBar/><ToKorean/></div>
+            <div className="bg-zinc-100 border-2 border-zinc-200 p-3 flex flex-col lg:flex-row gap-y-5 items-center gap-x-5 py-5 w-full mt-3 ml-1 rounded-lg"><JobsearchBar/><ToKorean/></div>
           </div>
         </div>
         <div className="w-full grid grid-cols-4">
@@ -158,6 +160,8 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
                   <Link key={index} href={`?${new URLSearchParams({type:work.type, category:industry, q:s})}`} className="py-3 pl-2 flex font-bold items-center rounded-md hover:bg-violet-300 hover:cursor-pointer gap-x-3">{work.name}</Link>
                 ))}
             </div>
+            <div className="mt-20 mr-5"><BackgroundGradientDemo/></div>
+            <div className="mt-10 mr-5"><CareerJetCta/></div>
           </div>
         <Suspense fallback = "loading...">
         <div className="col-span-3">
@@ -175,7 +179,7 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
                           <Image src="/purpleheart.svg" width={30} height={30} alt="heart" className="hidden group-hover:block z-10 hover:scale-105"/>
                         </div>
                         <div className="flex items-center gap-x-5"><div className={`text-primary rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max`}>{formatDate(job.date)}</div><div className={`text-pink-600 rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max ${job.salary==""? "hidden":""}`}>{job.salary}</div></div>
-                        <div className="text-indigo-600 rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max">{`${job.category.charAt(0).toUpperCase()+job.category.slice(1)}`}</div>
+                        <div className="flex items-center gap-x-5"><div className="text-indigo-600 rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max">{`${job.category.charAt(0).toUpperCase()+job.category.slice(1)}`}</div><div className="text-amber-600 rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max">Contract</div></div>
                       </div>
                       <div className="flex flex-col text-muted-foreground w-[30%] gap-y-4">
                         <div className="flex gap-x-2 items-center">
@@ -202,7 +206,7 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
           <Pagination className="mt-10">
             <PaginationContent>
               <PaginationItem>
-                <PaginationPrevious href={`?${checkNullandCall({page:`${pageNumInt-1}`,industry:industry,s:s,type:"none"})}`} className={pageNum == "1"? "hidden": "text-center min-w-[100px] bg-indigo-400 text-indigo-800 rounded-lg p-2 hover:bg-indigo-500 hover:text-white"}/>
+                <PaginationPrevious href={`?${checkNullandCall({page:`${pageNumInt-1}`,industry:industry,s:s,type:"none"})}`} className={pageNum == "1"? "hidden": "text-center min-w-[100px] bg-indigo-400 rounded-lg p-2 hover:bg-indigo-500 hover:text-white"}/>
               </PaginationItem>
               <PaginationItem>
                 <PaginationNext href={`?${checkNullandCall({page:`${pageNumInt+1}`,industry:industry,s:s,type:"none"})}`} className={nextPage == 0? "hidden": "text-center min-w-[100px] bg-indigo-400 rounded-lg p-2 hover:bg-indigo-500 hover:text-white"} />

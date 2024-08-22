@@ -79,8 +79,9 @@ const Canada = () => {
                   {
                       Jobs.map((item, idx) => (
                           <li key={idx} className="gap-8 flex hover:cursor-pointer flex-col">
-                            <Link href={{pathname:"/canada/jobs", query:{category:(item.name).toLowerCase()}}}>
-                              <div className="w-full h-60 relative hover:cursor-pointer">
+                            <Link href={{pathname:"/canada/jobs", query:{category:(item.name).toLowerCase()}}} className="group">
+                              <div className="w-full h-60 overflow-hidden rounded-xl relative">
+                                <div className="w-full h-60 relative transition transform rounded-xl duration-700 group-hover:scale-110 group-hover:cursor-pointer">
                                   <Image
                                       src={item.src}
                                       className="w-full h-full object-cover object-center shadow-md rounded-xl"
@@ -88,6 +89,7 @@ const Canada = () => {
                                       fill = {true}
                                       
                                   />
+                                  </div>
                               </div>
                               <div className="mt-4 sm:mt-0 hover:cursor-pointer">
                                   <h4 className="text-lg font-semibold">{item.name}</h4>
