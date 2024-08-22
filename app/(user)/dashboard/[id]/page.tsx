@@ -181,7 +181,7 @@ const SidebarDemo = () => {
         <SidebarBody className="justify-between bg-indigo-500 gap-10">
           <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
             <>
-              <Logo />
+              VIKB.IO
             </>
             <div className="mt-8 flex flex-col gap-2">
               {links.map((link, idx) => (
