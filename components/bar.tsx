@@ -6,9 +6,9 @@ import LoginButton from "./ui/loginbutton";
 const Bar = () => {
   return (
     <div className="w-screen">
-      <div className="w-full flex justify-between p-10 border-4 ">
+      <div className="w-full flex justify-between items-center p-10 border-4 ">
         <h1 className="font-bold text-gradient text-3xl">VIKB.IO</h1>
-        <div className="flex flex-nowrap ml-20 w-[60%] justify-between text-md md:text-lg lg:text-xl invisible sm:visible font-semibold">
+        <div className="flex flex-nowrap ml-20 w-[60%] justify-between items-center text-md md:text-lg lg:text-xl invisible sm:visible font-semibold">
           <div className="hover:cursor-pointer hover:text-primary">
             <DrawDown />
           </div>
@@ -21,7 +21,7 @@ const Bar = () => {
             About Us
           </div>
           <Separator orientation="vertical" />
-          <div className="flex gap-5 justify-between">
+          <div className="flex gap-5 items-center justify-between">
             <Image
               src="/language.svg"
               width={40}
