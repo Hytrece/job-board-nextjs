@@ -27,7 +27,12 @@ import Image from "next/image";
 import ModeToggle from "@/components/togglemode";
 import { SignedIn,SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
-const UserBar = () => {
+interface Profile{
+  firstName: React.ReactNode | null, 
+  lastName: React.ReactNode | null,
+  photo: string,
+}
+const UserBar = ({firstName,lastName,photo}:Profile) => {
     const elements = [
       {
         title:"Favorites",
@@ -55,7 +60,18 @@ const UserBar = () => {
             </div>
           </Link>
         </SignedOut>
-        <SignedIn><SheetTrigger><LoginButton/></SheetTrigger></SignedIn>
+        <SignedIn><SheetTrigger>
+          <div className="p-[3px] relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+              <div className="px-4 py-2 rounded-[6px] flex items-center gap-x-4 relative group transition duration-200 text-white bg-transparent">
+                <div className="flex items-center font-semibold text-lg">
+                  <h1 className="text-semibold">{firstName}</h1>
+                  <h1 className="text-semibold ml-1">{lastName}</h1>
+                  <div className="relative w-7 h-7 rounded-full overflow-hidden ml-2"><Image src={photo} fill={true} objectFit="cover" alt="profilepic"/></div>
+                </div>
+              </div>
+          </div>
+        </SheetTrigger></SignedIn>
         <SheetContent side = "right" className="w-[400px] sm:w-[540px]">
         <DropdownMenu>
           <DropdownMenuTrigger className="w-full">
@@ -64,10 +80,10 @@ const UserBar = () => {
                 <div className="mt-6 flex items-center justify-between">
                 <div className="flex gap-x-5 items-center">
                 <Avatar>
-                <AvatarImage src="/avatar.svg" alt="user" />
+                <AvatarImage src={photo} alt="user" />
                 <AvatarFallback>User</AvatarFallback>
                 </Avatar>
-                <h1 className="font-semibold text-black">D.H Hyun</h1>
+                <h1 className="font-semibold text-black">{firstName}&nbsp;{lastName}</h1>
                 </div>
                 <Image src="/chevron-up-down.svg" width={24} height={24} alt="arrow"/>
                 </div>

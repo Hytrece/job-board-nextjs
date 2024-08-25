@@ -5,6 +5,7 @@ import Image from "next/image";
 import { BedSingle, MoveRight, TrafficCone ,Code, Tractor, HandCoins, LampDesk,Heart} from "lucide-react";
 import Link from "next/link";
 import { Coffee } from 'lucide-react';
+import { auth, redirectToSignIn } from '@clerk/nextjs/server'
 import { Pagination,
   PaginationContent,
   PaginationEllipsis,
@@ -19,6 +20,9 @@ import { BreadcrumbDemo } from "@/components/breadcrumbs";
 import ToKorean from "@/components/tokorean";
 import {BackgroundGradientDemo} from "@/components/cta";
 import { CareerJetCta } from "@/components/careerjetcta";
+import { RedirectToSignIn } from "@clerk/nextjs";
+import User from "@/lib/models/user.model";
+import LikeButton from "@/components/likebutton";
 async function connectToDB(){
         try {
         const connection = await mongoose.connect(
@@ -126,7 +130,17 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
       const formattedDate = date.toLocaleDateString('en-GB', options); // 'en-GB' gives "01 Aug", 'en-US' would give "Aug 01"
   
       return formattedDate;
-  }
+  } 
+    interface User{
+      clerkId:string,
+      email:string,
+      username:string,
+      photo:string,
+      firstName:string,
+      lastName:string,
+      savedJobs:string[],
+      savedWh:string[]
+    }
     return(
       <section className="min-h-screen w-[80%] max-h-[500vh]">
         <BreadcrumbDemo prev={[{href:"/canada",name:"Canada"}]} now={{href:"/canada/jobs",name:"Jobs"}}/>
@@ -167,13 +181,13 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
             <div className="text-primary w-full flex justify-center mt-16 text-3xl font-semibold">No results found</div> :
             <ul className=" ml-5">
               {joblist.map((job)=>(
-                <Link key = {job.url} href = {job.url}>
+                <div key = {job.url}>
                   <div key={job.url} className="w-full min-h-[150px] group hover:cursor-pointer mb-5 bg-zinc-100 border-2 rounded-md border-zinc-200 ">
                     <div className="flex pt-5 pb-5 px-4 justify-between">
                       <div className="flex flex-col gap-y-4">
                         <div className="flex items-center group gap-x-4 ">
-                          <h1 className="font-bold text-lg" >{job.title}</h1>
-                          <Image src="/purpleheart.svg" width={30} height={30} alt="heart" className="hidden group-hover:block z-10 hover:scale-105"/>
+                          <h1 className="font-bold text-lg max-w-[500px]" >{job.title}</h1>
+                          <LikeButton jobId = {JSON.parse(JSON.stringify(job._id))}/>
                         </div>
                         <div className="flex items-center gap-x-5"><div className={`text-primary rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max`}>{formatDate(job.date)}</div><div className={`text-pink-600 rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max ${job.salary==""? "hidden":""}`}>{job.salary}</div></div>
                         <div className="flex items-center gap-x-5"><div className="text-indigo-600 rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max">{`${job.category.charAt(0).toUpperCase()+job.category.slice(1)}`}</div><div className="text-amber-600 rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max">Contract</div></div>
@@ -187,14 +201,14 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
                           <Image src="/location.svg" width={20} height={20} alt="company"/>
                           <p className="font-medium">{job.location}</p>
                         </div>
-                        <div className="text-indigo-600 font-semibold flex gap-x-1 mt-8">
+                        <Link href = {job.url} className="text-indigo-600 font-semibold flex gap-x-1 mt-8">
                           Continue with CareerJet
                           <MoveRight className="transition w-[20px] transform group-hover:translate-x-1 duration-100"/>
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   </div>
-                </Link>
+                </div>
                 )
               )
             }

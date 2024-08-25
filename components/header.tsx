@@ -7,7 +7,7 @@ const Header = ({ name, bg }: { name: string; bg: string }) => {
       <div className="sm:invisible absolute right-10 top-10">
         <Image src="/menu.svg" width={50} height={50} alt="menu" />
       </div>
-      <div className="w-full border-b h-[300px] mt-20 rounded-xl overflow-hidden relative">
+      <div className="w-full border-b h-[300px] mt-20 -translate-y-[4px] rounded-xl overflow-hidden relative">
         <Image
           src={bg}
           fill={true}
