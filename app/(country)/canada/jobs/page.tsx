@@ -20,7 +20,7 @@ import { BreadcrumbDemo } from "@/components/breadcrumbs";
 import ToKorean from "@/components/tokorean";
 import {BackgroundGradientDemo} from "@/components/cta";
 import { CareerJetCta } from "@/components/careerjetcta";
-import { RedirectToSignIn } from "@clerk/nextjs";
+import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/nextjs";
 import User from "@/lib/models/user.model";
 import LikeButton from "@/components/likebutton";
 async function connectToDB(){
@@ -131,15 +131,14 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
   
       return formattedDate;
   } 
-    interface User{
-      clerkId:string,
-      email:string,
-      username:string,
-      photo:string,
-      firstName:string,
-      lastName:string,
-      savedJobs:string[],
-      savedWh:string[]
+    interface Job{
+      url: string;
+      title: string;
+      company: string;
+      location: string;
+      date: string;
+      salary: string;
+      category: string;
     }
     return(
       <section className="min-h-screen w-[80%] max-h-[500vh]">
@@ -180,14 +179,14 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
           {joblist.length == 0 ? 
             <div className="text-primary w-full flex justify-center mt-16 text-3xl font-semibold">No results found</div> :
             <ul className=" ml-5">
-              {joblist.map((job)=>(
+              {joblist.map((job:any)=>(
                 <div key = {job.url}>
                   <div key={job.url} className="w-full min-h-[150px] group hover:cursor-pointer mb-5 bg-zinc-100 border-2 rounded-md border-zinc-200 ">
                     <div className="flex pt-5 pb-5 px-4 justify-between">
                       <div className="flex flex-col gap-y-4">
                         <div className="flex items-center group gap-x-4 ">
                           <h1 className="font-bold text-lg max-w-[500px]" >{job.title}</h1>
-                          <LikeButton jobId = {JSON.parse(JSON.stringify(job._id))}/>
+                          <LikeButton>{job.url}</LikeButton>
                         </div>
                         <div className="flex items-center gap-x-5"><div className={`text-primary rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max`}>{formatDate(job.date)}</div><div className={`text-pink-600 rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max ${job.salary==""? "hidden":""}`}>{job.salary}</div></div>
                         <div className="flex items-center gap-x-5"><div className="text-indigo-600 rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max">{`${job.category.charAt(0).toUpperCase()+job.category.slice(1)}`}</div><div className="text-amber-600 rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max">Contract</div></div>

@@ -24,9 +24,7 @@ const UserSchema = new Schema({
     lastName:{
         type:String
     },
-    savedJobs:[{
-        type:String
-    }],
+    savedJobs:{type:[String]},
     savedWh:[{
         type:String
     }]
