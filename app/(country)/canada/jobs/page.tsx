@@ -65,6 +65,7 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
         type:"c",
       }
     ]
+    //wtf 
     interface Param{
       industry?:string | "none",
       s?: string | "",
