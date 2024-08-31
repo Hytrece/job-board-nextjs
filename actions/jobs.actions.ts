@@ -4,15 +4,22 @@ import { connectToDB } from "@/lib/db"
 import User from "@/lib/models/user.model";
 import mongoose from "mongoose";
 import Country from "@/utils/country-schema";
+import { NextResponse } from "next/server";
 
 
 export async function saveJob(userId:string,jobId:mongoose.Schema.Types.ObjectId){
     connectToDB();
     try {
-        await User.findOneAndUpdate({clerkId:userId},{$push:{savedJobs:jobId}});
-        console.log("Job Succesfully saved")
+        const response = await User.findOneAndUpdate({clerkId:userId},{$addToSet:{savedJobs:jobId}});
+        if(response){
+            console.log("job saved successfully");
+            return {status:200};
+        }
+        else{
+            return {status:500}
+        }
     } catch (error) {
-        console.log(`error saving job for${userId}`,error);
+        return {status:500}
     }
 ;
 }

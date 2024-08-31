@@ -1,17 +1,9 @@
-import mongoose from "mongoose";
-import Country from "@/utils/country-schema";
+
 import { Suspense } from "react";
-import Image from "next/image";
-import { BedSingle, MoveRight, TrafficCone ,Code, Tractor, HandCoins, LampDesk,Heart} from "lucide-react";
+import { Document } from "mongoose";
+import { BedSingle, TrafficCone ,Code, Tractor, HandCoins, LampDesk} from "lucide-react";
 import Link from "next/link";
 import { Coffee } from 'lucide-react';
-import { Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious, } from "@/components/ui/pagination";
 import { cn } from "@/lib/utils";
 import JobsearchBar from "@/components/jobsearchbar";
 import ComboboxForm from "@/components/comboboxforjob";
@@ -19,24 +11,16 @@ import { BreadcrumbDemo } from "@/components/breadcrumbs";
 import ToKorean from "@/components/tokorean";
 import {BackgroundGradientDemo} from "@/components/cta";
 import { CareerJetCta } from "@/components/careerjetcta";
-import { JobType } from "@/lib/types/jobtype";
-import LikeButton from "@/components/likebutton";
-import { connectToDB } from "@/lib/db";
 import JobList from "@/components/joblist";
+import { fetchJob } from "@/actions/jobs.actions";
 
 const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | string[] | undefined}}) => {
     const pageNum = (searchParams.page ?? "1") as string;
     const pageNumInt = +pageNum;
     const industry = (searchParams.category ?? "none") as string;
     const query = (searchParams.q ?? "") as string;
-    let type = "";
-    let salary="";
     console.log(industry);
-    const mongo = await connectToDB();
     const s = query;
-    const regex = RegExp(s,'i');
-    const joblist = industry == "none" ? await Country.find({country:"australia", title: {$regex: regex}}).lean().skip((pageNumInt-1)*20).limit(20) : await Country.find({country:"australia",category:industry,title: {$regex: regex}}).lean().skip((pageNumInt-1)*20).limit(20);
-    const nextPage = industry == "none" ? await Country.find({country:"australia",title: {$regex: regex}}).lean().skip((pageNumInt)*20).countDocuments() : await Country.find({country:"australia",category:industry,title: {$regex: regex}}).lean().skip((pageNumInt)*20).countDocuments();
     const categories = [
       {
         name:"Barista",
@@ -88,40 +72,11 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
       type?:string | "none",
       salary?:string | "false"
     };
-    function checkNullandCall(param:Param){
-      let returnObject = new Map()
-      if(param.industry!="none"){
-        returnObject.set("category",param.industry);
-      }
-      if(param.s!="" || param.s==undefined){
-        returnObject.set("q" ,param.s);
-      }
-      if(param.page!="1"){
-        returnObject.set("page",param.page);
-      }
-      if(param.type!="none" || param.type==undefined){
-        returnObject.set("type",param.type);
-      }
-      if(param.salary=="true"){
-        returnObject.set("salary","true")
-      }
-      return new URLSearchParams(Object.fromEntries(returnObject));
-    }
-    function formatDate(input: string): string {
-      // Create a Date object from the input string
-      const date = new Date(input);
-  
-      // Define options for formatting the date
-      const options: Intl.DateTimeFormatOptions = {
-          day: '2-digit',
-          month: 'short'
-      };
-  
-      // Format the date using the options
-      const formattedDate = date.toLocaleDateString('en-GB', options); // 'en-GB' gives "01 Aug", 'en-US' would give "Aug 01"
-  
-      return formattedDate;
-  } 
+    const {joblist, nextPage} = await fetchJob({industry,s,pageNumInt});
+    const toObjects = <T extends Document>(
+      documents: T[],
+    ): Omit<T, keyof Document>[] =>
+      documents.map((document) => document.toObject({ flattenObjectIds: true }));
     return(
       <section className="min-h-screen w-[80%] max-h-[500vh]">
         <BreadcrumbDemo prev={[{href:"/canada",name:"Canada"}]} now={{href:"/canada/jobs",name:"Jobs"}}/>
@@ -157,7 +112,8 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
           </div>
         <Suspense fallback = "loading...">
         <div className="col-span-3">
-          <JobList searchParams={searchParams}/>
+          <h1 className="ml-5 mb-5 text-xl font-bold">{industry=="none" ? `${query} Jobs` : `${industry.charAt(0).toUpperCase() + industry.slice(1)} Jobs`}</h1>
+          <JobList joblist={joblist} nextPage={nextPage} industry={industry} s={s} pageNum={pageNum}/>
         </div>
         </Suspense>
         </div>

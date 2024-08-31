@@ -1,5 +1,4 @@
 "use client"
-import { fetchJob } from "@/actions/jobs.actions"
 import { Pagination,
     PaginationContent,
     PaginationEllipsis,
@@ -9,19 +8,25 @@ import { Pagination,
     PaginationPrevious, } from "@/components/ui/pagination";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
-import {useEffect, useState} from "react"
 import { useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { saveJob } from "@/actions/jobs.actions";
-const JobList = ({searchParams}:{searchParams:{[key:string]:string | string[] | undefined}}) => {
+const JobList = ({joblist,nextPage,industry,s,pageNum}:{joblist:any[],nextPage:number,industry:string,s:string,pageNum:string}) => {
+    const pageNumInt = +pageNum;
     const router = useRouter();
     const {isSignedIn,userId} = useAuth();
     async function handleClick(jobId:any){
         console.log("jobId is",jobId);
         if(isSignedIn){
             try {
-                await saveJob(userId,jobId);
+                const res = await saveJob(userId,jobId);
+                if(res.status==200){
+                  console.log("saved");
+                }
+                else{
+                  console.log("error");
+                }
             } catch (error) {
                 console.log(error);
             }
@@ -30,17 +35,7 @@ const JobList = ({searchParams}:{searchParams:{[key:string]:string | string[] | 
             router.push("/sign-up");
         }
     }
-    const pageNum = (searchParams.page ?? "1") as string;
-    const pageNumInt = +pageNum;
-    const industry = (searchParams.category ?? "none") as string;
-    const query = (searchParams.q ?? "") as string;
-    const s = query;
-    const [data,setData] = useState<any>();
-    const [nextPage,setNextpage] = useState(0);
-    const [isLoading,setIsLoading] = useState(true);
-    useEffect(()=>{
-        fetchJob({industry,s:s, pageNumInt:pageNumInt}).then((res)=>{setData(res.joblist); setNextpage(res.nextPage)}).then(()=>{setIsLoading(false)});
-    },[industry,s,pageNumInt])
+    
     interface Param{
         industry?:string | "none",
         s?: string | "",
@@ -84,11 +79,10 @@ const JobList = ({searchParams}:{searchParams:{[key:string]:string | string[] | 
     } 
     return(
         <>
-        <h1 className="ml-5 mb-5 text-xl font-bold">{industry=="none" ? `${query} Jobs` : `${industry.charAt(0).toUpperCase() + industry.slice(1)} Jobs`}</h1>
-        {data==undefined? 
+        {joblist.length==0? 
           <div className="text-primary w-full flex justify-center mt-16 text-3xl font-semibold">No results found</div> :
           <ul className=" ml-5">
-            {data.map((job:any)=>(
+            {joblist.map((job:any)=>(
               <div key = {job.url}>
                 <div key={job.url} className="w-full min-h-[150px] group hover:cursor-pointer mb-5 bg-zinc-100 border-2 rounded-md border-zinc-200 ">
                   <div className="flex pt-5 pb-5 px-4 justify-between">
