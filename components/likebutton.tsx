@@ -2,15 +2,15 @@
 import { useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { saveJob } from "@/actions/jobs.actions";
 const LikeButton = (jobId:any)=> {
     const router = useRouter();
-    const {isSignedIn} = useAuth();
-    async function saveJob({jobId}:{jobId:any}){
+    const {isSignedIn,userId} = useAuth();
+    async function handleClick({jobId}:{jobId:any}){
+        console.log("jobId is",jobId);
         if(isSignedIn){
             try {
-                const get = await fetch(`/api/mongodb/${jobId}`,{method:"POST"})
-                console.log(`Id i ${jobId}`);
-                console.log(get);
+                await saveJob(userId,jobId);
             } catch (error) {
                 console.log(error);
             }
@@ -20,7 +20,7 @@ const LikeButton = (jobId:any)=> {
         }
     }
     return(
-        <button onClick={()=>{saveJob({jobId})}} className="z-10"><Image src="/purpleheart.svg" width={30} height={30} alt="heart" className="hidden group-hover:block z-10 hover:scale-105"/></button>
+        <button onClick={()=>{handleClick({jobId})}} className="z-10"><Image src="/purpleheart.svg" width={30} height={30} alt="heart" className="hidden group-hover:block z-10 hover:scale-105"/></button>
     )
 }
 
