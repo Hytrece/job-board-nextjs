@@ -1,5 +1,5 @@
 import {Schema,model,models} from "mongoose";
-
+import mongoose from "mongoose";
 const UserSchema = new Schema({
     clerkId:{
         type:String,
@@ -24,7 +24,10 @@ const UserSchema = new Schema({
     lastName:{
         type:String
     },
-    savedJobs:{type:[String]},
+    savedJobs:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Job"
+    }],
     savedWh:[{
         type:String
     }]
