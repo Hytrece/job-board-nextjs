@@ -26,7 +26,7 @@ const UserSchema = new Schema({
     },
     savedJobs:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"Job"
+        ref:"Country"
     }],
     savedWh:[{
         type:String

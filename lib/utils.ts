@@ -27,3 +27,18 @@ export function checkNullandCall(param:Param){
   }
   return new URLSearchParams(Object.fromEntries(returnObject));
 }
+export function formatDate(input: string): string {
+  // Create a Date object from the input string
+  const date = new Date(input);
+
+  // Define options for formatting the date
+  const options: Intl.DateTimeFormatOptions = {
+      day: '2-digit',
+      month: 'short'
+  };
+
+  // Format the date using the options
+  const formattedDate = date.toLocaleDateString('en-GB', options); // 'en-GB' gives "01 Aug", 'en-US' would give "Aug 01"
+
+  return formattedDate;
+}

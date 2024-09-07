@@ -13,7 +13,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { saveJob } from "@/actions/jobs.actions";
 import { cn } from "@/lib/utils";
-import { checkNullandCall } from "@/lib/utils";
+import { checkNullandCall,formatDate} from "@/lib/utils";
 const JobList = ({joblist,nextPage,industry,s,pageNum,type}:{joblist:any[],nextPage:number,industry:string,s:string,pageNum:string,type:string}) => {
     const pageNumInt = +pageNum;
     const router = useRouter();
@@ -38,21 +38,6 @@ const JobList = ({joblist,nextPage,industry,s,pageNum,type}:{joblist:any[],nextP
         }
     }
     
-      function formatDate(input: string): string {
-        // Create a Date object from the input string
-        const date = new Date(input);
-    
-        // Define options for formatting the date
-        const options: Intl.DateTimeFormatOptions = {
-            day: '2-digit',
-            month: 'short'
-        };
-    
-        // Format the date using the options
-        const formattedDate = date.toLocaleDateString('en-GB', options); // 'en-GB' gives "01 Aug", 'en-US' would give "Aug 01"
-    
-        return formattedDate;
-    } 
     return(
         <>
         {joblist.length==0? 

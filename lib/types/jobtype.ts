@@ -1,4 +1,7 @@
+import { ObjectId } from "mongoose";
+
 export interface JobType{
+    _id:ObjectId
     country:string,
     category:string,
     title:string,

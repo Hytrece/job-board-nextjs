@@ -1,12 +1,12 @@
 "use server"
-
 import { connectToDB } from "@/lib/db"
 import User from "@/lib/models/user.model";
-import mongoose from "mongoose";
-import Country from "@/utils/country-schema";
+import mongoose, { ObjectId } from "mongoose";
+import Country from "@/lib/models/country-schema";
 import { NextResponse } from "next/server";
-
-
+import { auth } from "@clerk/nextjs/server";
+import { revalidatePath } from "next/cache";
+import {toast} from "sonner"
 export async function saveJob(userId:string,jobId:mongoose.Schema.Types.ObjectId){
     connectToDB();
     try {
@@ -45,4 +45,31 @@ export async function fetchJob({industry,s,pageNumInt,type}:Params){
     }
     
     return {joblist:joblist, nextPage:nextPage};
+}
+export async function deleteJob(jobId:string){
+    const {userId} = auth();
+    var Id = new mongoose.Types.ObjectId(jobId);
+    if(!userId){
+        return NextResponse.json({success:false,message:"not authenticated"},{status:401});
+    }
+    try {
+        await connectToDB();
+        const response = await User.findOneAndUpdate({clerkId:userId},{$pull:{savedJobs:Id}});
+        if(response){
+            console.log("job deleted successfully")
+            revalidatePath("../dashboard/jobs")
+            return NextResponse.json({success:true,message:"job deleted successfully"},{status:200});
+        }
+        else {
+            return NextResponse.json(
+                { success: false, message: "Job not found" },
+                { status: 404 }
+            );
+        }
+    } catch (error) {
+        console.log(error);
+        return NextResponse.json({success:false,message:"Unexpected error occured"},{status:500});
+    }
+
+
 }

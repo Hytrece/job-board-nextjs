@@ -70,7 +70,7 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
     const {joblist, nextPage} = await fetchJob({industry,s,pageNumInt,type});
     return(
       <section className="min-h-screen w-[80%] max-h-[500vh]">
-        <BreadcrumbDemo prev={[{href:"/canada",name:"Canada"}]} now={{href:"/canada/jobs",name:"Jobs"}}/>
+        <BreadcrumbDemo prev={[{href:"/canada",name:"Canada"}]} now={{href:"/canada/jobs",name:"Jobs"}} classname="mt-20 pt-7 ml-10"/>
         <div className="items-center grid grid-cols-4 " >
           <div className="text-xl md:text-3xl font-bold pt-5 pb-10 flex mx-5 w-full col-span-1">
               <div className=" p-2 rounded-full border-2 w-full bg-indigo-400 h-max shadow-md mr-10 flex justify-center mt-5 ">

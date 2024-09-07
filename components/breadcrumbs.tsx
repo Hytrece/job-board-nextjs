@@ -7,19 +7,21 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
   } from "@/components/ui/breadcrumb"
+import { cn } from "@/lib/utils";
   import { ChevronRight } from 'lucide-react';
 
   interface Props{
     prev:Page[],
-    now:Page
+    now:Page,
+    classname?:string
   }
   interface Page{
     href:string,
     name:string,
   }
-  export const BreadcrumbDemo = ({prev,now}:Props) => {
+  export const BreadcrumbDemo = ({prev,now,classname}:Props) => {
     return (
-      <Breadcrumb className="mt-20 pt-7 ml-10">
+      <Breadcrumb className={cn(classname)}>
         <BreadcrumbList className="flex gap-x-6 items-center">
           {prev.map((element)=>(
             <div key={element.name} className="flex gap-x-2 items-center">
