@@ -7,6 +7,7 @@ import Charts from "@/components/charts";
 import MoreJobs from "@/components/morejobs";
 import Subscribe from "@/components/subscribe";
 import Link from "next/link";
+import { CardSpotlight } from "@/components/ui/card-reveal";
 const Canada = () => {
   const Jobs = [
     {
@@ -102,6 +103,33 @@ const Canada = () => {
                   }
               </ul>
           </div>
+      </section>
+      <section className="w-full mt-28 mx-auto px-4 py-7 md:px-8">
+        <div className="max-w-xl">
+          <h4 className="text-primary font-semibold text-lg">Benefits</h4>
+          <div className="flex gap-x-7 items-center">
+            <h1 className="text-2xl font-bold mt-5 sm:text-2xl">
+              Benefits of working holiday in Canada
+            </h1>
+          </div>
+        </div>
+        <div className="mt-12 grid md:grid-cols-2 w-full rounded-xl overflow-hidden bg-zinc-800">
+          <div className="grid grid-cols-2 py-32 px-10">
+            {features.map((feature,index)=>(
+              <div key={index}>
+                <CardSpotlight  className="px-8 py-20 flex flex-col gap-y-8 ">
+                  <div className="bg-violet-600 text-white w-16 h-16 rounded-full z-10 flex justify-center items-center text-2xl font-bold">{index}</div>
+                  <div className="text-white text-lg font-semibold z-10 leading-loose">
+                    {feature.desc}
+                  </div>
+                </CardSpotlight>
+              </div>
+            ))}
+          </div>
+          <div className="w-full h-full relative">
+            <Image src="/canada_benefit_1.jpg" fill={true} className="brightness-75" alt="tower" objectFit="cover"/>
+          </div>
+        </div>
       </section>
       <CheckList features={features}/>
       <Charts/>

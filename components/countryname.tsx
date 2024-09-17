@@ -10,7 +10,7 @@ const CountryName = ({ name }: { name: string }) => {
   return (
     <h1
       className={cn(
-        "font-bold transition transform delay-1000 text-8xl ml-32 bottom-[20%] text-white absolute z-1",
+        "font-bold transition transform delay-1000 text-8xl ml-32 bottom-[40%] text-white absolute z-1",
         attr,
       )}
     >
