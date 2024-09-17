@@ -8,6 +8,7 @@ import MoreJobs from "@/components/morejobs";
 import Subscribe from "@/components/subscribe";
 import Link from "next/link";
 import { CardSpotlight } from "@/components/ui/card-reveal";
+import WorkingHolidayGuide from "@/components/steps";
 const Canada = () => {
   const Jobs = [
     {
@@ -113,12 +114,12 @@ const Canada = () => {
             </h1>
           </div>
         </div>
-        <div className="mt-12 grid md:grid-cols-2 w-full rounded-xl overflow-hidden bg-zinc-800">
-          <div className="grid grid-cols-2 py-32 px-10">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 w-full rounded-xl overflow-hidden bg-zinc-800">
+          <div className="grid grid-cols-1 lg:grid-cols-2 py-32 px-10">
             {features.map((feature,index)=>(
               <div key={index}>
                 <CardSpotlight  className="px-8 py-20 flex flex-col gap-y-8 ">
-                  <div className="bg-violet-600 text-white w-16 h-16 rounded-full z-10 flex justify-center items-center text-2xl font-bold">{index}</div>
+                  <div className="bg-violet-600 text-white w-16 h-16 rounded-full z-10 flex justify-center items-center text-2xl font-bold">{index+1}</div>
                   <div className="text-white text-lg font-semibold z-10 leading-loose">
                     {feature.desc}
                   </div>
@@ -132,6 +133,22 @@ const Canada = () => {
         </div>
       </section>
       <CheckList features={features}/>
+      <section className="w-full mt-28 mx-auto px-4 py-7 md:px-8">
+         <div className="max-w-xl">
+            <h4 className="text-primary font-semibold text-lg">How to apply</h4>
+            <div className="flex gap-x-7 items-center">
+              <h1 className="text-2xl font-bold mt-5 sm:text-2xl">
+                Step-by-Step Guide
+              </h1>
+            </div>
+            <p className="mt-5 leading-loose">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industrys standard dummy.
+            </p>
+          </div>
+          <div className="mt-12 w-full">
+            <WorkingHolidayGuide/>
+          </div>
+      </section>
       <Charts/>
       <Subscribe country="Canada"/>
     </TracingBeam>

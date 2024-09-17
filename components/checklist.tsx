@@ -5,6 +5,7 @@ interface Features{
     title:string,
     desc:string
 }
+import { FileText, Building ,Languages,BriefcaseBusiness } from 'lucide-react';
 const CheckList = ({features}:{features:Features[]}) => {
     return (
         <section className="mt-28 mx-10 py-7 ">
@@ -13,10 +14,10 @@ const CheckList = ({features}:{features:Features[]}) => {
         <p className="mt-5 font-md leading-loose">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, cum?</p>
         <Tabs defaultValue="a" className="mt-5">
         <TabsList>
-            <TabsTrigger value="a"> Documents</TabsTrigger>
-            <TabsTrigger value="b"> Accomodation</TabsTrigger>
-            <TabsTrigger value="c"> Employment</TabsTrigger>
-            <TabsTrigger value="d"> Others</TabsTrigger>
+            <TabsTrigger value="a"> <div className="flex items-center gap-x-3"><FileText/> Documents</div></TabsTrigger>
+            <TabsTrigger value="b"> <div className="flex items-center gap-x-3"><Building/> Accomodation</div></TabsTrigger>
+            <TabsTrigger value="c"><div className="flex items-center gap-x-3"><BriefcaseBusiness/> Employment</div></TabsTrigger>
+            <TabsTrigger value="d"> <div className="flex items-center gap-x-3"><Languages/> Others </div></TabsTrigger>
         </TabsList>
         <div className="mt-3 px-12 pt-6 pb-12 bg-zinc-200 w-full flex flex-col relative justify-center rounded-lg">
         <TabsContent value="a">

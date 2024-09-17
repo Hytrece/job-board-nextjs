@@ -7,6 +7,7 @@ import {cn} from "@/lib/utils";
 import React, {useState, useEffect} from "react";
 import UserBar from "./userbar";
 import { SignedIn,SignedOut } from "@clerk/nextjs";
+import Link from "next/link";
 import { X } from "lucide-react";
 interface Profile{
   firstName: React.ReactNode | null, 
@@ -70,7 +71,7 @@ export default function BarforHeader({firstName, lastName, photo}: Profile) {
               <DrawDown />
             </div>
             <Separator className="font-semibold" orientation="vertical" />
-            <div className="hover:cursor-pointer border-b-2 border-white h-full py-6 hover:border-indigo-600">Jobs</div>
+            <Link href="/visachart"className="hover:cursor-pointer border-b-2 border-white h-full py-6 hover:border-indigo-600">VisaChart</Link>
             <Separator orientation="vertical" />
             <div className="hover:cursor-pointer border-b-2 border-white h-full py-6 hover:border-indigo-600">Blog</div>
             <Separator orientation="vertical" />
