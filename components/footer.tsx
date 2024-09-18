@@ -19,8 +19,8 @@ const Footer = () => {
         }
     ]
     return (
-        <footer className="pt-10">
-            <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
+        <footer className="pt-10 w-full relative">
+            <div className="w-[90%] absolute right-0 mx-auto px-4 py-8 text-zinc-600 md:px-8">
                 <div className="justify-between sm:flex">
                     <div className="space-y-6">
                         <h1 className="text-xl font-bold">IMINI.IO</h1>

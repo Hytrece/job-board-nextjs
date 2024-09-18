@@ -3,7 +3,7 @@ import DonutChart from "./donutchart";
 
 const Charts = () => {
     return(
-    <section className="w-full min-h-screen mt-28 py-7 mx-10">
+    <section className="w-full mt-28 py-7 mx-10">
         <h4 className="text-primary font-semibold text-lg">Charts</h4>
         <h1 className="text-2xl font-bold mt-5 sm:text-2xl">
             Salaries & Cost of living 

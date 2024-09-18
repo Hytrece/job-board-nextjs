@@ -48,7 +48,7 @@ const Subscribe = ({country}:{country:String}) => {
           description: "Now you will receive newletters from IMINI.IO",});
       }
     return(
-        <section className="w-full mb-6 flex flex-col relative justify-center py-20 items-center">
+        <section className="w-full mb-6 flex flex-col mt-28 relative justify-center py-20 items-center">
             <div className="flex flex-col items-center text-center gap-y-8 pb-8 z-10">
             <h1 className="text-5xl font-bold"><TypewriterEffectSmooth words={words}/></h1>
             <h2 className="text-md font-medium text-muted-foreground">Subscribe to our newsletter to get newest updates on jobs, information, and more!</h2>
