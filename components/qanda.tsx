@@ -4,14 +4,13 @@ import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collisi
 
 export default function WorkingHolidayQA() {
   return (
-    <BackgroundBeamsWithCollision>
         <div className="relative w-[70%] ml-0 ">
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className=" text-lg w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger >
                 What is a working holiday visa?
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="text-md">
                 A working holiday visa is a permit that allows young people to undertake employment (and sometimes study) in a foreign country for a specified period, typically up to one or two years.
               </AccordionContent>
             </AccordionItem>
@@ -53,6 +52,5 @@ export default function WorkingHolidayQA() {
             </AccordionItem>
           </Accordion>
         </div>
-    </BackgroundBeamsWithCollision>
   )
 }

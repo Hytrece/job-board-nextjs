@@ -1,21 +1,18 @@
 "use client";
-import { useState, useEffect } from "react";
-import { cn } from "@/lib/utils";
+import { useState, useRef,useEffect } from "react";
+import { motion } from "framer-motion";
 const CountryName = ({ name }: { name: string }) => {
-  const [isRendered, setIsRendered] = useState(false);
-  useEffect(() => {
-    setIsRendered(true);
-  }, []);
-  const attr = isRendered ? "blur-none" : "blur-2xl translate-y-75";
   return (
-    <h1
-      className={cn(
-        "font-bold transition transform delay-1000 text-8xl ml-32 bottom-[40%] text-white absolute z-1",
-        attr,
-      )}
-    >
-      {name}
-    </h1>
+    <div className="h-screen flex items-center font-bold text-8xl bottom-[35%] w-full flex justify-center text-white absolute z-1">
+      <motion.h1
+        className="text-6xl font-bold text-gray-800"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+       {name}
+      </motion.h1>
+    </div>
   );
 };
 export default CountryName;

@@ -1,12 +1,35 @@
 "use client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { BackgroundBeams } from "./ui/background-beams";
+import { FileText, Building ,Languages,BriefcaseBusiness } from 'lucide-react';
+import {useState,useRef,useEffect} from "react"
+
 interface Features{
     title:string,
     desc:string
 }
-import { FileText, Building ,Languages,BriefcaseBusiness } from 'lucide-react';
 const CheckList = ({features}:{features:Features[]}) => {
+    const [isVisible, setIsVisible] = useState<boolean[]>(new Array(features.length).fill(false))
+    const featureRefs = useRef<(HTMLLIElement|null)[]>([])
+    useEffect(()=>{
+        const observer = new IntersectionObserver((entries)=>{
+            entries.forEach((entry)=>{
+                if(entry.isIntersecting){
+                    const index = featureRefs.current.findIndex((ref)=>(ref === entry.target))
+                    if(index !== -1){
+                        setIsVisible(prev=>{
+                            const newState = [...prev];
+                            newState[index] = true
+                            return newState;
+                        })
+                    }
+                }
+            })
+        },{threshold:0.1})
+        featureRefs.current.forEach((ref)=>{
+            if(ref) observer.observe(ref)
+        })
+        return()=>observer.disconnect()
+    },[])
     return (
         <section className="mt-28 mx-10 py-7 ">
         <h4 className="text-primary font-semibold text-lg">Checklist</h4>
@@ -19,34 +42,118 @@ const CheckList = ({features}:{features:Features[]}) => {
             <TabsTrigger value="c"><div className="flex items-center gap-x-3"><BriefcaseBusiness/> Employment</div></TabsTrigger>
             <TabsTrigger value="d"> <div className="flex items-center gap-x-3"><Languages/> Others </div></TabsTrigger>
         </TabsList>
-        <div className="mt-3 px-12 pt-6 pb-12 bg-zinc-200 w-full flex flex-col relative justify-center rounded-lg">
-        <TabsContent value="a">
-            <ul className="grid gap-y-8 grid-cols-1">
+        <TabsContent value="a" className="mt-7">
+            <ul className="grid gap-y-1 grid-cols-1 w-full py-4 rounded-xl">
             {
                 features.map((item, idx) => (
-                    <li key={idx} className="space-y-3">
-                        <div className="flex items-center">
-                            <div className="w-12 h-12 border text-indigo-600 rounded-lg flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <li key={idx} ref={el => featureRefs.current[idx] = el}
+                    className="transition-all py-6 px-5 duration-1000 ease-out delay-300"
+                    style={{
+                      opacity: isVisible[idx] ? 1 : 0
+                    }}>
+                        <div className="flex items-center backdrop-blur-sm">
+                            <div className="w-12 h-12 rounded-3xl flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 text-indigo-600 h-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                 </svg>
                             </div>
-                            <h4 className="text-lg ml-3 text-gray-800 font-semibold">
+                            <h4 className="text-lg ml-6 font-semibold">
                                 {item.title}
                             </h4>
                         </div>
-                        <p className="ml-3">
+                        <p className="ml-3 mt-3">
                             {item.desc}
                         </p>
+                        {idx<features.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
                     </li>
                 ))
             }
         </ul>
         </TabsContent>
-        <TabsContent value="b">Change your password here.</TabsContent>
-        <TabsContent value="c">Change your password here.</TabsContent>
-        <TabsContent value="d">Change your password here.</TabsContent>
-        </div>
+        <TabsContent value="b" className="mt-7">
+        <ul className="grid gap-y-1 grid-cols-1 w-full py-4 rounded-xl">
+            {
+                features.map((item, idx) => (
+                    <li key={idx} ref={el => featureRefs.current[idx] = el}
+                    className="transition-all py-6 px-5 duration-1000 ease-out delay-300"
+                    style={{
+                      opacity: isVisible[idx] ? 1 : 0
+                    }}>
+                        <div className="flex items-center backdrop-blur-sm">
+                            <div className="w-12 h-12 rounded-3xl flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 text-indigo-600 h-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                            </div>
+                            <h4 className="text-lg ml-6 font-semibold">
+                                {item.title}
+                            </h4>
+                        </div>
+                        <p className="ml-3 mt-3">
+                            {item.desc}
+                        </p>
+                        {idx<features.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
+                    </li>
+                ))
+            }
+        </ul>
+        </TabsContent>
+        <TabsContent value="c" className="mt-7">
+        <ul className="grid gap-y-1 grid-cols-1 w-full py-4 rounded-xl">
+            {
+                features.map((item, idx) => (
+                    <li key={idx} ref={el => featureRefs.current[idx] = el}
+                    className="transition-all py-6 px-5 duration-1000 ease-out delay-300"
+                    style={{
+                      opacity: isVisible[idx] ? 1 : 0
+                    }}>
+                        <div className="flex items-center backdrop-blur-sm">
+                            <div className="w-12 h-12 rounded-3xl flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 text-indigo-600 h-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                            </div>
+                            <h4 className="text-lg ml-6 font-semibold">
+                                {item.title}
+                            </h4>
+                        </div>
+                        <p className="ml-3 mt-3">
+                            {item.desc}
+                        </p>
+                        {idx<features.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
+                    </li>
+                ))
+            }
+        </ul>
+        </TabsContent>
+        <TabsContent value="d" className="mt-7">
+        <ul className="grid gap-y-1 grid-cols-1 w-full py-4 rounded-xl">
+            {
+                features.map((item, idx) => (
+                    <li key={idx} ref={el => featureRefs.current[idx] = el}
+                    className="transition-all py-6 px-5 duration-1000 ease-out delay-300"
+                    style={{
+                      opacity: isVisible[idx] ? 1 : 0
+                    }}>
+                        <div className="flex items-center backdrop-blur-sm">
+                            <div className="w-12 h-12 rounded-3xl flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 text-indigo-600 h-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                            </div>
+                            <h4 className="text-lg ml-6 font-semibold">
+                                {item.title}
+                            </h4>
+                        </div>
+                        <p className="ml-3 mt-3">
+                            {item.desc}
+                        </p>
+                        {idx<features.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
+                    </li>
+                ))
+            }
+        </ul>
+        </TabsContent>
         </Tabs>
       </section>
     )

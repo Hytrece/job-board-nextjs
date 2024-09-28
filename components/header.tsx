@@ -1,23 +1,38 @@
-import Image from "next/image";
-import CountryName from "./countryname";
-import BarforHeader from "./barforheader";
-const Header = ({ name, bg }: { name: string; bg: string }) => {
+"use client"
+
+import { motion } from "framer-motion"
+import Image from "next/image"
+
+interface CountryHeaderProps {
+  name: string
+  bgImage: string
+}
+
+export default function CountryHeader({ name, bgImage }: CountryHeaderProps) {
   return (
-    <div className="w-full flex flex-col">
-      <div className="sm:invisible absolute right-10 top-10">
+    <div className="relative w-full h-[550px]">
+      <div className="sm:invisible absolute right-10 top-10 z-10">
         <Image src="/menu.svg" width={50} height={50} alt="menu" />
       </div>
-      <div className="w-full border-b h-[400px] mt-20 overflow-hidden relative">
+      <div className="absolute inset-0 overflow-hidden">
         <Image
-          src={bg}
-          fill={true}
+          src={bgImage}
+          layout="fill"
+          objectFit="cover"
           alt={name}
-          style={{ objectFit: "cover" }}
-          className="z-0 brightness-75 "
+          className="brightness-50"
         />
-        <CountryName name={name} />
       </div>
+      <motion.div 
+        className="absolute inset-0 flex items-center w-full mt-16 justify-center"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <h1 className="text-8xl font-bold text-white z-10">
+          {name}
+        </h1>
+      </motion.div>
     </div>
-  );
-};
-export default Header;
+  )
+}

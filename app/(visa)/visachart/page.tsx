@@ -47,8 +47,9 @@ export default function VisaChart() {
   }
 
   return (
-    <div className="container mx-auto px-4 mt-32 py-8">
-      <h1 className="text-3xl font-bold mb-6">Global Visa Chart</h1>
+    <div className="bg-zinc-800 w-full min-h-screen">
+    <div className="container w-[80%] bg-white mx-auto min-h-screen px-10 py-8">
+      <h1 className="text-3xl mt-32 font-bold mb-6">Global Visa Chart</h1>
       
       <div className="mb-6 flex flex-col sm:flex-row gap-4">
         <div className="relative flex-grow">
@@ -108,6 +109,7 @@ export default function VisaChart() {
       {filteredVisas.length === 0 && (
         <p className="text-center mt-8 text-gray-500">No visas found matching your search or filters.</p>
       )}
+    </div>
     </div>
   )
 }

@@ -42,7 +42,7 @@ const JobList = ({joblist,nextPage,industry,s,pageNum,type}:{joblist:any[],nextP
         <>
         {joblist.length==0? 
           <div className="text-primary w-full flex justify-center mt-16 text-3xl font-semibold">No results found</div> :
-          <ul className=" ml-5">
+          <ul className=" mb-1 ml-5">
             {joblist.map((job:any)=>(
               <div key = {job.url}>
                 <div key={job.url} className="w-full min-h-[150px] group hover:cursor-pointer mb-5 bg-zinc-100 border-2 rounded-md border-zinc-200 ">
