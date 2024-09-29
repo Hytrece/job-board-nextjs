@@ -2,25 +2,10 @@
 import Image from "next/image"
 import { CardSpotlight } from "@/components/ui/card-reveal";
 import {useEffect, useRef, useState} from "react"
-const BenefitSection = () => {
-    const features = [
-        {
-            title: "Fast Refresh",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus."
-        },
-        {
-            title: "Analytics",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus."
-        },
-        {
-            title: "Datacenter security",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus."
-        },
-        {
-            title: "Build on your terms",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus."
-        }
-    ]
+import { benefits } from "@/constants/benefits";
+const BenefitSection = ({country}:{country:string}) => {
+    const getCountry = benefits.find((e)=>e.country == country)
+    const features = getCountry?.benefitlist || [];
     const [visibleFeatures, setVisibleFeatures] = useState<boolean[]>(new Array(features.length).fill(false))
     const featureRefs = useRef<(HTMLDivElement | null)[]>([])
     useEffect(()=>{
@@ -73,7 +58,7 @@ const BenefitSection = () => {
             ))}
           </div>
           <div className="w-full h-full relative">
-            <Image src="/canada_benefit_1.jpg" fill={true} className="brightness-75" alt="tower" objectFit="cover"/>
+            <Image src={`/${country}/benefit.jpg`} fill={true} className="brightness-75" alt="tower" objectFit="cover"/>
           </div>
         </div>
       </section>

@@ -2,13 +2,14 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { FileText, Building ,Languages,BriefcaseBusiness } from 'lucide-react';
 import {useState,useRef,useEffect} from "react"
-
-interface Features{
-    title:string,
-    desc:string
-}
-const CheckList = ({features}:{features:Features[]}) => {
-    const [isVisible, setIsVisible] = useState<boolean[]>(new Array(features.length).fill(false))
+import { checks } from "@/constants/checklist";
+const CheckList = ({country}:{country:string}) => {
+    const getCountry = checks.find((e)=>e.country == country)
+    const documents = getCountry?.listA || []
+    const accomodations = getCountry?.listB || []
+    const medications = getCountry?.listC || []
+    const others = getCountry?.listD || []
+    const [isVisible, setIsVisible] = useState<boolean[]>(new Array(documents.length).fill(false))
     const featureRefs = useRef<(HTMLLIElement|null)[]>([])
     useEffect(()=>{
         const observer = new IntersectionObserver((entries)=>{
@@ -45,7 +46,7 @@ const CheckList = ({features}:{features:Features[]}) => {
         <TabsContent value="a" className="mt-7">
             <ul className="grid gap-y-1 grid-cols-1 w-full py-4 rounded-xl">
             {
-                features.map((item, idx) => (
+                documents.map((item, idx) => (
                     <li key={idx} ref={el => featureRefs.current[idx] = el}
                     className="transition-all py-6 px-5 duration-1000 ease-out delay-300"
                     style={{
@@ -64,7 +65,7 @@ const CheckList = ({features}:{features:Features[]}) => {
                         <p className="ml-3 mt-3">
                             {item.desc}
                         </p>
-                        {idx<features.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
+                        {idx<documents.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
                     </li>
                 ))
             }
@@ -73,7 +74,7 @@ const CheckList = ({features}:{features:Features[]}) => {
         <TabsContent value="b" className="mt-7">
         <ul className="grid gap-y-1 grid-cols-1 w-full py-4 rounded-xl">
             {
-                features.map((item, idx) => (
+                accomodations.map((item, idx) => (
                     <li key={idx} ref={el => featureRefs.current[idx] = el}
                     className="transition-all py-6 px-5 duration-1000 ease-out delay-300"
                     style={{
@@ -92,7 +93,7 @@ const CheckList = ({features}:{features:Features[]}) => {
                         <p className="ml-3 mt-3">
                             {item.desc}
                         </p>
-                        {idx<features.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
+                        {idx<accomodations.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
                     </li>
                 ))
             }
@@ -101,7 +102,7 @@ const CheckList = ({features}:{features:Features[]}) => {
         <TabsContent value="c" className="mt-7">
         <ul className="grid gap-y-1 grid-cols-1 w-full py-4 rounded-xl">
             {
-                features.map((item, idx) => (
+                medications.map((item, idx) => (
                     <li key={idx} ref={el => featureRefs.current[idx] = el}
                     className="transition-all py-6 px-5 duration-1000 ease-out delay-300"
                     style={{
@@ -120,7 +121,7 @@ const CheckList = ({features}:{features:Features[]}) => {
                         <p className="ml-3 mt-3">
                             {item.desc}
                         </p>
-                        {idx<features.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
+                        {idx<medications.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
                     </li>
                 ))
             }
@@ -129,7 +130,7 @@ const CheckList = ({features}:{features:Features[]}) => {
         <TabsContent value="d" className="mt-7">
         <ul className="grid gap-y-1 grid-cols-1 w-full py-4 rounded-xl">
             {
-                features.map((item, idx) => (
+                others.map((item, idx) => (
                     <li key={idx} ref={el => featureRefs.current[idx] = el}
                     className="transition-all py-6 px-5 duration-1000 ease-out delay-300"
                     style={{
@@ -148,7 +149,7 @@ const CheckList = ({features}:{features:Features[]}) => {
                         <p className="ml-3 mt-3">
                             {item.desc}
                         </p>
-                        {idx<features.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
+                        {idx<others.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
                     </li>
                 ))
             }

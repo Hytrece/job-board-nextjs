@@ -1,5 +1,8 @@
 import WorkingHolidayQA from "@/components/qanda";
-const QASection = () => {
+import { questions } from "@/constants/questions";
+const QASection = ({country}:{country:string}) => {
+    const getCountry = questions.find((e)=>e.country == country);
+    const questionList = getCountry?.qlist || [];
     return (
         <section className="w-full mt-28 mx-auto px-4 py-7 md:px-8">
         <div className="max-w-xl">
@@ -11,7 +14,7 @@ const QASection = () => {
           </div>
         </div>
         <div className="mt-12 w-full ">
-          <WorkingHolidayQA/>
+          <WorkingHolidayQA questionList = {questionList}/>
         </div>
       </section>
     )
