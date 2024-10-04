@@ -32,7 +32,7 @@ const Subscribe = ({country}:{country:String}) => {
           text: "in",
         },
         {
-          text: "Canada?",
+          text: `${country}?`,
           className: "underline decoration-primary",
         },
       ];

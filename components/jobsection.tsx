@@ -1,11 +1,11 @@
 import MoreJobs from "@/components/morejobs";
 import Link from "next/link";
 import Image from "next/image"
-import { jobs } from "@/constants/jobs";
+import { workingHolidayJobs } from "@/constants/jobs";
 const JobSection = ({country}:{country:string}) => {
     const countryName = country.charAt(0).toUpperCase() + country.slice(1);
-    const Job = jobs.find((e)=>e.country == country);
-    const JobList = Job?.joblist;
+    const Job = workingHolidayJobs.find((e)=>e.country == country);
+    const JobList = Job?.jobList;
     return (
         <section className="w-full mt-28 mx-auto px-4 py-7 md:px-8">
         <div className="max-w-xl">
@@ -27,7 +27,7 @@ const JobSection = ({country}:{country:string}) => {
                           <li key={idx} className="gap-8 flex hover:cursor-pointer flex-col">
                             <Link href={{pathname:"/canada/jobs", query:{category:(item.name).toLowerCase()}}} className="group">
                               <div className="w-full h-60 overflow-hidden rounded-xl relative">
-                                <div className="w-full h-60 relative transition transform rounded-xl duration-700 group-hover:scale-110 group-hover:cursor-pointer">
+                                <div className="w-full h-60 relative transition transform rounded-xl duration-700 group-hover:scale-105 group-hover:cursor-pointer">
                                   <Image
                                       src={item.src}
                                       className="w-full h-full object-cover object-center shadow-md rounded-xl"

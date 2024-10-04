@@ -8,7 +8,7 @@ interface Step{
 const StepSection = ({country}:{country:string}) => {
     const countryName = country.charAt(0).toUpperCase() + country.slice(1);
     const getCountry = stepsData.find((e)=>e.country == country)
-    const stepData: Step[] = getCountry?.steplist || [];
+    const stepData: Step[] = getCountry?.stepList || [];
     return (
         <section className="w-full mt-28 mx-auto px-4 py-7 md:px-8">
          <div className="max-w-xl">

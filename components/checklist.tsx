@@ -32,7 +32,7 @@ const CheckList = ({country}:{country:string}) => {
         return()=>observer.disconnect()
     },[])
     return (
-        <section className="mt-28 mx-10 py-7 ">
+        <section className="mt-28 mx-10 py-7">
         <h4 className="text-primary font-semibold text-lg">Checklist</h4>
         <h1 className="mt-5 font-bold text-2xl">Things to Check before going to Canada</h1>
         <p className="mt-5 font-md leading-loose">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, cum?</p>
@@ -43,7 +43,7 @@ const CheckList = ({country}:{country:string}) => {
             <TabsTrigger value="c"><div className="flex items-center gap-x-3"><BriefcaseBusiness/> Employment</div></TabsTrigger>
             <TabsTrigger value="d"> <div className="flex items-center gap-x-3"><Languages/> Others </div></TabsTrigger>
         </TabsList>
-        <TabsContent value="a" className="mt-7">
+        <TabsContent value="a" className="mt-7 h-max">
             <ul className="grid gap-y-1 grid-cols-1 w-full py-4 rounded-xl">
             {
                 documents.map((item, idx) => (
@@ -63,7 +63,7 @@ const CheckList = ({country}:{country:string}) => {
                             </h4>
                         </div>
                         <p className="ml-3 mt-3">
-                            {item.desc}
+                            {item.description}
                         </p>
                         {idx<documents.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
                     </li>
@@ -91,7 +91,7 @@ const CheckList = ({country}:{country:string}) => {
                             </h4>
                         </div>
                         <p className="ml-3 mt-3">
-                            {item.desc}
+                            {item.description}
                         </p>
                         {idx<accomodations.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
                     </li>
@@ -119,7 +119,7 @@ const CheckList = ({country}:{country:string}) => {
                             </h4>
                         </div>
                         <p className="ml-3 mt-3">
-                            {item.desc}
+                            {item.description}
                         </p>
                         {idx<medications.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
                     </li>
@@ -147,7 +147,7 @@ const CheckList = ({country}:{country:string}) => {
                             </h4>
                         </div>
                         <p className="ml-3 mt-3">
-                            {item.desc}
+                            {item.description}
                         </p>
                         {idx<others.length-1 ? <div className="h-[0.1px] bg-zinc-300 mt-10"/>:<div></div>}
                     </li>

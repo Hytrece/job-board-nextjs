@@ -5,7 +5,7 @@ import {useEffect, useRef, useState} from "react"
 import { benefits } from "@/constants/benefits";
 const BenefitSection = ({country}:{country:string}) => {
     const getCountry = benefits.find((e)=>e.country == country)
-    const features = getCountry?.benefitlist || [];
+    const features = getCountry?.benefitList || [];
     const [visibleFeatures, setVisibleFeatures] = useState<boolean[]>(new Array(features.length).fill(false))
     const featureRefs = useRef<(HTMLDivElement | null)[]>([])
     useEffect(()=>{
