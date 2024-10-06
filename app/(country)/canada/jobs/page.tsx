@@ -25,32 +25,35 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
     const s = query;
     const categories = [
       {
-        name:"Barista",
-        icon:<Coffee/>
+        name:"Cafe & Barista",
+        icon:<Coffee/>,
+        link:"cafe"
       },
       {
         name:"Hotel",
-        icon:<BedSingle/>
+        icon:<BedSingle/>,
+        link:"hotel"
+
       },
       {
         name:"Labours",
-        icon:<TrafficCone/>
+        icon:<TrafficCone/>,
+        link:"construction"
       },
       {
-        name:"Developers",
-        icon:<Code/>
+        name:"Developer",
+        icon:<Code/>,
+        link:"developer"
       },
       {
         name:"Farm",
-        icon:<Tractor/>
-      },
-      {
-        name:"Retail",
-        icon:<HandCoins/>
+        icon:<Tractor/>,
+        link:"farm"
       },
       {
         name:"Office",
-        icon:<LampDesk/>
+        icon:<LampDesk/>,
+        link:"office"
       }
     ]
     const workType = [
@@ -88,7 +91,7 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
             <div className="mt-6 pl-5 bg-zinc-100 shadow-md pt-1 border-2 border-zinc-200 rounded-lg mr-5 pb-5 pr-5">
               <div className="mt-5 flex text-foreground font-semibold flex-col">
                 {categories.map((category)=>(
-                  <Link key={category.name} href = {`?${new URLSearchParams({category:category.name.toLowerCase()})}`} className={cn(industry == category.name.toLowerCase() ? "bg-black text-white hover:text-white hover:bg-black" : " hover:bg-zinc-200 active:bg-zinc-300","py-3 pl-2 flex items-center rounded-md hover:cursor-pointer gap-x-3")}>{category.icon}{category.name}</Link>
+                  <Link key={category.name} href = {`?${new URLSearchParams({category:category.link})}`} className={cn(industry == category.link ? "bg-black text-white hover:text-white hover:bg-black" : " hover:bg-zinc-200 active:bg-zinc-300","py-3 pl-2 flex items-center rounded-md hover:cursor-pointer gap-x-3")}>{category.icon}{category.name}</Link>
                 ))}
               </div>
             </div>

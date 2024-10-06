@@ -38,18 +38,18 @@ export const workingHolidayJobs = [
       country: "australia",
       jobList: [
           {
-              name: "Hospitality",
-              src: "/australia/hospitality.jpg",
+              name: "Cafe & Restaurant",
+              src: "/australia/cafe.jpg",
               avg: "1100000"
           },
           {
-              name: "Fruit Picking",
-              src: "/australia/fruit_picking.jpg",
+              name: "Farm",
+              src: "/australia/farm.jpg",
               avg: "800000"
           },
           {
-              name: "Construction",
-              src: "/australia/construction.jpg",
+              name: "Labour",
+              src: "/australia/labour.jpg",
               avg: "1500000"
           },
           {
@@ -58,8 +58,8 @@ export const workingHolidayJobs = [
               avg: "1200000"
           },
           {
-              name: "Mining",
-              src: "/australia/mining.jpg",
+              name: "Hotel",
+              src: "/australia/hotel.jpg",
               avg: "1800000"
           },
           {
@@ -210,51 +210,16 @@ export const workingHolidayJobs = [
       ]
   },
   {
-      country: "south korea",
-      jobList: [
-          {
-              name: "English Teaching",
-              src: "/southkorea/teaching.jpg",
-              avg: "1400000"
-          },
-          {
-              name: "Hospitality",
-              src: "/southkorea/hospitality.jpg",
-              avg: "1200000"
-          },
-          {
-              name: "IT",
-              src: "/southkorea/it.jpg",
-              avg: "1600000"
-          },
-          {
-              name: "Tourism",
-              src: "/southkorea/tourism.jpg",
-              avg: "1300000"
-          },
-          {
-              name: "Retail",
-              src: "/southkorea/retail.jpg",
-              avg: "1100000"
-          },
-          {
-              name: "Administration",
-              src: "/southkorea/administration.jpg",
-              avg: "1300000"
-          }
-      ]
-  },
-  {
       country: "france",
       jobList: [
           {
-              name: "Hospitality",
-              src: "/france/hospitality.jpg",
+              name: "Service",
+              src: "/france/service.jpg",
               avg: "1300000"
           },
           {
-              name: "Retail",
-              src: "/france/retail.jpg",
+              name: "Cafe & Restaurant",
+              src: "/france/cafe.jpg",
               avg: "1200000"
           },
           {
@@ -263,18 +228,18 @@ export const workingHolidayJobs = [
               avg: "1400000"
           },
           {
-              name: "IT",
-              src: "/france/it.jpg",
+              name: "Office",
+              src: "/france/office.jpg",
               avg: "1600000"
           },
           {
-              name: "Construction",
-              src: "/france/construction.jpg",
+              name: "farm",
+              src: "/france/farm.jpg",
               avg: "1500000"
           },
           {
-              name: "Arts",
-              src: "/france/arts.jpg",
+              name: "Hotel",
+              src: "/france/hotel.jpg",
               avg: "1100000"
           }
       ]
@@ -450,6 +415,41 @@ export const workingHolidayJobs = [
         {
             name: "Teaching",
             src: "/netherlands/teaching.jpg",
+            avg: "1500000"
+        }
+    ]
+},
+{
+    country: "denmark",
+    jobList: [
+        {
+            name: "Hotel",
+            src: "/denmark/hotel.jpg",
+            avg: "1600000"
+        },
+        {
+            name: "Cafe & Restaurant",
+            src: "/denmark/cafe.jpg",
+            avg: "1300000"
+        },
+        {
+            name: "Labour",
+            src: "/denmark/work.jpg",
+            avg: "1400000"
+        },
+        {
+            name: "Tourism",
+            src: "/denmark/tourism.jpg",
+            avg: "1300000"
+        },
+        {
+            name: "Service",
+            src: "/denmark/service.jpg",
+            avg: "1200000"
+        },
+        {
+            name: "Office",
+            src: "/denmark/office.jpg",
             avg: "1500000"
         }
     ]

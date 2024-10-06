@@ -91,6 +91,102 @@ export const checks = [
         ],
     },
     {
+      country: "australia",
+      listA: [
+        {
+            title: 'Age Limit',
+            description: 'You must be aged between 18 and 30 (or 35 in some cases).'
+        },
+        {
+            title: 'Passport Requirements',
+            description: "You must hold a passport from a country or region participating in Australia's Working Holiday Maker program."
+        },
+        {
+            title: 'Previous Working Holiday Visa',
+            description: 'You must not have previously entered Australia on a Working Holiday visa (subclass 417 or subclass 462).'
+        },
+        {
+            title: 'Specified Work Requirements',
+            description: 'In most cases, you must have completed three months of specified work in regional areas of Australia while on your first Working Holiday visa to be eligible for a second Working Holiday visa.'
+        },
+        {
+            title: 'Health and Character Requirements',
+            description: 'You must meet certain health and character requirements.'
+        },
+        {
+            title: 'Financial Requirements',
+            description: 'You must have sufficient funds to support yourself in Australia, usually AUD $5,000.'
+        }
+    ],
+      listB: [
+        {
+            title: 'Identity Documents',
+            description: 'Passport and other identity documents.'
+        },
+        {
+            title: 'Financial Evidence',
+            description: 'Proof of funds to stay in Australia, usually AUD $5,000.'
+        },
+        {
+            title: 'Health Requirements',
+            description: 'Meet certain health requirements.'
+        },
+        {
+            title: 'Character Requirements',
+            description: 'Meet certain character requirements.'
+        },
+        {
+            title: 'Police Certificate',
+            description: 'May be required to provide a police certificate.'
+        }
+    ],
+      listC: [
+        {
+            title: 'Job Research',
+            description: 'Research job opportunities and prepare your resume and cover letter tailored to the Australian job market.'
+        },
+        {
+            title: 'Confirm Travel Documents',
+            description: 'Ensure your passport is valid for at least six months beyond your intended stay and check visa requirements.'
+        },
+        {
+            title: 'Financial Preparations',
+            description: 'Notify your bank of your travel plans and consider setting up a local bank account in Australia.'
+        }
+    ],
+      listD: [
+        {
+            title: 'Health Insurance',
+            description: 'Obtain travel health insurance that covers medical expenses during your stay in Australia.'
+        },
+        {
+            title: 'Accommodation Arrangements',
+            description: 'Book temporary accommodation for your arrival, such as a hotel or hostel.'
+        },
+        {
+            title: 'Pack Essentials',
+            description: 'Pack necessary clothing for Australia’s climate, important documents, and personal items.'
+        },
+        {
+            title: 'Contact Information',
+            description: 'Share your travel itinerary and contact information with family or friends for safety.'
+        },
+        {
+            title: 'Learn Local Customs',
+            description: 'Familiarize yourself with Australian culture, customs, and etiquette to ease your transition.'
+        },
+        {
+            title: 'Prepare for Arrival',
+            description: 'Research transportation options from the airport to your accommodation and any local amenities.'
+        },
+        {
+            title: 'Emergency Contacts',
+            description: 'Make a list of emergency contacts, including local authorities and your country’s embassy or consulate.'
+        }
+    ]
+  },
+  
+    {
         country:"newzealand",
         listA:[
             {
@@ -1158,6 +1254,109 @@ export const checks = [
                 description: 'Prepare a list of emergency contacts, including local authorities.'
             }
         ]
+    },
+    {
+      country: "france",
+      listA: [
+        {
+            title: 'Nationality',
+            description: 'The work holiday programme is available to young travelers from 16 countries or territories that have signed an agreement with France.'
+        },
+        {
+            title: 'Age Limit',
+            description: 'Applicants must be between 18 and 30 years of age (i.e., until the day before their 31st birthday), except for Argentina, Australia, and Canada, where the maximum age is 35 years (up to the date of 36th birthday).'
+        },
+        {
+            title: 'Financial Resources',
+            description: 'Applicants must meet the terms and conditions of the agreement regarding expected financial resources provided for in the agreement.'
+        },
+        {
+            title: 'Purpose of Stay',
+            description: "The main reason for the stay must be tourism and discovering France's culture."
+        },
+        {
+            title: 'Employment',
+            description: 'The visa entitles the holder to undertake paid employment on a secondary basis, without prior approval from the French Administration.'
+        }
+    ],
+      listB: [
+        {
+            title: 'Valid Passport',
+            description: "A valid passport with at least 12 months' validity"
+        },
+        {
+            title: 'Completed Application Form',
+            description: 'A completed and signed application form for the working holiday visa'
+        },
+        {
+            title: 'Recent Passport Photos',
+            description: 'Recent passport-sized photos'
+        },
+        {
+            title: 'Proof of Financial Resources',
+            description: 'Proof of sufficient financial resources (at least 2,500 euros) to support yourself during your stay in France'
+        },
+        {
+            title: 'Health Insurance',
+            description: 'Proof of health insurance that covers you for the duration of your stay in France'
+        },
+        {
+            title: 'Proof of Age',
+            description: 'Proof of age (18-30 years old, or 18-35 years old for certain nationalities)'
+        },
+        {
+            title: 'Proof of Nationality',
+            description: 'Proof of nationality (passport or national ID card)'
+        },
+        {
+            title: 'Proof of Language Proficiency',
+            description: 'Proof of language proficiency in French (not always required)'
+        }
+    ],
+      listC: [
+          {
+              title: 'Job Research',
+              description: 'Look for job opportunities in France.'
+          },
+          {
+              title: 'Verify Qualifications',
+              description: 'Ensure your qualifications are recognized in France.'
+          },
+          {
+              title: 'Network and Connect',
+              description: 'Join local professional and expat groups in France.'
+          }
+      ],
+      listD: [
+    {
+        title: 'Health Insurance',
+        description: 'Obtain health insurance for your stay in France.'
+    },
+    {
+        title: 'Accommodation Arrangements',
+        description: 'Book temporary accommodation for your arrival in France.'
+    },
+    {
+        title: 'Pack Essentials',
+        description: 'Prepare necessary items for France’s climate.'
+    },
+    {
+        title: 'Learn Basic French',
+        description: 'Familiarize yourself with basic French phrases.'
+    },
+    {
+        title: 'Research Local Amenities',
+        description: 'Explore local grocery stores and transportation options in France.'
+    },
+    {
+        title: 'Understand Local Customs',
+        description: 'Learn about French culture and etiquette.'
+    },
+    {
+        title: 'Emergency Contacts',
+        description: 'Prepare a list of emergency contacts, including local authorities in France.'
     }
+      ]
+  }
     
 ]

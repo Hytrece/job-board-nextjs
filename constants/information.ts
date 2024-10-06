@@ -75,6 +75,12 @@ export const information = [
         country:"netherlands",
         info:`The Netherlands enchants South Korean participants with its beautiful landscapes, iconic canals, and rich cultural heritage. The IEC program offers young adults a unique opportunity to gain valuable work experience while exploring vibrant cities like Amsterdam, Rotterdam, and Utrecht
                 Participants can immerse themselves in Dutch traditions, enhance their language skills, and enjoy the country’s renowned hospitality. With a strong focus on sustainability and quality of life, the Netherlands ensures a comfortable and enriching stay, allowing participants to create lasting memories while discovering a culture that seamlessly blends history and modernity.`
+    },
+    {
+        country: "denmark",
+        info: `Denmark captivates South Korean participants with its picturesque landscapes, vibrant cities, and deep-rooted cultural heritage. The IEC program provides young adults a fantastic opportunity to gain valuable work experience while exploring lively cities like Copenhagen, Aarhus, and Aalborg.
+    
+                    Participants can immerse themselves in Danish traditions, improve their language skills, and enjoy the country’s celebrated sense of community and hygge lifestyle. With a strong emphasis on sustainability and innovation, Denmark ensures a comfortable and enriching stay, allowing participants to create lasting memories while discovering a culture that beautifully integrates history with modernity.`
     }
 ] 
 export const stats = [

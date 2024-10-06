@@ -21,6 +21,27 @@ export const benefits = [
         ]
     },
     {
+        country: "denmark",
+        benefitList: [
+            {
+                title: "Robust Job Market",
+                desc: "Access diverse job opportunities in innovative industries, from tech to design."
+            },
+            {
+                title: "Stunning Scenery",
+                desc: "Discover Denmark’s beautiful coastlines, charming countryside, and picturesque cities."
+            },
+            {
+                title: "Rich Cultural Heritage",
+                desc: "Immerse yourself in Denmark’s vibrant culture, including festivals, museums, and culinary delights."
+            },
+            {
+                title: "Exceptional Quality of Life",
+                desc: "Enjoy a high standard of living with excellent healthcare, education, and work-life balance."
+            }
+        ]
+    },
+    {
         country: "australia",
         benefitList: [
             {

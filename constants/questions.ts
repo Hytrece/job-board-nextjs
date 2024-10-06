@@ -37,6 +37,35 @@ export const questions = [
           ]
     },
     {
+      country:"australia",
+      qlist:[
+          {
+              question: "What is the age limit for a Working Holiday in Australia?",
+              answer: "The Australian Working Holiday visa is open to applicants aged between 18 and 30 (18 to 35 in some cases)."
+          },
+          {
+              question: "Where can I find more information about Working Holiday visas in Australia?",
+              answer: "Find the most up to date information regarding visas and the Working Holiday Maker program on the Department of Home Affairs website."
+          },
+          {
+              question: "Which Australian Working Holiday visa should I apply for if I hold a passport from the USA?",
+              answer: "Apply for the Work and Holiday visa (Subclass 462) if you hold a passport from the USA."
+          },
+          {
+              question: "Can I leave and re-enter Australia during a working holiday?",
+              answer: "Yes. You can leave and re-enter Australia any number of times while the visa is valid."
+          },
+          {
+              question: "How long does an Australian Working Holiday visa last?",
+              answer: "Your first Working Holiday visa lasts for 12 months. However, there are options to stay for two or even three years on your working holiday."
+          },
+          {
+              question: "What is required to complete the Australian Working Holiday visa application?",
+              answer: "Check the Department of Home Affairs website for the latest updates."
+          }
+      ]
+    },
+    {
         country:"newzealand",
         qlist:[
             {
@@ -326,5 +355,42 @@ export const questions = [
               answer: 'For more information on the Working Holiday Program, you can contact the Embassy of the Republic of Korea in Denmark.'
             }
           ]
-    }
+    },
+    {
+      country:"france",
+      qlist:[
+        {
+          question: 'How long is the working holiday visa valid for in France?',
+          answer: 'The working holiday visa is valid for one year and may not be extended, unless otherwise stipulated.'
+      },
+      {
+          question: 'What type of visa is required for a working holiday in France?',
+          answer: "The work holiday visa is a long-stay visa containing the statement 'vacances travail' (working holiday)."
+      },
+      {
+          question: 'Can the working holiday visa be extended in France?',
+          answer: 'The working holiday visa may not be extended, unless otherwise stipulated.'
+      },
+      {
+          question: 'What is the age limit for applying for a working holiday visa in France?',
+          answer: 'Applicants must be between 18 and 30 years of age (i.e., until the day before their 31st birthday), except for Argentina, Australia, and Canada, where the maximum age is 35 years (up to the date of 36th birthday).'
+      },
+      {
+          question: 'Is there a limit on the number of hours that can be worked on a working holiday visa in France?',
+          answer: 'There is no limit on the number of hours that can be worked on a working holiday visa in France.'
+      },
+      {
+          question: 'Do employers need to apply for a work permit for working holiday visa holders in France?',
+          answer: 'No, employers do not need to apply for a work permit for working holiday visa holders in France, but they must report the employment to the French administration.'
+      },
+      {
+          question: 'Are working holiday visa holders eligible for social security benefits in France?',
+          answer: 'No, working holiday visa holders are not eligible for social security benefits in France.'
+      },
+      {
+          question: 'Can working holiday visa holders work full-time in France?',
+          answer: 'The visa entitles the holder to undertake paid employment on a secondary basis, without prior approval from the French Administration.'
+      }
+        ]
+  }
 ]

@@ -110,6 +110,41 @@ export const stepsData = [
     ]
   },
   {
+    country:"australia",
+    stepList:[
+        {
+            title: 'Check Eligibility',
+            description: 'Check if you are eligible for a Working Holiday visa by ensuring you hold or have previously held a Working Holiday (subclass 417 or subclass 462) visa and have completed three months of specified work in regional areas of Australia while on your first Working Holiday visa.',
+            image: '/australia/eligibility.jpg'
+        },
+        {
+            title: 'Gather Required Documents',
+            description: 'Gather the required documents, including your passport, financial evidence (AUD $5,000), and any other necessary documents such as a police certificate.',
+            image: '/australia/documents.jpg'
+        },
+        {
+            title: 'Choose the Correct Visa',
+            description: 'Choose the correct visa for your nationality, either the Work and Holiday visa (Subclass 462) or the Working Holiday visa (Subclass 417).',
+            image: '/australia/visa.jpg'
+        },
+        {
+            title: 'Apply for the Visa',
+            description: 'Apply for the visa through the Australian Government Department of Home Affairs website, ensuring you meet the eligibility requirements and have all necessary documents.',
+            image: '/australia/application.jpg'
+        },
+        {
+            title: 'Pay the Application Fee',
+            description: 'Pay the non-refundable application fee when lodging your visa application.',
+            image: '/australia/fee.jpg'
+        },
+        {
+            title: 'Wait for the Visa to be Processed',
+            description: 'Wait for the visa to be processed, and once approved, you can enter Australia and start your working holiday.',
+            image: '/australia/processing.jpg'
+        }
+    ]
+  },
+  {
     country: "poland", // Change this to the appropriate country name
     stepList: [
         {
@@ -401,6 +436,41 @@ export const stepsData = [
                 title: 'Register with the Danish Authorities',
                 description: 'Register with the Danish authorities and obtain a Danish tax card and a health insurance card.',
                 image: '/denmark/register-authorities.jpg'
+            }
+        ]
+    },
+    {
+        country: "france",
+        stepList: [
+            {
+                title: 'Check Eligibility',
+                description: 'Check if your country or territory has signed an agreement with France for the working holiday program and if you meet the age and other requirements.',
+                image: '/france/eligibility.jpg'
+            },
+            {
+                title: 'Gather Required Documents',
+                description: 'Gather all the required documents, including a valid passport, proof of financial resources, health insurance, and a return ticket or proof of onward travel.',
+                image: '/france/documents.jpg'
+            },
+            {
+                title: 'Apply for the Visa',
+                description: 'Apply for the working holiday visa at the competent visa center in your country or territory of nationality, or at the French consular service in your country of residence if you are an Australian, Canadian, or Colombian national.',
+                image: '/france/apply.jpg'
+            },
+            {
+                title: 'Wait for Visa Approval',
+                description: 'Wait for the visa to be approved, which may take several weeks or months, depending on the country and the time of year.',
+                image: '/france/wait.jpg'
+            },
+            {
+                title: 'Enter France and Register',
+                description: 'Enter France and register with the local authorities, including obtaining a residence permit and registering with the French social security system.',
+                image: '/france/register.jpg'
+            },
+            {
+                title: 'Find Employment and Start Working',
+                description: 'Find employment and start working in France, while also exploring the country and its culture.',
+                image: '/france/employment.jpg'
             }
         ]
     }
