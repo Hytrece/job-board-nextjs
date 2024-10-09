@@ -14,7 +14,7 @@ const JobSection = ({country}:{country:string}) => {
             <h1 className="text-2xl font-bold mt-5 sm:text-2xl">
               Jobs in {countryName}
             </h1>
-            <MoreJobs/>
+            <MoreJobs country={country}/>
           </div>
             <p className="mt-5 leading-loose">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industrys standard dummy.
@@ -25,7 +25,7 @@ const JobSection = ({country}:{country:string}) => {
                   {
                       JobList?.map((item, idx) => (
                           <li key={idx} className="gap-8 flex hover:cursor-pointer flex-col">
-                            <Link href={{pathname:"/canada/jobs", query:{category:(item.name).toLowerCase()}}} className="group">
+                            <Link href={{pathname:`/${country}/jobs`, query:{category:(item.name).toLowerCase()}}} className="group">
                               <div className="w-full h-60 overflow-hidden rounded-xl relative">
                                 <div className="w-full h-60 relative transition transform rounded-xl duration-700 group-hover:scale-105 group-hover:cursor-pointer">
                                   <Image

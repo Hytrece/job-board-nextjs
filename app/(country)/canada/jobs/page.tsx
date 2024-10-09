@@ -15,6 +15,8 @@ import { fetchJob } from "@/actions/jobs.actions";
 import { X } from "lucide-react";
 
 const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | string[] | undefined}}) => {
+    const country = "canada"
+    const countryName = "Canada"
     var pageNum = (searchParams.page ?? "1") as string;
     const pageNumInt = +pageNum;
     const industry = (searchParams.category ?? "none") as string;
@@ -70,10 +72,10 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
         type:"c",
       }
     ]
-    const {joblist, nextPage} = await fetchJob({industry,s,pageNumInt,type});
+    const {joblist, nextPage} = await fetchJob({country,industry,s,pageNumInt,type});
     return(
       <section className="min-h-screen w-[80%] max-h-[500vh]">
-        <BreadcrumbDemo prev={[{href:"/canada",name:"Canada"}]} now={{href:"/canada/jobs",name:"Jobs"}} classname="mt-32 pt-7 ml-10"/>
+        <BreadcrumbDemo prev={[{href:`/${country}`,name:countryName}]} now={{href:`/${country}/jobs`,name:"Jobs"}} classname="mt-32 pt-7 ml-10"/>
         <div className="items-center grid grid-cols-4 " >
           <div className="text-xl md:text-3xl font-bold pt-5 pb-10 flex mx-5 w-full col-span-1">
               <div className=" p-2 rounded-full border-2 w-full bg-indigo-400 h-max shadow-md mr-10 flex justify-center mt-5 ">

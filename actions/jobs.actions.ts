@@ -6,11 +6,11 @@ import Country from "@/lib/models/country-schema";
 import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
-import {toast} from "sonner"
-export async function saveJob(userId:string,jobId:mongoose.Schema.Types.ObjectId){
+export async function saveJob(userId:string,jobId:string){
+    var Id = new mongoose.Types.ObjectId(jobId);
     connectToDB();
     try {
-        const response = await User.findOneAndUpdate({clerkId:userId},{$addToSet:{savedJobs:jobId}});
+        const response = await User.findOneAndUpdate({clerkId:userId},{$push:{savedJobs:{job:Id,status:0}}});
         if(response){
             console.log("job saved successfully");
             return {status:200};
@@ -24,24 +24,25 @@ export async function saveJob(userId:string,jobId:mongoose.Schema.Types.ObjectId
 ;
 }
 interface Params{
+    country:string
     industry:string,
     s:string,
     pageNumInt:number,
     type:string
 }
-export async function fetchJob({industry,s,pageNumInt,type}:Params){
+export async function fetchJob({country, industry,s,pageNumInt,type}:Params){
     connectToDB();
     let joblist;
     let nextPage;
     const regex = RegExp(s,'i');
     if(type==""){
-        joblist = industry == "none" ? await Country.find({country:"canada", title: {$regex: regex}}).lean().skip((pageNumInt-1)*20).limit(20) : await Country.find({country:"canada",category:industry,title: {$regex: regex}}).lean().skip((pageNumInt-1)*20).limit(20);
-        nextPage = industry == "none" ? await Country.find({country:"canada",title: {$regex: regex}}).lean().skip((pageNumInt)*20).countDocuments() : await Country.find({country:"canada",category:industry,title: {$regex: regex}}).lean().skip((pageNumInt)*20).countDocuments();
+        joblist = industry == "none" ? await Country.find({country:country, title: {$regex: regex}}).lean().skip((pageNumInt-1)*20).limit(20) : await Country.find({country:country,category:industry,title: {$regex: regex}}).lean().skip((pageNumInt-1)*20).limit(20);
+        nextPage = industry == "none" ? await Country.find({country:country,title: {$regex: regex}}).lean().skip((pageNumInt)*20).countDocuments() : await Country.find({country:country,category:industry,title: {$regex: regex}}).lean().skip((pageNumInt)*20).countDocuments();
     }
     else{
         console.log(`job type=${type}`);
-        joblist = industry == "none" ? await Country.find({country:"canada", title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt-1)*20).limit(20) : await Country.find({country:"canada",category:industry,title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt-1)*20).limit(20);
-        nextPage = industry == "none" ? await Country.find({country:"canada",title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*20).countDocuments() : await Country.find({country:"canada",category:industry,title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*20).countDocuments();
+        joblist = industry == "none" ? await Country.find({country:country, title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt-1)*20).limit(20) : await Country.find({country:country,category:industry,title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt-1)*20).limit(20);
+        nextPage = industry == "none" ? await Country.find({country:country,title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*20).countDocuments() : await Country.find({country:country,category:industry,title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*20).countDocuments();
     }
     
     return {joblist:joblist, nextPage:nextPage};
@@ -54,7 +55,7 @@ export async function deleteJob(jobId:string){
     }
     try {
         await connectToDB();
-        const response = await User.findOneAndUpdate({clerkId:userId},{$pull:{savedJobs:Id}});
+        const response = await User.findOneAndUpdate({clerkId:userId},{$pull:{savedJobs:{job:{$in:[Id]}}}});
         if(response){
             console.log("job deleted successfully")
             revalidatePath("../dashboard/jobs")

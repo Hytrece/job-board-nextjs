@@ -15,6 +15,8 @@ import { fetchJob } from "@/actions/jobs.actions";
 import { X } from "lucide-react";
 
 const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | string[] | undefined}}) => {
+    const country = "japan"
+    const countryName = "Japan"
     var pageNum = (searchParams.page ?? "1") as string;
     const pageNumInt = +pageNum;
     const industry = (searchParams.category ?? "none") as string;
@@ -25,32 +27,35 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
     const s = query;
     const categories = [
       {
-        name:"Barista",
-        icon:<Coffee/>
+        name:"Cafe & Barista",
+        icon:<Coffee/>,
+        link:"cafe"
       },
       {
         name:"Hotel",
-        icon:<BedSingle/>
+        icon:<BedSingle/>,
+        link:"hotel"
+
       },
       {
         name:"Labours",
-        icon:<TrafficCone/>
+        icon:<TrafficCone/>,
+        link:"construction"
       },
       {
-        name:"Developers",
-        icon:<Code/>
+        name:"Developer",
+        icon:<Code/>,
+        link:"developer"
       },
       {
         name:"Farm",
-        icon:<Tractor/>
-      },
-      {
-        name:"Retail",
-        icon:<HandCoins/>
+        icon:<Tractor/>,
+        link:"farm"
       },
       {
         name:"Office",
-        icon:<LampDesk/>
+        icon:<LampDesk/>,
+        link:"office"
       }
     ]
     const workType = [
@@ -67,10 +72,10 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
         type:"c",
       }
     ]
-    const {joblist, nextPage} = await fetchJob({industry,s,pageNumInt,type});
+    const {joblist, nextPage} = await fetchJob({country,industry,s,pageNumInt,type});
     return(
       <section className="min-h-screen w-[80%] max-h-[500vh]">
-        <BreadcrumbDemo prev={[{href:"/canada",name:"Canada"}]} now={{href:"/canada/jobs",name:"Jobs"}} classname="mt-32 pt-7 ml-10"/>
+        <BreadcrumbDemo prev={[{href:`/${country}`,name:countryName}]} now={{href:`/${country}/jobs`,name:"Jobs"}} classname="mt-32 pt-7 ml-10"/>
         <div className="items-center grid grid-cols-4 " >
           <div className="text-xl md:text-3xl font-bold pt-5 pb-10 flex mx-5 w-full col-span-1">
               <div className=" p-2 rounded-full border-2 w-full bg-indigo-400 h-max shadow-md mr-10 flex justify-center mt-5 ">
@@ -88,7 +93,7 @@ const JobPage = async ({searchParams}:{searchParams:{[key:string]:string | strin
             <div className="mt-6 pl-5 bg-zinc-100 shadow-md pt-1 border-2 border-zinc-200 rounded-lg mr-5 pb-5 pr-5">
               <div className="mt-5 flex text-foreground font-semibold flex-col">
                 {categories.map((category)=>(
-                  <Link key={category.name} href = {`?${new URLSearchParams({category:category.name.toLowerCase()})}`} className={cn(industry == category.name.toLowerCase() ? "bg-black text-white hover:text-white hover:bg-black" : " hover:bg-zinc-200 active:bg-zinc-300","py-3 pl-2 flex items-center rounded-md hover:cursor-pointer gap-x-3")}>{category.icon}{category.name}</Link>
+                  <Link key={category.name} href = {`?${new URLSearchParams({category:category.link})}`} className={cn(industry == category.link ? "bg-black text-white hover:text-white hover:bg-black" : " hover:bg-zinc-200 active:bg-zinc-300","py-3 pl-2 flex items-center rounded-md hover:cursor-pointer gap-x-3")}>{category.icon}{category.name}</Link>
                 ))}
               </div>
             </div>

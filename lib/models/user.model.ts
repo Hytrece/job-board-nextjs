@@ -24,13 +24,17 @@ const UserSchema = new Schema({
     lastName:{
         type:String
     },
-    savedJobs:[{
+    savedJobs:[
+        {
+        job:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Country"
-    }],
-    savedWh:[{
-        type:String
-    }]
+        },
+        status:{
+            type:Number
+        }
+    }
+]
 })
 
 const User = models?.User || model("User",UserSchema)

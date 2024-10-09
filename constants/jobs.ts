@@ -253,18 +253,18 @@ export const workingHolidayJobs = [
               avg: "1600000"
           },
           {
-              name: "Engineering",
-              src: "/germany/engineering.jpg",
+              name: "Hotel",
+              src: "/germany/hotel.jpg",
               avg: "1500000"
           },
           {
-              name: "Hospitality",
-              src: "/germany/hospitality.jpg",
+              name: "Cafe & Restaurant",
+              src: "/germany/cafe.jpg",
               avg: "1300000"
           },
           {
-              name: "Tourism",
-              src: "/germany/tourism.jpg",
+              name: "Farm",
+              src: "/germany/farm.jpg",
               avg: "1400000"
           },
           {
@@ -273,8 +273,8 @@ export const workingHolidayJobs = [
               avg: "1700000"
           },
           {
-              name: "Retail",
-              src: "/germany/retail.jpg",
+              name: "Service",
+              src: "/germany/service.jpg",
               avg: "1200000"
           }
       ]

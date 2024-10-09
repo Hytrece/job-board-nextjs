@@ -50,7 +50,7 @@ const JobList = ({joblist,nextPage,industry,s,pageNum,type}:{joblist:any[],nextP
                     <div className="flex flex-col gap-y-4">
                       <div className="flex items-center group gap-x-4 min-h-[30px]">
                         <h1 className="font-bold text-lg max-w-[500px]" >{job.title}</h1>
-                        <button onClick={()=>{handleClick(job._id)}} className="z-10"><Image src="/purpleheart.svg" width={30} height={30} alt="heart" className="hidden group-hover:block z-10 hover:scale-105"/></button>
+                        <button onClick={()=>{handleClick(job._id.toString())}} className="z-10"><Image src="/purpleheart.svg" width={30} height={30} alt="heart" className="hidden group-hover:block z-10 hover:scale-105"/></button>
                       </div>
                       <div className="flex items-center gap-x-5"><div className={`text-primary rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max`}>{formatDate(job.date)}</div><div className={`text-pink-600 rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max ${job.salary==""? "hidden":""}`}>{job.salary}</div></div>
                       <div className="flex items-center gap-x-5"><div className="text-indigo-600 rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max">{`${job.category.charAt(0).toUpperCase()+job.category.slice(1)}`}</div><div className={cn(job.contracttype=="p"?"text-violet-600":"text-amber-600"," rounded-full bg-white p-1 px-2 text-sm min-w-0 w-max")}>{

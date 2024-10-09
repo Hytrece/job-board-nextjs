@@ -50,7 +50,7 @@ const countries = [
   { value: "italy", label: "Italy" },
   { value: "japan", label: "Japan" },
   { value: "netherlands", label: "Netherlands" },
-  { value: "new zealand", label: "New Zealand" },
+  { value: "newzealand", label: "New Zealand" },
   { value: "norway", label: "Norway" },
   { value: "poland", label: "Poland" },
   { value: "portugal", label: "Portugal" },

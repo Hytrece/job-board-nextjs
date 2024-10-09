@@ -9,17 +9,17 @@ import BenefitSection from "@/components/benefitsection";
 import QASection from "@/components/qasection";
 
 const CountryPage = () => {
-  const countryName = "Canada"
+  const countryName = "Germany"
   return (
     <div className="overflow-hidden">
-        <Header name={countryName} bgImage={`/canada/bg.jpg`}/>
+        <Header name={countryName} bgImage={`/germany/bg.jpg`}/>
         <TracingBeam className="px-1">
-          <Information country = {"canada"}/>
-          <JobSection country = {"canada"}/> 
-          <StepSection country = {"canada"}/>
-          <BenefitSection country = {"canada"}/>
-          <CheckList country = {"canada"}/>
-          <QASection country = {"canada"}/>
+          <Information country = {"germany"}/>
+          <JobSection country = {"germany"}/> 
+          <StepSection country = {"germany"}/>
+          <BenefitSection country = {"germany"}/>
+          <CheckList country = {"germany"}/>
+          <QASection country = {"germany"}/>
           <Subscribe country={countryName}/>
         </TracingBeam>
     </div>

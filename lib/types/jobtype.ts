@@ -1,5 +1,5 @@
 import { ObjectId } from "mongoose";
-
+import mongoose from "mongoose"
 export interface JobType{
     _id:ObjectId
     country:string,
@@ -13,3 +13,13 @@ export interface JobType{
     description:string,
     contracttype:string,
 };
+export interface UserType{
+    clerkId:string,
+    email:string,
+    username?:string,
+    photo:string,
+    firstName?:string,
+    lastName?:string,
+    savedJobs?:mongoose.Schema.Types.ObjectId[],
+    jobStatus?:Number[]
+}

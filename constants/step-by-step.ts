@@ -220,32 +220,32 @@ export const stepsData = [
         {
             title: 'Check Eligibility',
             description: 'Ensure you meet the eligibility criteria: 18-30 years old, Korean national, good health, and no dependents.',
-            image: '/germany/check-eligibility.jpg'
+            image: '/germany/eligibility.jpg'
         },
         {
             title: 'Gather Required Documents',
             description: 'Prepare necessary documents: valid passport, proof of financial means (at least 2,000 euros), health insurance, and a motivation letter (if required).',
-            image: '/germany/gather-documents.jpg'
+            image: '/germany/documents.jpg'
         },
         {
             title: 'Apply for a Working Holiday Visa',
             description: 'Submit your application and required documents to the German embassy or consulate in Korea. Pay the application fee (75 euros).',
-            image: '/germany/apply-working-holiday-visa.jpg'
+            image: '/germany/apply.jpg'
         },
         {
             title: 'Find a Job in Germany',
             description: "Search for job opportunities in Germany through online job portals, employment agencies, or networking. Ensure the job aligns with the working holiday program's purpose.",
-            image: '/germany/find-job.jpg'
+            image: '/germany/find.jpg'
         },
         {
             title: 'Register with the Local Authorities',
             description: 'Register with the local authorities in Germany and obtain a residence permit. This is usually done after arriving in Germany.',
-            image: '/germany/register-local-authorities.jpg'
+            image: '/germany/register.jpg'
         },
         {
             title: 'Start Your Working Holiday',
             description: "Begin your working holiday in Germany, ensuring you comply with the program's rules and regulations. You can work part-time or full-time, but not exceed the maximum allowed working hours.",
-            image: '/germany/start-working-holiday.jpg'
+            image: '/germany/start.jpg'
         }
     ]
 },
