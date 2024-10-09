@@ -32,20 +32,6 @@ export default function VisaChart() {
 
   const filterButtons = ['Tourist', 'Work', 'Student', 'Permanent']
 
-  const filteredVisas = visas.filter(visa => 
-    (visa.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
-     visa.type.toLowerCase().includes(searchTerm.toLowerCase())) &&
-    (activeFilters.length === 0 || activeFilters.includes(visa.type))
-  )
-
-  const toggleFilter = (filter) => {
-    setActiveFilters(prev => 
-      prev.includes(filter) 
-        ? prev.filter(f => f !== filter)
-        : [...prev, filter]
-    )
-  }
-
   return (
     <div className="bg-zinc-800 w-full min-h-screen">
     <div className="container w-[80%] bg-white mx-auto min-h-screen px-10 py-8">
@@ -66,8 +52,8 @@ export default function VisaChart() {
           {filterButtons.map(filter => (
             <Button
               key={filter}
-              variant={activeFilters.includes(filter) ? "default" : "outline"}
-              onClick={() => toggleFilter(filter)}
+              variant="default" 
+              onClick={()=>{}}
               className="flex items-center gap-2"
             >
               <Filter className="w-4 h-4" />
@@ -78,7 +64,7 @@ export default function VisaChart() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {filteredVisas.map(visa => (
+        {visas.map(visa => (
           <Dialog key={visa.id}>
             <DialogTrigger asChild>
               <Card className="cursor-pointer hover:shadow-lg transition-shadow">
@@ -106,7 +92,7 @@ export default function VisaChart() {
         ))}
       </div>
 
-      {filteredVisas.length === 0 && (
+      {visas.length === 0 && (
         <p className="text-center mt-8 text-gray-500">No visas found matching your search or filters.</p>
       )}
     </div>
