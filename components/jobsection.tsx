@@ -25,7 +25,7 @@ const JobSection = ({country}:{country:string}) => {
                   {
                       JobList?.map((item, idx) => (
                           <li key={idx} className="gap-8 flex hover:cursor-pointer flex-col">
-                            <Link href={{pathname:`/${country}/jobs`, query:{category:(item.name).toLowerCase()}}} className="group">
+                            <Link href={{pathname:`/jobs`, query:{country:country,category:(item.name).toLowerCase()}}} className="group">
                               <div className="w-full h-60 overflow-hidden rounded-xl relative">
                                 <div className="w-full h-60 relative transition transform rounded-xl duration-700 group-hover:scale-105 group-hover:cursor-pointer">
                                   <Image

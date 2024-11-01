@@ -1,36 +1,26 @@
 import Image from "next/image";
-import ModeToggle from "@/components/togglemode";
 import { Separator } from "./ui/separator";
 import DrawDown from "./drawdown";
 import LoginButton from "./ui/loginbutton";
 const Bar = () => {
   return (
-    <div className="w-screen">
-      <div className="w-full flex justify-between items-center p-10 border-4 ">
-        <h1 className="font-bold text-gradient text-3xl">VIKB.IO</h1>
-        <div className="flex flex-nowrap ml-20 w-[60%] justify-between items-center text-md md:text-lg lg:text-xl invisible sm:visible font-semibold">
-          <div className="hover:cursor-pointer hover:text-primary">
+    <div className="w-screen z-20 absolute top-0">
+      <div className="w-full flex justify-between items-center py-5 text-white px-10">
+        <h1 className="font-semibold text-gradient text-3xl">VIKB.IO</h1>
+        <div className="flex flex-nowrap ml-20 w-[60%] justify-between items-center text-md md:text-lg lg:text-xl invisible sm:visible font-medium">
+          <div className="hover:cursor-pointer z-20 hover:scale-105 animate duration-500 ">
             <DrawDown />
           </div>
           <Separator className="font-semibold" orientation="vertical" />
-          <div className="hover:cursor-pointer hover:text-primary">Jobs</div>
+          <div className="hover:cursor-pointer hover:scale-105 animate duration-500">Jobs</div>
           <Separator orientation="vertical" />
-          <div className="hover:cursor-pointer hover:text-primary">Blog</div>
+          <div className="hover:cursor-pointer hover:scale-105 animate duration-500">Blog</div>
           <Separator orientation="vertical" />
-          <div className="text-nowrap hover:cursor-pointer hover:text-primary ">
+          <div className="text-nowrap hover:cursor-pointer hover:scale-105 animate duration-500 ">
             About Us
           </div>
           <Separator orientation="vertical" />
-          <div className="flex gap-5 items-center justify-between">
-            <Image
-              src="/language.svg"
-              width={40}
-              height={40}
-              alt="globe"
-              className="hover:cursor-pointer"
-            />
             <LoginButton/>
-          </div>
         </div>
       </div>
       <div className="sm:invisible absolute right-10 top-10">

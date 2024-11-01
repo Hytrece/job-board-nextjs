@@ -67,17 +67,14 @@ const FormSchema = z.object({
   }),
 });
 
-export default function ComboboxForm() {
+export default function ComboboxForm({defaultValue}:{defaultValue:string}) {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
-  const path = usePathname();
-  const countryPage = path.split("/")[1];
-  console.log(countryPage);
   const router = useRouter();
   const formRef = useRef(null);
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    const url = `/${data.language}/jobs`;
+    const url = `/jobs?${new URLSearchParams({country:data.language})}`;
     router.push(url);
   }
   const handleSelect = (data:string)=>{
@@ -111,13 +108,13 @@ export default function ComboboxForm() {
                         !field.value && "text-muted-foreground",
                       )}
                     >
-                      {countryPage ? (
+                      {defaultValue ? (
                         <div className="flex w-full justify-between items-center">
                          <div className="w-[70px] h-[70px] relative overflow-hidden shrink-0 rounded-full">
                           <Image
                             src={`/${
                               countries.find(
-                                (country) => country.value === countryPage,
+                                (country) => country.value === defaultValue,
                               )?.value
                             }.png`}
                             fill={true}
@@ -129,7 +126,7 @@ export default function ComboboxForm() {
                         <div className="text-md lg:text-xl shrink-1 hidden xl:block font-bold">
                             {
                               countries.find(
-                                (country) => country.value === countryPage,
+                                (country) => country.value === defaultValue,
                               )?.label
                             }
                           </div>

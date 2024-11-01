@@ -12,7 +12,7 @@ const Information = ({country}:{country:string}) => {
       <div className="flex flex-col gap-y-3 mt-10 ml-10">
         <h4 className="text-primary font-semibold text-lg">Overview</h4>
         <h2 className="text-2xl mt-2 font-bold">Working Holiday in {countryName}</h2>
-        <div className="mt-10 pt-2 flex flex-col sm:flex-row sm:flex-wrap gap-y-10 justify-center items-center gap-x-3 lg:divide-x">
+        <div className="mt-10 pt-2 flex flex-col sm:flex-row sm:flex-wrap gap-y-10 lg:flex-nowrap justify-center items-center gap-x-3 lg:divide-x">
         {showStats?.map((stat)=>(
           <ul key={stat.title} className="text-center flex flex-col gap-y-2 px-12 md:px-16">
             <h3 className="text-primary text-2xl font-semibold">{stat.data}</h3>

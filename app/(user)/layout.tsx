@@ -11,7 +11,9 @@ import {
 import { cn } from "@/lib/utils";
 import { auth } from "@clerk/nextjs/server";
 import { Toaster } from "sonner";
+import { connectToDB } from "@/lib/db";
 const UserLayout = ({children}:{children:React.ReactNode}) => {
+    
     const links = [
         {
         label: "Dashboard",

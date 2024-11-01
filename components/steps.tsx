@@ -48,7 +48,7 @@ export default function WorkingHolidayGuide({steps}:{steps:Step[]}) {
       <div className="relative">
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200">
           <div 
-            className="absolute top-0 left-0 w-full bg-blue-500 transition-all duration-1000 ease-out"
+            className="absolute top-0 left-0 w-full bg-[#8678f9] transition-all duration-1000 ease-out"
             style={{ height: `${(progress.reduce((a, b) => a + b) / steps.length) * 100}%` }}
           ></div>
         </div>
@@ -63,8 +63,8 @@ export default function WorkingHolidayGuide({steps}:{steps:Step[]}) {
                 {index % 2 === 0 ? (
                   <Card className="p-6 shadow-md">
                     <h2 className="text-2xl font-semibold mb-4 flex items-center">
-                      <CheckCircle2 className={`mr-2 ${progress[index] ? 'text-green-500' : 'text-gray-300'}`} />
-                      Step LEFT {index + 1}: {step.title}
+                      <CheckCircle2 className={`mr-2 ${progress[index] ? 'text-[#8678f9]' : 'text-gray-300'}`} />
+                      Step {index + 1}: {step.title}
                     </h2>
                     <p className="text-gray-600">{step.description}</p>
                   </Card>
@@ -77,7 +77,7 @@ export default function WorkingHolidayGuide({steps}:{steps:Step[]}) {
                 )}
               </div>
               <div className="w-2/12 flex justify-center order-2">
-                <div className={`w-8 h-8 rounded-full border-4 border-white ${progress[index] ? 'bg-blue-500' : 'bg-gray-200'} transition-all duration-500 ease-out`}></div>
+                <div className={`w-8 h-8 rounded-full border-4 border-white ${progress[index] ? 'bg-[#8678f9]' : 'bg-gray-200'} transition-all duration-500 ease-out`}></div>
               </div>
               <div className={`w-5/12 ${index % 2 === 0 ? 'order-3 pl-8' : 'order-3 pl-8'}`}>
                 {index % 2 === 0 ? (
@@ -89,7 +89,7 @@ export default function WorkingHolidayGuide({steps}:{steps:Step[]}) {
                 ) : (
                   <Card className="p-6 shadow-md">
                     <h2 className="text-2xl font-semibold mb-4 flex items-center">
-                      <CheckCircle2 className={`mr-2 ${progress[index] ? 'text-green-500' : 'text-gray-300'}`} />
+                      <CheckCircle2 className={`mr-2 ${progress[index] ? 'text-[#8678f9]' : 'text-gray-300'}`} />
                       Step {index + 1}: {step.title}
                     </h2>
                     <p className="text-gray-600">{step.description}</p>

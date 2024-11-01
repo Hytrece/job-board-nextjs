@@ -18,13 +18,9 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { ChartConfig, ChartContainer } from "@/components/ui/chart"
-const chartData = [
-  { work: "work holiday", countries: 2, fill: "hsl(var(--chart-1))" },
-]
-
 const chartConfig = {
   countries: {
-    label: "Saved Working Holidays",
+    label: "Saved Jobs",
     color: "hsl(var(--chart-1))"
   },
   work: {
@@ -33,7 +29,11 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function Component() {
+export function Component({len}:{len:number}) {
+  const chartData = [
+    { work: "work holiday", jobs:len, fill: "hsl(var(--chart-1))" },
+  ]
+  
   return (
     <Card className="flex flex-col border-0 mt-0">
       <CardContent className="flex-1 p-0">
@@ -72,14 +72,14 @@ export function Component() {
                           y={viewBox.cy}
                           className="fill-foreground text-4xl font-bold"
                         >
-                          {chartData[0].countries.toLocaleString()}
+                          {chartData[0].jobs.toLocaleString()}
                         </tspan>
                         <tspan
                           x={viewBox.cx}
                           y={(viewBox.cy || 0) + 24}
                           className="fill-muted-foreground"
                         >
-                          Countries
+                         Jobs
                         </tspan>
                       </text>
                     )

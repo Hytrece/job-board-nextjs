@@ -6,6 +6,7 @@ import Country from "@/lib/models/country-schema";
 import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
+import { JobType, MidType, MidTypePopulate } from "@/lib/types/jobtype";
 export async function saveJob(userId:string,jobId:string){
     var Id = new mongoose.Types.ObjectId(jobId);
     connectToDB();
@@ -36,15 +37,14 @@ export async function fetchJob({country, industry,s,pageNumInt,type}:Params){
     let nextPage;
     const regex = RegExp(s,'i');
     if(type==""){
-        joblist = industry == "none" ? await Country.find({country:country, title: {$regex: regex}}).lean().skip((pageNumInt-1)*20).limit(20) : await Country.find({country:country,category:industry,title: {$regex: regex}}).lean().skip((pageNumInt-1)*20).limit(20);
-        nextPage = industry == "none" ? await Country.find({country:country,title: {$regex: regex}}).lean().skip((pageNumInt)*20).countDocuments() : await Country.find({country:country,category:industry,title: {$regex: regex}}).lean().skip((pageNumInt)*20).countDocuments();
+        joblist = industry == "none" ? await Country.find({country:country, title: {$regex: regex}}).skip((pageNumInt-1)*10).limit(10).lean().exec() : await Country.find({country:country,category:industry,title: {$regex: regex}}).skip((pageNumInt-1)*20).limit(10).lean().exec();
+        nextPage = industry == "none" ? await Country.find({country:country,title: {$regex: regex}}).lean().skip((pageNumInt)*10).countDocuments() : await Country.find({country:country,category:industry,title: {$regex: regex}}).lean().skip((pageNumInt)*10).countDocuments();
     }
     else{
         console.log(`job type=${type}`);
-        joblist = industry == "none" ? await Country.find({country:country, title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt-1)*20).limit(20) : await Country.find({country:country,category:industry,title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt-1)*20).limit(20);
-        nextPage = industry == "none" ? await Country.find({country:country,title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*20).countDocuments() : await Country.find({country:country,category:industry,title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*20).countDocuments();
+        joblist = industry == "none" ? await Country.find({country:country, title: {$regex: regex},contracttype:type}).skip((pageNumInt-1)*10).limit(10).lean().exec() : await Country.find({country:country,category:industry,title: {$regex: regex},contracttype:type}).skip((pageNumInt-1)*10).limit(10).lean().exec();
+        nextPage = industry == "none" ? await Country.find({country:country,title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*10).countDocuments() : await Country.find({country:country,category:industry,title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*10).countDocuments();
     }
-    
     return {joblist:joblist, nextPage:nextPage};
 }
 export async function deleteJob(jobId:string){
@@ -71,6 +71,55 @@ export async function deleteJob(jobId:string){
         console.log(error);
         return NextResponse.json({success:false,message:"Unexpected error occured"},{status:500});
     }
-
-
+}
+export async function changeStatus(jobId:string,stat:number){
+    const {userId} = auth().protect()
+    var Id = new mongoose.Types.ObjectId(jobId);
+    if(!userId){
+        return NextResponse.json({success:false,message:"not authenticated"},{status:401});
+    }
+    try{
+        await connectToDB()
+        const user = await User.findOne({clerkId:userId})
+        if(!user){
+            console.log("user not found")
+            return NextResponse.json({success:false,message:"user not found"},{status:200});
+        }
+        const jobList: MidType[] = user?.savedJobs;
+        jobList.forEach((elem)=>{
+            if(elem.job.toString() == jobId){
+                if(stat>(elem.status as number)){
+                    console.log("hi")
+                    elem.status = new Number(stat);
+                }
+                else if(stat == (elem.status as number)){
+                    if(elem.status as number >= 1){
+                        elem.status = new Number(elem.status as number - 1)
+                    }
+                }
+                console.log("stat", stat)
+                console.log("current", elem.status as number)
+            }
+        })
+        const response = await user.save();
+        if(response){
+            console.log("status changed successfully")
+            revalidatePath("../dashboard/jobs")
+            return NextResponse.json({success:true,message:"status changed successfully"},{status:200});
+        }
+        else {
+            return NextResponse.json(
+                { success: false, message: "Error" },
+                { status: 404 }
+            );
+        }
+    }
+    catch(error){
+        return(
+            NextResponse.json(
+                { success: false, error:error },
+                { status: 404 }
+            )
+        )
+    }
 }

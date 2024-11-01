@@ -78,7 +78,7 @@ export default function ComboboxForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="gap-x-3 flex">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full flex justify-center gap-x-3">
         <FormField
           control={form.control}
           name="language"

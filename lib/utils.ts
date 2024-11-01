@@ -5,6 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 interface Param{
+  country:string
   industry?:string | "none",
   s?: string | "",
   page?:string | "1",
@@ -13,6 +14,7 @@ interface Param{
 
 export function checkNullandCall(param:Param){
   let returnObject = new Map()
+  returnObject.set("country",param.country);
   if(param.industry!="none" || param.industry==undefined){
     returnObject.set("category",param.industry);
   }

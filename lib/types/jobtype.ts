@@ -13,6 +13,10 @@ export interface JobType{
     description:string,
     contracttype:string,
 };
+export interface MidType{
+    job:mongoose.Schema.Types.ObjectId,
+    status:Number
+}
 export interface UserType{
     clerkId:string,
     email:string,
@@ -20,6 +24,9 @@ export interface UserType{
     photo:string,
     firstName?:string,
     lastName?:string,
-    savedJobs?:mongoose.Schema.Types.ObjectId[],
-    jobStatus?:Number[]
+    savedJobs?:MidType[],
+}
+export interface MidTypePopulate{
+    job:JobType,
+    status:Number
 }

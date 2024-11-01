@@ -49,7 +49,14 @@ const BenefitSection = ({country}:{country:string}) => {
                 transform: `translateY(${visibleFeatures[index] ? '0px' : '100px'})`
               }}>
                 <CardSpotlight  className="px-8 py-20 flex flex-col gap-y-8 ">
-                  <div className="bg-violet-600 text-white w-16 h-16 rounded-full z-10 flex justify-center items-center text-2xl font-bold">{index+1}</div>
+                  <div className="flex gap-x-5">
+                  <div className="text-2xl font-bold shrink-0 text-white bg-violet-500 rounded-full p-1 z-10 w-10 h-10 flex justify-center items-center">
+                    {index+1}
+                    </div>
+                    <div className='bg-gradient-to-t from-[#c7d2fe] to-[#8678f9] bg-clip-text text-2xl z-10 text-transparent'>
+                      {feature.title}
+                    </div>
+                  </div>
                   <div className="text-white text-lg font-semibold z-10 leading-loose">
                     {feature.desc}
                   </div>
