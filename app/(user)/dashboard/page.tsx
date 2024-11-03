@@ -1,22 +1,29 @@
+import { MidTypePopulate } from "@/lib/types/jobtype";
+import { auth } from "@clerk/nextjs/server";
+import { connectToDB } from "@/lib/db";
+import User from "@/lib/models/user.model";
+import Country from "@/lib/models/country-schema";
 import React from "react";
 import { Plus } from 'lucide-react';
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { Separator } from "@/components/ui/separator";
 import { Component } from "@/components/worktracker";
 import { Button } from "@/components/ui/button";
-import { auth } from "@clerk/nextjs/server";
-import { connectToDB } from "@/lib/db";
-import User from "@/lib/models/user.model";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { Toaster } from "sonner";
 async function Dashboard(){
-  const {userId} = auth().protect();
-    if(!userId){
-        return null;
-    }
+    const {userId} = auth().protect()
     await connectToDB();
-    const user = await User.findOne({id:userId})
-    const jobList = user.savedJobs ?? []
-    const jobLength = jobList.length
+    let joblist:MidTypePopulate[] = []
+    let jobLength;
+    if(!userId){return null;}
+    else{
+        const temp = await Country.find({})
+        const userJob = await User.findOne({id:userId}).populate('savedJobs.job');        
+        joblist = userJob.savedJobs?? [];
+        jobLength = joblist.length;
+    }
     const items = [
       {
         className: "md:col-span-2",
@@ -109,22 +116,22 @@ async function Dashboard(){
         )
       },
     ];
-  return (
-    <section className="w-full relative min-h-screen overflow-y-auto">
-            <div className="mt-20 absolute relative left-[10%] ">
-                <h1 className="font-bold text-3xl">Welcome Back!</h1>
-                <BentoGrid className="absolute md:auto-rows-[20rem] w-[65%] mt-7">
-                    {items.map((item, i) => (
-                        <BentoGridItem
-                        key={i}
-                        className={item.className}
-                        content={item.content}
-                        />
-                    ))}
-                </BentoGrid>
-            </div>
-    </section>
-  );
+  return(
+          <section className="w-full relative min-h-screen overflow-y-auto">
+              <div className="mt-20 absolute relative left-[10%] ">
+                  <h1 className="font-bold text-3xl">Welcome Back!</h1>
+                  <BentoGrid className="absolute md:auto-rows-[20rem] w-[65%] mt-7">
+                      {items.map((item, i) => (
+                          <BentoGridItem
+                          key={i}
+                          className={item.className}
+                          content={item.content}
+                          />
+                      ))}
+                  </BentoGrid>
+              </div>
+            </section>
+      );
 }
 const Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>

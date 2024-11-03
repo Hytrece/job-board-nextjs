@@ -17,6 +17,7 @@ export async function saveJob(userId:string,jobId:string){
             return {status:200};
         }
         else{
+            console.log("error while saving");
             return {status:500}
         }
     } catch (error) {
@@ -51,39 +52,36 @@ export async function deleteJob(jobId:string){
     const {userId} = auth();
     var Id = new mongoose.Types.ObjectId(jobId);
     if(!userId){
-        return NextResponse.json({success:false,message:"not authenticated"},{status:401});
+        return {success:false,message:"not authenticated"};
     }
     try {
         await connectToDB();
         const response = await User.findOneAndUpdate({clerkId:userId},{$pull:{savedJobs:{job:{$in:[Id]}}}});
         if(response){
             console.log("job deleted successfully")
-            revalidatePath("../dashboard/jobs")
-            return NextResponse.json({success:true,message:"job deleted successfully"},{status:200});
+            revalidatePath("../dashboard/jobs");
+            return {success:true,message:"success"};
         }
         else {
-            return NextResponse.json(
-                { success: false, message: "Job not found" },
-                { status: 404 }
-            );
+            return { success: false, message: "Job not found" };
         }
     } catch (error) {
         console.log(error);
-        return NextResponse.json({success:false,message:"Unexpected error occured"},{status:500});
+        return {success:false,message:"Unexpected error occured"};
     }
 }
 export async function changeStatus(jobId:string,stat:number){
     const {userId} = auth().protect()
     var Id = new mongoose.Types.ObjectId(jobId);
     if(!userId){
-        return NextResponse.json({success:false,message:"not authenticated"},{status:401});
+        return {success:false,message:"not authenticated"};
     }
     try{
         await connectToDB()
         const user = await User.findOne({clerkId:userId})
         if(!user){
             console.log("user not found")
-            return NextResponse.json({success:false,message:"user not found"},{status:200});
+            return {success:false,message:"user not found"};
         }
         const jobList: MidType[] = user?.savedJobs;
         jobList.forEach((elem)=>{
@@ -105,21 +103,13 @@ export async function changeStatus(jobId:string,stat:number){
         if(response){
             console.log("status changed successfully")
             revalidatePath("../dashboard/jobs")
-            return NextResponse.json({success:true,message:"status changed successfully"},{status:200});
+            return {success:true,message:"status changed successfully"};
         }
         else {
-            return NextResponse.json(
-                { success: false, message: "Error" },
-                { status: 404 }
-            );
+            return { success: false, message: "Error" };
         }
     }
     catch(error){
-        return(
-            NextResponse.json(
-                { success: false, error:error },
-                { status: 404 }
-            )
-        )
+        return{ success: false, message:"error" };
     }
 }

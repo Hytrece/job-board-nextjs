@@ -14,7 +14,7 @@ async function handleClick(jobId:string){
 }
 const DeleteJobButton = ({jobId}:{jobId:string}) => {
     return (
-        <button onClick = {()=>handleClick(jobId)}className="bg-pink-500 px-1 pl-10 py-9 h-full flex flex-col justify-center text-white font-semibold hover:opacity-80 hover:cursor-pointer"><X/></button>
+        <button className="bg-pink-500 px-1 pl-10 py-9 h-full flex flex-col justify-center text-white font-semibold hover:opacity-80 hover:cursor-pointer"><X/></button>
     )
 }
 export default DeleteJobButton;

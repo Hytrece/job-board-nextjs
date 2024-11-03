@@ -35,7 +35,7 @@ const BenefitSection = ({country}:{country:string}) => {
           <h4 className="text-primary font-semibold text-lg">Benefits</h4>
           <div className="flex gap-x-7 items-center">
             <h1 className="text-2xl font-bold mt-5 sm:text-2xl">
-              Benefits of working holiday in Canada
+              Benefits of working holiday in {country.charAt(0).toUpperCase()+country.substring(1)}
             </h1>
           </div>
         </div>

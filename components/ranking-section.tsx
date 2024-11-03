@@ -5,36 +5,55 @@ import Image from 'next/image'
 
 const topDestinations = [
   {
-    city: "Sydney",
-    country: "Australia",
-    image: "/australia/bg.jpg",
-    description: "Iconic beaches, vibrant culture, and endless job opportunities in a sun-soaked metropolis."
+    "city": "Sydney",
+    "country": "Australia",
+    "image": "/australia/bg.jpg",
+    "description": "Iconic beaches, vibrant culture, and endless job opportunities in a sun-soaked metropolis."
   },
   {
-    city: "Vancouver",
-    country: "Canada",
-    image: "/canada/bg.jpg",
-    description: "A perfect blend of urban life and nature, with a booming tech scene and stunning landscapes."
+    "city": "Vancouver",
+    "country": "Canada",
+    "image": "/canada/bg.jpg",
+    "description": "A perfect blend of urban life and nature, with a booming tech scene and stunning landscapes."
   },
   {
-    city: "Dublin",
-    country: "Ireland",
-    image: "/canada/bg.jpg",
-    description: "Rich history meets modern innovation in this friendly, pub-filled city with a strong job market."
+    "city": "Dublin",
+    "country": "Ireland",
+    "image": "/ireland/bg.jpg",
+    "description": "Rich history meets modern innovation in this friendly, pub-filled city with a strong job market."
   },
   {
-    city: "Tokyo",
-    country: "Japan",
-    image: "/canada/bg.jpg",
-    description: "Futuristic technology alongside ancient traditions in the world's largest metropolitan area."
+    "city": "Tokyo",
+    "country": "Japan",
+    "image": "/japan/bg.jpg",
+    "description": "Futuristic technology alongside ancient traditions in the world's largest metropolitan area."
   },
   {
-    city: "Berlin",
-    country: "Germany",
-    image: "/germany/bg.jpg",
-    description: "A hub of creativity and startups with a rich history and vibrant nightlife."
+    "city": "Berlin",
+    "country": "Germany",
+    "image": "/germany/bg.jpg",
+    "description": "A hub of creativity and startups with a rich history and vibrant nightlife."
+  },
+  {
+    "city": "Barcelona",
+    "country": "Spain",
+    "image": "/spain/bg.jpg",
+    "description": "A captivating city known for its art, architecture, and Mediterranean beaches, offering a lively atmosphere."
+  },
+  {
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "image": "/netherlands/bg.jpg",
+    "description": "Famous for its canals, museums, and progressive culture, it's a charming city with a vibrant tech scene."
+  },
+  {
+    "city": "Lisbon",
+    "country": "Portugal",
+    "image": "/portugal/bg.jpg",
+    "description": "A sun-kissed city with rich history, vibrant neighborhoods, and stunning views over the Atlantic Ocean."
   }
 ]
+
 
 export default function RankingSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)

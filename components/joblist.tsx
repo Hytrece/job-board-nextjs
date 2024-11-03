@@ -24,23 +24,35 @@ import {
   DialogTrigger,
   DialogClose
 } from "@/components/ui/dialog"
+import { LoaderCircle } from 'lucide-react';
+import {useState} from "react";
+import { Check } from 'lucide-react';
+import { CircleX } from 'lucide-react';
 const JobList = ({joblist,country,nextPage,industry,s,pageNum,type}:{joblist:any[],nextPage:number,country:string,industry:string,s:string,pageNum:string,type:string}) => {
+    const [isLoading,setIsLoading] = useState(0);
     const pageNumInt = +pageNum;
     const router = useRouter();
     const {isSignedIn,userId} = useAuth();
+    function handleStart(){
+      setIsLoading(0);
+    }
     async function handleClick(jobId:any){
         console.log("jobId is",jobId);
         if(isSignedIn){
             try {
+                setIsLoading(1);
                 const res = await saveJob(userId,jobId);
                 if(res.status==200){
                   console.log("saved");
+                  setIsLoading(2);
                 }
                 else{
                   console.log("error");
+                  setIsLoading(3);
                 }
             } catch (error) {
                 console.log(error);
+                setIsLoading(3);
             }
         }
         else{
@@ -62,23 +74,44 @@ const JobList = ({joblist,country,nextPage,industry,s,pageNum,type}:{joblist:any
                         <h1 className="font-bold text-lg max-w-[500px]" >{job.title}</h1>
                         <Dialog>
                           <DialogTrigger>
-                          <button className="z-10"><Image src="/purpleheart.svg" width={30} height={30} alt="heart" className="invisible group-hover:visible z-10 hover:scale-105"/></button>
+                          <button className="z-10" onClick={handleStart}><Image src="/purpleheart.svg" width={30} height={30} alt="heart" className="invisible group-hover:visible z-10 hover:scale-105"/></button>
                           </DialogTrigger>
                           <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>Save this Job?</DialogTitle>
-                              <DialogDescription>
-                                You can check your saved jobs in your dashboard. 
-                              </DialogDescription>
-                            </DialogHeader>
-                            <div className="flex justify-end w-full gap-x-5 items-center">
-                              <Button className="z-10 bg-black w-[100px]"  onClick={()=>{handleClick(job._id)}}>Save</Button>
-                              <DialogClose asChild>
-                                <Button type="button" className="w-[100px]" variant="secondary">
-                                  Close
-                                </Button>
-                              </DialogClose>
+                            {(isLoading == 2) ? 
+                            (
+                              <div className="w-full p-5 h-full flex flex-col text-xl font-semibold items-center justify-center gap-x-8">
+                                <div>Job Successfully Saved</div>
+                                <div><Check className="text-green-500 font-semibold text-3xl"/></div>
+                              </div>
+                            )
+                            : (isLoading==3) 
+                            ? (
+                              <div className="w-full p-5 h-full flex flex-col text-xl font-semibold items-center justify-center gap-x-8">
+                                <div>Something Went Wrong!</div>
+                                <div><CircleX className="text-pink-500 font-semibold text-3xl"/></div>
+                              </div>
+                            )
+                            : (
+                              <div>
+                                <DialogHeader>
+                                  <DialogTitle>Save this Job?</DialogTitle>
+                                  <DialogDescription>
+                                    You can check your saved jobs in your dashboard. 
+                                  </DialogDescription>
+                                </DialogHeader>
+                                <div className="flex justify-end w-full gap-x-5 mt-3 items-center">
+                                  <Button className="z-10 bg-black w-[100px]"  onClick={()=>{handleClick(job._id)}}>
+                                    {(isLoading==0)? "Save" : <LoaderCircle className="animate-spin"/>}
+                                  </Button>
+                                  <DialogClose asChild>
+                                    <Button type="button" className="w-[100px]" variant="secondary">
+                                      Close
+                                    </Button>
+                                  </DialogClose>
+                                </div>
                             </div>
+                            )
+                            }
                           </DialogContent>
                         </Dialog>
                       </div>
