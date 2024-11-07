@@ -11,7 +11,7 @@ import Image from "next/image";
 export const countryData = {
   oceania: [
     { value: "australia", label: "Australia", flag: "/australia.png" },
-    { value: "newzealand", label: "New Zealand", flag: "/new zealand.png" },
+    { value: "newzealand", label: "New Zealand", flag: "/newzealand.png" },
   ],
   europe: [
     { value: "austria", label: "Austria", flag: "/austria.png" },
