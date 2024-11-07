@@ -65,7 +65,7 @@ export default function Loading(){
         <div className="items-center grid grid-cols-4 " >
           <div className="text-xl md:text-3xl font-bold pt-5 pb-10 flex mx-5 w-full col-span-1">
               <div className=" p-2 rounded-full border-2 w-full bg-indigo-400 h-max shadow-md mr-10 flex justify-center mt-5 ">
-                <ComboboxForm/>
+                <ComboboxForm defaultValue="canada"/>
               </div>
           </div>
           <div className="w-full flex flex-col justify-start pt-5 pb-10 pl-4 col-span-3">

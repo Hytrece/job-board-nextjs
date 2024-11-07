@@ -152,7 +152,7 @@ export default function LandingPage() {
             ].map((testimonial, index) => (
               <ScrollAnimation key={index} variants={fadeInUpVariants}>
                 <div className="bg-white p-6 rounded-lg shadow-md">
-                  <p className="text-gray-600 mb-4">"{testimonial.text}"</p>
+                  <p className="text-gray-600 mb-4">{testimonial.text}</p>
                   <p className="font-semibold">{testimonial.name}</p>
                   <p className="text-sm text-gray-500">{testimonial.country}</p>
                 </div>
@@ -168,7 +168,7 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-semibold mb-4">About Us</h3>
-              <p className="text-sm">We're passionate about connecting travelers with life-changing working holiday opportunities around the world.</p>
+              <p className="text-sm">Were passionate about connecting travelers with life-changing working holiday opportunities around the world.</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">Popular Destinations</h3>
