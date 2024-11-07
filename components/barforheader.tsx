@@ -10,11 +10,12 @@ import { SignedIn,SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 import { X } from "lucide-react";
 interface Profile{
-  firstName: React.ReactNode | null, 
-  lastName: React.ReactNode | null,
+  firstName: string , 
+  lastName: string,
+  userName:string,
   photo: string,
 }
-export default function BarforHeader({firstName, lastName, photo}: Profile) {
+export default function BarforHeader({firstName, lastName, userName, photo}: Profile) {
   const [banner, setBanner] = useState(true)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
@@ -88,7 +89,7 @@ export default function BarforHeader({firstName, lastName, photo}: Profile) {
               alt="globe"
               className="hover:cursor-pointer"
             />
-            <UserBar firstName={firstName} lastName={lastName} photo={photo} />
+            <UserBar firstName={firstName} lastName={lastName} userName = {userName} photo={photo} />
           </div>
         </div>
       </div>
