@@ -48,13 +48,15 @@ const status = [
 ]
 async function SavedJobPage() {
     const {userId} = auth().protect()
+    console.log(userId)
     await connectToDB();
     let joblist:MidTypePopulate[] = []
     if(!userId){return null;}
     else{
         const temp = await Country.find({})
-        const userJob = await User.findOne({id:userId}).populate('savedJobs.job');        
-        joblist = userJob.savedJobs?? [];
+        const userJob = await User.findOne({clerkId:userId}).populate('savedJobs.job');   
+        console.log(userJob)     
+        joblist = userJob?.savedJobs?? [];
     }
     return(
             <section className="w-full relative min-h-screen overflow-y-auto">

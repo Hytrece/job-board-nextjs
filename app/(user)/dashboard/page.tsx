@@ -10,18 +10,35 @@ import { Separator } from "@/components/ui/separator";
 import { Component } from "@/components/worktracker";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { Toaster } from "sonner";
+import Image from "next/image";
+import { redirect } from 'next/navigation'
 async function Dashboard(){
     const {userId} = auth().protect()
+    console.log(userId);
     await connectToDB();
     let joblist:MidTypePopulate[] = []
-    let jobLength;
+    let jobLength = 0;
+    let name = ""
     if(!userId){return null;}
     else{
         const temp = await Country.find({})
-        const userJob = await User.findOne({id:userId}).populate('savedJobs.job');        
-        joblist = userJob.savedJobs?? [];
+        const userJob = await User.findOne({clerkId:userId}).populate('savedJobs.job');    
+        if(!(userJob)){
+          return(
+            <section className="w-full relative min-h-screen overflow-y-auto">
+              <div className="mt-20 absolute relative left-[10%] ">
+                  <h1 className="font-bold text-3xl">Error!</h1>
+              </div>
+            </section>
+          )
+        }
+        if(!(userJob.username || userJob.firstName)){
+          redirect("/setinfo");
+        }
+        else{
+          name = userJob.username ?? (userJob.firstName + " " + userJob.lastName);
+        }
+        joblist = userJob?.savedJobs?? [];
         jobLength = joblist.length;
     }
     const items = [
@@ -119,7 +136,11 @@ async function Dashboard(){
   return(
           <section className="w-full relative min-h-screen overflow-y-auto">
               <div className="mt-20 absolute relative left-[10%] ">
-                  <h1 className="font-bold text-3xl">Welcome Back!</h1>
+                <div className="flex items-center gap-x-5">
+                  <h1 className="font-bold text-3xl">Welcome Back,</h1>
+                  <h1 className="font-bold text-3xl">{name}</h1>
+                  <h1 className="font-bold text-3xl"><Image src="/wavinghand.png" alt="waving hand" width={50} height={50}/></h1>
+                </div>
                   <BentoGrid className="absolute md:auto-rows-[20rem] w-[65%] mt-7">
                       {items.map((item, i) => (
                           <BentoGridItem

@@ -15,7 +15,7 @@ interface Profile{
   userName:string,
   photo: string,
 }
-export default function BarforHeader({firstName, lastName, userName, photo}: Profile) {
+export default function  BarforHeader({firstName, lastName, userName, photo}: Profile) {
   const [banner, setBanner] = useState(true)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)

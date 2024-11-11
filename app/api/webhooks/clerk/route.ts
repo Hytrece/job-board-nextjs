@@ -63,6 +63,7 @@ export async function POST(req: Request) {
             photo: image_url,
 
         }
+        console.log(user);
         const newUser = await createUser(user);
         if(newUser){
             await clerkClient.users.updateUserMetadata(id,{
@@ -70,8 +71,11 @@ export async function POST(req: Request) {
                     userId:newUser._id,
                 }
             })
+            return NextResponse.json({message:"a new user has been created", user:newUser, olduser:user});
         }
-        return NextResponse.json({message:"a new user has been created", user:newUser});
+        else{
+          return NextResponse.json({message:"new user is null",olduser:user});
+        }
     }
     console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
     console.log('Webhook body:', body)

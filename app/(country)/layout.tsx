@@ -22,19 +22,16 @@ export default async function CountryLayout({
   if(userId){
     console.log(userId);
     const currentUser = await User.findOne({clerkId:userId});
-    firstName = currentUser.firstName ?? "";
-    lastName = currentUser.lastName ?? "";
-    userName = currentUser.username ?? "";
-    photourl = currentUser.photo ?? "";
+    firstName = currentUser?.firstName ?? "";
+    lastName = currentUser?.lastName ?? "";
+    userName = currentUser?.username ?? "";
+    photourl = currentUser?.photo ?? "";
   }
   return (
-    <>
     <Container>
       <BarforHeader firstName = {firstName}  lastName = {lastName} userName = {userName} photo = {photourl} />
       {children}
       <Footer/>
     </Container>
-    <Toaster/>
-    </>
   );
 }
