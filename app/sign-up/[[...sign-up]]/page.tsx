@@ -33,7 +33,7 @@ export default function Page() {
         </div>
     </div>
     <div className="h-screen w-full flex items-center justify-center">
-      <SignUp fallbackRedirectUrl="/dashboard"/>
+      <SignUp fallbackRedirectUrl="/"/>
     </div>
 </main>
   )

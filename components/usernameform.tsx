@@ -44,7 +44,7 @@ export function ProfileForm({userId}:{userId:string}) {
         }
         else{
             console.log("username saved");
-            router.replace("/dashboard");
+            router.replace("/");
         }
     }
     return (

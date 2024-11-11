@@ -8,6 +8,7 @@ import React, {useState, useEffect} from "react";
 import UserBar from "./userbar";
 import { SignedIn,SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
+import { Heart } from 'lucide-react';
 import { X } from "lucide-react";
 interface Profile{
   firstName: string , 
@@ -43,7 +44,7 @@ export default function  BarforHeader({firstName, lastName, userName, photo}: Pr
     setBannerVisible(false)
   }
   return (
-    <div className="relative">
+    <div className="relative w-screen">
       <div className="fixed top-0 left-0 right-0 z-50">
         {BannerVisible && (
           <div className="w-full bg-zinc-800 h-[50px] text-white flex justify-center items-center text-sm gap-x-5 font-medium">
@@ -81,14 +82,8 @@ export default function  BarforHeader({firstName, lastName, userName, photo}: Pr
             </div>
             <Separator orientation="vertical" />
           </div>
-          <div className="flex gap-5 mr-5 justify-between">
-            <Image
-              src="/language.svg"
-              width={30}
-              height={30}
-              alt="globe"
-              className="hover:cursor-pointer"
-            />
+          <div className="flex gap-5 mr-16 justify-between items-center">
+            <Heart className="w-8 h-8"/>
             <UserBar firstName={firstName} lastName={lastName} userName = {userName} photo={photo} />
           </div>
         </div>

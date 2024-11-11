@@ -3,7 +3,6 @@ import User from "@/lib/models/user.model";
 import { MidTypePopulate } from "@/lib/types/jobtype";
 import { auth } from "@clerk/nextjs/server";
 import Country from "@/lib/models/country-schema";
-import { BreadcrumbDemo } from "@/components/breadcrumbs";
 import { Loader,MousePointer2,Speech,PartyPopper } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import Image from "next/image"
@@ -20,6 +19,7 @@ import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import SavedJobCard from "@/components/savedjobcard";
 import DialogUI from "@/components/dialogui";
+import { redirect } from "next/navigation";
 const status = [
     {
         index:0,
@@ -55,14 +55,28 @@ async function SavedJobPage() {
     else{
         const temp = await Country.find({})
         const userJob = await User.findOne({clerkId:userId}).populate('savedJobs.job');   
-        console.log(userJob)     
-        joblist = userJob?.savedJobs?? [];
+        if(!userJob){
+            return(
+                <section className="w-full relative min-h-screen overflow-y-auto">
+                    <div className="mt-36 absolute relative left-[10%]">
+                        <div className="flex mt-10 items-center gap-x-7">
+                            <h1 className="font-bold text-3xl">Error!</h1>
+                        </div>
+                    </div>
+                </section>
+            )
+        }
+        else{
+            if(!(userJob?.username || userJob?.firstName || userJob?.lastName)){
+                redirect("/setinfo");
+            }
+        }
+        joblist = userJob?.savedJobs ?? [];
     }
     return(
-            <section className="w-full relative min-h-screen overflow-y-auto">
-                <div className="mt-16 absolute relative left-[10%]">
-                    <BreadcrumbDemo prev={[{href:"/dashboard",name:"Dashboard"}]} now={{href:"/dashboard/jobs",name:"Saved Jobs"}} classname="mb-6"/>
-                    <div className="flex items-center gap-x-7">
+            <section className="w-full relative min-h-screen overflow-y-auto overflow-x-hidden">
+                <div className="mt-36 absolute relative left-[10%]">
+                    <div className="flex mt-16 items-center gap-x-7">
                         <h1 className="font-bold text-3xl">Saved Jobs</h1>
                         <div className="bg-zinc-200 text-black font-bold text-3xl p-3 rounded-full">{joblist.length}</div>
                     </div>

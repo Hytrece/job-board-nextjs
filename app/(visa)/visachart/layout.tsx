@@ -6,6 +6,7 @@ import User from "@/lib/models/user.model";
 import { Toaster } from "@/components/ui/toaster";
 import { auth } from "@clerk/nextjs/server";
 import BarforHeader from "@/components/barforheader";
+import { redirect } from "next/navigation";
 export default async function CountryLayout({
   children,
 }: {
@@ -23,6 +24,9 @@ export default async function CountryLayout({
   if(userId){
     console.log(userId);
     const currentUser = await User.findOne({clerkId:userId});
+    if(!(currentUser?.username || currentUser?.firstName || currentUser?.lastName)){
+      redirect("/setinfo");
+    }
     firstName = currentUser.firstName ?? "";
     lastName = currentUser.lastName ?? "";
     userName = currentUser.username ?? "";

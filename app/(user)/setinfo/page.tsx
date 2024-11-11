@@ -21,7 +21,7 @@ async function setInfo(){
           )
         }
         if((user?.username || user?.firstName || user?.lastName)){
-          redirect("/dashboard");
+          redirect("/");
         }
     }
     return(
