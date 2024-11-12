@@ -4,6 +4,11 @@ import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import {Webhook} from "svix";
 import { createUser } from "@/actions/user.actions";
+interface response{
+  status:number,
+  error?:any,
+  user?:any
+}
 export async function POST(req: Request) {
     // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
     const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET
@@ -64,17 +69,17 @@ export async function POST(req: Request) {
 
         }
         console.log(user);
-        const newUser = await createUser(user);
-        if(newUser){
+        const response = await createUser(user);
+        if(response.status == 200){
             await clerkClient.users.updateUserMetadata(id,{
                 publicMetadata:{
-                    userId:newUser._id,
+                    userId:response.user._id,
                 }
             })
-            return NextResponse.json({message:"a new user has been created", user:newUser, olduser:user});
+            return NextResponse.json({message:"a new user has been created", user:response.user, olduser:user});
         }
         else{
-          return NextResponse.json({message:"new user is null",olduser:user});
+          return NextResponse.json({message:"new user is null",olduser:user, error:response.error});
         }
     }
     console.log(`Webhook with and ID of ${id} and type of ${eventType}`)

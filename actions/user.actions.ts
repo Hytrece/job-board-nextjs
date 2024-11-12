@@ -4,39 +4,21 @@ import {connectToDB} from "@/lib/db"
 import { revalidatePath } from "next/cache";
 
 export async function createUser(user: any) {
-    console.log("server actions started");
     try {
-        console.log("Connecting to DB...");
         await connectToDB();
-        console.log("Connected to DB.");
-
-        // Log the incoming user object to check its structure
-        console.log("Incoming user data:", user);
-
-        // Attempt to create the user
-        let newUser;
         try {
-            // Creating user
-            newUser = await User.create(user);
-            console.log("User saved successfully:", newUser);
+            const newUser = await User.create(user);
+            if (!newUser || !newUser._id) {
+                return{status:400, error: "User.create returns nothing"};
+            } else {
+                return{status:200, user:newUser}
+            }
         } catch (createError) {
-            // Catch and log any errors that happen during user creation
-            console.log("Error creating user:", createError);
-            return null; // Optionally return null if creation fails
+            return {status:400, error:createError}; 
         }
-
-        // If the creation was successful but the user object is still empty or invalid
-        if (!newUser || !newUser._id) {
-            console.log("User created, but something went wrong:", newUser);
-        } else {
-            console.log("User successfully created:", newUser);
-        }
-
-        return newUser;
 
     } catch (error) {
-        // This will catch any unexpected errors outside of user creation
-        console.log("Unexpected error in createUser function:", error);
+       return {status:400, error:error}
     }
 }
 
