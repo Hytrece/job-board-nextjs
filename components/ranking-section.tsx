@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const topDestinations = [
   {
@@ -13,19 +14,19 @@ const topDestinations = [
   {
     "city": "Vancouver",
     "country": "Canada",
-    "image": "/canada/bg.jpg",
+    "image": "/toronto-landing.jpg",
     "description": "A perfect blend of urban life and nature, with a booming tech scene and stunning landscapes."
   },
   {
     "city": "Dublin",
     "country": "Ireland",
-    "image": "/ireland/bg.jpg",
+    "image": "/dublin-landing.jpg",
     "description": "Rich history meets modern innovation in this friendly, pub-filled city with a strong job market."
   },
   {
     "city": "Tokyo",
     "country": "Japan",
-    "image": "/japan/bg.jpg",
+    "image": "/tokyo-landing.jpg",
     "description": "Futuristic technology alongside ancient traditions in the world's largest metropolitan area."
   },
   {
@@ -37,7 +38,7 @@ const topDestinations = [
   {
     "city": "Barcelona",
     "country": "Spain",
-    "image": "/spain/bg.jpg",
+    "image": "/barcelona-landing.jpg",
     "description": "A captivating city known for its art, architecture, and Mediterranean beaches, offering a lively atmosphere."
   },
   {
@@ -49,7 +50,7 @@ const topDestinations = [
   {
     "city": "Lisbon",
     "country": "Portugal",
-    "image": "/portugal/bg.jpg",
+    "image": "/lisbon-landing.jpg",
     "description": "A sun-kissed city with rich history, vibrant neighborhoods, and stunning views over the Atlantic Ocean."
   }
 ]
@@ -59,10 +60,10 @@ export default function RankingSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-16 bg-gradient-to-b from-zinc-800 to-zinc-700">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Top Working Holiday Destinations</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <h2 className="text-3xl font-bold text-center text-white mb-12">Top Working Holiday Destinations</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
           {topDestinations.map((destination, index) => (
             <motion.div
               key={destination.city}
@@ -73,6 +74,7 @@ export default function RankingSection() {
               onHoverStart={() => setHoveredIndex(index)}
               onHoverEnd={() => setHoveredIndex(null)}
             >
+              <Link href={`/${destination.country.charAt(0).toLowerCase()+destination.country.substring(1)}`}>
               <div className="relative h-64 w-full">
                 <Image
                   src={destination.image}
@@ -102,6 +104,7 @@ export default function RankingSection() {
               >
                 <ChevronRight className="w-6 h-6" />
               </motion.div>
+              </Link>
             </motion.div>
           ))}
         </div>

@@ -22,29 +22,12 @@ interface Profile{
 }
 const UserBar = ({firstName,lastName,userName, photo}:Profile) => {
     const name = (firstName || lastName) ? `${firstName} ${lastName}` : userName
-    const elements = [ 
-      {
-        title:"Favorites",
-        icon:"/heart.svg",
-        link:"/favorites",
-      },
-      {
-        title:"Featured Jobs - for you",
-        icon:"/bag.svg",
-        link:"/jobs"
-      },
-      {
-        title:"Plan",
-        icon:"/layer.svg",
-        link:"/subscription"
-      },
-    ]
     return (
       <div>
         <SignedOut>
-          <Link href = "/sign-up" className="w-full h-full">
+          <Link href = "/sign-in" className="w-full h-full">
             <div className=" bg-red-500 bg-gradient-to-r px-5 py-3 flex justify-center gap-x-3 items-center text-white from-indigo-500 to-purple-500 w-full h-full rounded-lg">
-              <h1 className="text-semibold">Sign Up</h1>
+              <h1 className="text-semibold">Login</h1>
               <User/>
             </div>
           </Link>
@@ -63,7 +46,9 @@ const UserBar = ({firstName,lastName,userName, photo}:Profile) => {
             <DropdownMenuContent>
               <DropdownMenuLabel>{name}</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>My Jobs</DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/MyJobs">My Jobs</Link>
+              </DropdownMenuItem>
               <DropdownMenuItem><SignOutButton/></DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

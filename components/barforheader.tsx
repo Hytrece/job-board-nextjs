@@ -67,7 +67,7 @@ export default function  BarforHeader({firstName, lastName, userName, photo}: Pr
             top: BannerVisible ? '50px' : '0',
           }}
         >
-          <h1 className="font-bold text-gradient ml-16 text-3xl">VIKB.IO</h1>
+          <Link href="/" className="font-bold text-gradient ml-16 text-3xl">VIKB.IO</Link>
           <div className="flex flex-nowrap text-center items-center w-max h-max gap-x-12 text-sm md:text-md p-1 invisible sm:visible font-semibold">
             <div className="hover:cursor-pointer border-b-2 border-white h-full py-6 hover:border-indigo-600">
               <DrawDown />
@@ -82,8 +82,8 @@ export default function  BarforHeader({firstName, lastName, userName, photo}: Pr
             </div>
             <Separator orientation="vertical" />
           </div>
-          <div className="flex gap-5 mr-16 justify-between items-center">
-            <Heart className="w-8 h-8"/>
+          <div className="flex gap-5 mr-8 justify-between items-center">
+            <Link href="/MyJobs" className="hover:cursor-pointer animate duration-300 hover:scale-105"><Heart className="w-8 h-8"/></Link>
             <UserBar firstName={firstName} lastName={lastName} userName = {userName} photo={photo} />
           </div>
         </div>

@@ -3,7 +3,7 @@ import User from "@/lib/models/user.model";
 import { MidTypePopulate } from "@/lib/types/jobtype";
 import { auth } from "@clerk/nextjs/server";
 import Country from "@/lib/models/country-schema";
-import { Loader,MousePointer2,Speech,PartyPopper } from 'lucide-react';
+import { Loader,MousePointer2,Speech,PartyPopper,Plus } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import Image from "next/image"
 import {
@@ -16,10 +16,11 @@ import {
     DialogClose
   } from "@/components/ui/dialog"
 import { MoveRight } from "lucide-react";
-import Link from "next/link";
 import SavedJobCard from "@/components/savedjobcard";
 import DialogUI from "@/components/dialogui";
 import { redirect } from "next/navigation";
+import Link from "next/link";
+import { revalidatePath } from "next/cache";
 const status = [
     {
         index:0,
@@ -47,6 +48,7 @@ const status = [
     },
 ]
 async function SavedJobPage() {
+    revalidatePath("/MyJobs");
     const {userId} = auth().protect()
     console.log(userId)
     await connectToDB();
@@ -58,7 +60,7 @@ async function SavedJobPage() {
         if(!userJob){
             return(
                 <section className="w-full relative min-h-screen overflow-y-auto">
-                    <div className="mt-36 absolute relative left-[10%]">
+                    <div className="mt-52 absolute relative left-[10%]">
                         <div className="flex mt-10 items-center gap-x-7">
                             <h1 className="font-bold text-3xl">Error!</h1>
                         </div>
@@ -73,14 +75,42 @@ async function SavedJobPage() {
         }
         joblist = userJob?.savedJobs ?? [];
     }
+    if(joblist.length == 0){
+        return(
+            <section className="w-full h-screen relative overflow-y-auto overflow-x-hidden">
+            <div className="mt-40 absolute relative left-[10%]">
+                <h2 className="font-bold text-xl text-indigo-600">My Jobs</h2>
+                <div className="flex mt-6 items-center gap-x-7">
+                    <h1 className="font-bold text-3xl">Saved Jobs</h1>
+                    <div className="bg-zinc-200 text-black font-bold text-3xl p-3 rounded-full">{joblist.length}</div>
+                </div>
+                    <div className="mt-14">
+                        <Link href={{pathname:`/jobs`, query:{country:"canada"}}} className="flex gap-x-5 group hover:cursor-pointer items-center">
+                            <h1 className="font-bold text-2xl">Add Jobs</h1>
+                            <div className="w-10 h-10 rounded-full bg-indigo-200 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white text-indigo-500"><Plus/></div>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+        )
+    }
+    else{
     return(
             <section className="w-full relative min-h-screen overflow-y-auto overflow-x-hidden">
-                <div className="mt-36 absolute relative left-[10%]">
-                    <div className="flex mt-16 items-center gap-x-7">
+                <div className="mt-40 absolute relative left-[10%]">
+                    <h2 className="font-bold text-xl text-indigo-600">My Jobs</h2>
+                    <div className="flex mt-6 items-center gap-x-7">
                         <h1 className="font-bold text-3xl">Saved Jobs</h1>
                         <div className="bg-zinc-200 text-black font-bold text-3xl p-3 rounded-full">{joblist.length}</div>
                     </div>
-                    {joblist.length == 0 ? (<div className="mt-10">Add Jobs</div>):
+                    {joblist.length == 0 ? (
+                        <div className="mt-14">
+                            <div className="flex gap-x-5 group hover:cursor-pointer items-center">
+                                <h1 className="font-bold text-2xl">Add Jobs</h1>
+                                <div className="w-10 h-10 rounded-full bg-indigo-200 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white text-indigo-500"><Plus/></div>
+                            </div>
+                        </div>
+                    ):
                         <ul className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-4 gap-x-5 w-max">
                             {joblist.map((elem,index)=>(
                                 <div key={index}>
@@ -127,5 +157,6 @@ async function SavedJobPage() {
                 </div>
             </section>
     )
+}
 }
 export default SavedJobPage;

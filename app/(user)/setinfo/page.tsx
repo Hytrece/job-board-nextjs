@@ -13,8 +13,8 @@ async function setInfo(){
         const user : UserType | null= await User.findOne({clerkId:userId})   
         if(!user){
           return(
-            <section className="w-full relative min-h-screen overflow-y-auto">
-              <div className="mt-20 absolute relative left-[10%] ">
+            <section className="w-full relative min-h-screen overflow-x-hidden overflow-y-auto">
+              <div className="mt-52 absolute relative left-[10%] ">
                   <h1 className="font-bold text-3xl">Error!</h1>
               </div>
             </section>
@@ -25,8 +25,8 @@ async function setInfo(){
         }
     }
     return(
-        <section className="w-full relative min-h-screen overflow-y-auto">
-        <div className="mt-20 absolute relative left-[10%] ">
+        <section className="w-full relative min-h-screen overflow-x-hidden overflow-y-auto">
+        <div className="mt-52 absolute relative left-[10%] ">
             <h1 className="font-bold text-3xl">Type in your username</h1>
             <div className="mt-7 w-[65%]"><ProfileForm userId={userId}/></div>
         </div>

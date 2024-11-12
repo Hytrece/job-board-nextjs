@@ -64,7 +64,7 @@ export default function LandingPage() {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-gradient-to-b from-gray-100 to-white">
       {/* Hero Section with Diagonal Split */}
-      <div className="relative h-screen overflow-hidden">
+      <div className="relative h-screen overflow-hidden bg-zinc-800">
         <Bar/>
         <div 
           className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
