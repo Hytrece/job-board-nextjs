@@ -127,8 +127,8 @@ export default function LandingPage() {
 
       <RankingSection />
 
-      {/* Features Section */}
-      <FeaturesSectionDemo/>
+      {/* Features Section <FeaturesSectionDemo/>
+*/}
 
       {/* Benefits Section with Parallax */}
       <BenefitSectionDemo/>

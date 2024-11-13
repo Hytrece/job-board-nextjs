@@ -377,30 +377,30 @@ export const stepsData = [
     {
         country: "ireland",
         stepList: [
-            {
-                title: 'Submit Application Form via Email',
-                description: 'Submit an application form via email during the application period (October 16th to October 18th, 3 days Korean time).',
-                image: '/ireland/submit-application-form.jpg'
+            { 
+              title: "Review Eligibility and Application Period", 
+              description: "Check the eligibility criteria and application period for the Working Holiday Programme", 
+              image: "/ireland/check-eligibility.jpg" 
             },
-            {
-                title: 'Random Draw',
-                description: "A random draw will be held to select applicants, and the results will be announced on the Embassy's website.",
-                image: '/ireland/random-draw.jpg'
+            { 
+              title: "Submit Application Form via Email", 
+              description: "Submit the application form via email during the application period", 
+              image: "/ireland/apply.jpg" 
             },
-            {
-                title: 'Submit Additional Documents for Review',
-                description: 'Selected applicants will be required to submit additional documents for review.',
-                image: '/ireland/submit-additional-documents.jpg'
+            { 
+              title: "Participate in Random Draw", 
+              description: "Wait for the random draw to select applicants, and check the results on the Embassy's website", 
+              image: "/ireland/find.jpg" 
             },
-            {
-                title: 'Wait for Visa Approval',
-                description: 'Visa approval is subject to meeting the eligibility criteria and submitting the required documents.',
-                image: '/ireland/wait-visa-approval.jpg'
+            { 
+              title: "Submit Additional Documents for Review", 
+              description: "If selected, submit additional documents, including a completed application form, a copy of your passport, and proof of sufficient funds", 
+              image: "/ireland/documents.jpg" 
             },
-            {
-                title: 'Prepare Required Documents',
-                description: 'Applicants must submit the required documents, including a completed application form, a copy of their passport, and proof of sufficient funds.',
-                image: '/ireland/prepare-required-documents.jpg'
+            { 
+              title: "Wait for Visa Approval", 
+              description: "Wait for visa approval, which is subject to meeting the eligibility criteria and submitting the required documents", 
+              image:"/ireland/wait.jpg" 
             }
         ]
     },

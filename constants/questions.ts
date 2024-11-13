@@ -304,28 +304,33 @@ export const questions = [
     },
     {
         country:"ireland",
-        qlist:[
-            {
-              question: 'What is the primary language spoken in Ireland?',
-              answer: 'English is the primary language spoken in Ireland, and participants are expected to have a good understanding of English.'
-            },
-            {
-              question: 'Are there any programme fees associated with the Working Holiday Programme?',
-              answer: 'There are no programme fees associated with the Working Holiday Programme.'
-            },
-            {
-              question: 'What is the application period for the 2024 Working Holiday Programme?',
-              answer: 'The application period for the 2024 Working Holiday Programme is from October 16th (Wednesday) 00:00 to October 18th (Friday) 24:00 (3 days) Korean time.'
-            },
-            {
-              question: 'Do participants need to have health insurance for the Working Holiday Programme?',
-              answer: 'Participants are required to have health insurance that covers them for the duration of their stay in Ireland.'
-            },
-            {
-              question: 'How long does it take to process the application for the Working Holiday Programme?',
-              answer: 'The processing time for the application is approximately 2-3 months from the date of submission.'
-            }
-          ]
+        qlist: [
+          {
+            question: "What is the duration of the Working Holiday Programme in Ireland?",
+            answer: "The Working Holiday Programme allows participants to work and live in Ireland for up to 12 months, with the opportunity to extend their stay for an additional 12 months."
+          },
+          {
+            question: "Do participants need to pay a programme fee for the Working Holiday Programme in Ireland?",
+            answer: "There are no programme fees associated with the Working Holiday Programme."
+          },
+          {
+            question: "What is the primary language spoken in Ireland for the Working Holiday Programme?",
+            answer: "English is the primary language spoken in Ireland, and participants are expected to have a good understanding of English."
+          },
+          {
+            question: "Are participants allowed to work in Ireland during the Working Holiday Programme?",
+            answer: "Participants are allowed to work in Ireland, but they must comply with Irish employment laws and regulations."
+          },
+          {
+            question: "Who is responsible for finding accommodation in Ireland for the Working Holiday Programme?",
+            answer: "Participants are responsible for finding their own accommodation in Ireland."
+          },
+          {
+            question: "What is the requirement for health insurance for the Working Holiday Programme in Ireland?",
+            answer: "Participants are required to have health insurance that covers them for the duration of their stay in Ireland."
+          }
+        ]
+        
     },
     {
         country:"denmark",

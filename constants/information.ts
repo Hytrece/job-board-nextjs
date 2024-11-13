@@ -20,6 +20,10 @@ export const information = [
         info: `Germany attracts South Korean participants with its strong economy and rich cultural heritage. The IEC program enables young adults to gain valuable work experience across various industries while improving their German language skills. Participants can explore historic sites and vibrant cities like Berlin and Munich, enhancing their cultural understanding. Germany’s commitment to safety and high quality of life ensures a comfortable experience for all.`
     },
     {
+        country:"ireland",
+        info:"The Working Holiday Visa for South Koreans allows young people (18-30 years old) to live and work in Ireland for up to 12 months. This visa provides an opportunity to travel, experience Irish culture, and gain work experience while supporting oneself financially through part-time employment. Applicants must meet specific health, financial, and documentation requirements to qualify for the visa."
+    },
+    {
         country: "france",
         info: `France is a sought-after destination for South Korean participants, renowned for its rich culture, history, and cuisine. The IEC program allows young adults to gain work experience while immersing themselves in the French lifestyle. Participants can improve their language skills and explore iconic landmarks like the Eiffel Tower and the Louvre Museum. With an emphasis on safety and quality of life, France provides a unique and enriching experience for international visitors.`
     },

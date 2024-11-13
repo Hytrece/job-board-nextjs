@@ -1080,29 +1080,8 @@ export const checks = [
     {
         country: "ireland",
         listA: [
-            {
-              title: "Age Limit",
-              description: "The age limit for the Working Holiday Programme in Ireland has been increased from 30 to 34 years old."
-            },
-            {
-              title: "Visa Requirements",
-              description: "A visa is required for the Working Holiday Programme, and applicants must meet the eligibility criteria and submit the required documents to be considered."
-            },
-            {
-              title: "Language Proficiency",
-              description: "English is the primary language spoken in Ireland, and participants are expected to have a good understanding of English."
-            },
-            {
-              title: "Health Insurance",
-              description: "Participants are required to have health insurance that covers them for the duration of their stay in Ireland."
-            },
-            {
-              title: "Sufficient Funds",
-              description: "Applicants must submit proof of sufficient funds as part of the required documents."
-            },
-            {
-              title: "Quota",
-              description: "The quota for the Working Holiday Programme in Ireland has been increased from 600 to 800 participants."
+            { title: 'Required Documents', 
+            description: 'Applicants must submit the required documents, including a completed application form, a copy of their passport, and proof of sufficient funds.' 
             }
           ],
         listB: [

@@ -1,6 +1,6 @@
 "use client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { FileText, Building ,Languages,BriefcaseBusiness } from 'lucide-react';
+import { IconSquareCheckFilled ,IconScript,IconBriefcase2Filled,IconAffiliateFilled } from '@tabler/icons-react';
 import {useState,useRef,useEffect} from "react"
 import { checks } from "@/constants/checklist";
 const CheckList = ({country}:{country:string}) => {
@@ -38,10 +38,10 @@ const CheckList = ({country}:{country:string}) => {
         <p className="mt-5 font-md leading-loose">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, cum?</p>
         <Tabs defaultValue="a" className="mt-5">
         <TabsList>
-            <TabsTrigger value="a"> <div className="flex items-center gap-x-3"><FileText/>Eligibility</div></TabsTrigger>
-            <TabsTrigger value="b"> <div className="flex items-center gap-x-3"><Building/> Documents</div></TabsTrigger>
-            <TabsTrigger value="c"><div className="flex items-center gap-x-3"><BriefcaseBusiness/> Employment</div></TabsTrigger>
-            <TabsTrigger value="d"> <div className="flex items-center gap-x-3"><Languages/>Living </div></TabsTrigger>
+            <TabsTrigger value="a"> <div className="flex items-center gap-x-3"><IconSquareCheckFilled/>Eligibility</div></TabsTrigger>
+            <TabsTrigger value="b"> <div className="flex items-center gap-x-3"><IconScript/> Documents</div></TabsTrigger>
+            <TabsTrigger value="c"><div className="flex items-center gap-x-3"><IconBriefcase2Filled/> Employment</div></TabsTrigger>
+            <TabsTrigger value="d"> <div className="flex items-center gap-x-3"><IconAffiliateFilled/>Living </div></TabsTrigger>
         </TabsList>
         <TabsContent value="a" className="mt-7 h-max">
             <ul className="grid gap-y-1 grid-cols-1 w-full py-4 rounded-xl">

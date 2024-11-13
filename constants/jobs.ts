@@ -143,8 +143,8 @@ export const workingHolidayJobs = [
       country: "ireland",
       jobList: [
           {
-              name: "Hospitality",
-              src: "/ireland/hospitality.jpg",
+              name: "Cafe & Restaurant",
+              src: "/ireland/cafe.jpg",
               avg: "1100000"
           },
           {
@@ -153,8 +153,8 @@ export const workingHolidayJobs = [
               avg: "1000000"
           },
           {
-              name: "Construction",
-              src: "/ireland/construction.jpg",
+              name: "Labour",
+              src: "/ireland/labour.jpg",
               avg: "1400000"
           },
           {
@@ -168,8 +168,8 @@ export const workingHolidayJobs = [
               avg: "1300000"
           },
           {
-              name: "Healthcare",
-              src: "/ireland/healthcare.jpg",
+              name: "bar",
+              src: "/ireland/bar.jpg",
               avg: "1200000"
           }
       ]

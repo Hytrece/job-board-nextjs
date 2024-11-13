@@ -22,7 +22,7 @@ const Bar = () => {
           </div>
           <Separator orientation="vertical" />
           <SignedOut>
-            <Link href="/MyJobs" className="p-1 relative">
+            <Link href="/sign-in" className="p-1 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600" />
                   <div className="px-8 py-2 flex items-center gap-x-4 relative group transition duration-200 text-white bg-transparent">
                       <h1 className="">Login</h1>

@@ -77,7 +77,7 @@ async function SavedJobPage() {
     }
     if(joblist.length == 0){
         return(
-            <section className="w-full h-screen relative overflow-y-auto overflow-x-hidden">
+            <section className="w-full bg-zinc-100 h-screen relative overflow-y-auto overflow-x-hidden">
             <div className="mt-40 absolute relative left-[10%]">
                 <h2 className="font-bold text-xl text-indigo-600">My Jobs</h2>
                 <div className="flex mt-6 items-center gap-x-7">
@@ -96,7 +96,7 @@ async function SavedJobPage() {
     }
     else{
     return(
-            <section className="w-full relative min-h-screen overflow-y-auto overflow-x-hidden">
+            <section className="w-full bg-zinc-100 relative min-h-screen overflow-y-auto overflow-x-hidden">
                 <div className="mt-40 absolute relative left-[10%]">
                     <h2 className="font-bold text-xl text-indigo-600">My Jobs</h2>
                     <div className="flex mt-6 items-center gap-x-7">
@@ -115,7 +115,7 @@ async function SavedJobPage() {
                             {joblist.map((elem,index)=>(
                                 <div key={index}>
                                     <div className="flex group/total">
-                                        <div className="w-[300px] z-20 h-[380px] group relative hover:cursor-pointer mb-5 bg-white border-2 border-zinc-200 ">
+                                        <div className="w-[300px] z-20 h-[380px] group relative hover:cursor-pointer mb-5 bg-white rounded-md border-2 border-zinc-200 ">
                                             <Dialog>
                                                 <DialogTrigger>
                                                 <div className="w-[300px] h-full z-30 flex flex-col items-center gap-y-3 pt-5 pb-5 ">
