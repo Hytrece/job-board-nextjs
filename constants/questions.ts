@@ -224,7 +224,7 @@ export const questions = [
           ]
     },
     {
-        country:"united kingdom",
+        country:"uk",
         qlist:[
             {
               question: "What is the required savings for a working holiday in the UK?",
@@ -397,5 +397,122 @@ export const questions = [
           answer: 'The visa entitles the holder to undertake paid employment on a secondary basis, without prior approval from the French Administration.'
       }
         ]
-  }
+  },
+  {
+    country:"czeckia",
+    qlist:[
+      {
+        question: 'What is the purpose of stay that should be selected in the application form for a working holiday visa in Czechia?',
+        answer: 'Other (Ostatní/Other) and specify Working Holiday in the content field.'
+      },
+      {
+        question: 'Is it necessary to have a work permit to work in Czechia on a working holiday visa?',
+        answer: 'No, it is not necessary to have a work permit to work in Czechia on a working holiday visa for up to 1 year.'
+      },
+      {
+        question: 'What is the required document to prove the purpose of stay for a working holiday visa application in Czechia?',
+        answer: 'A statement of purpose (진술서) is required to prove the purpose of stay.'
+      },
+      {
+        question: 'What is the requirement for health insurance for a working holiday visa application in Czechia?',
+        answer: 'A proof of health insurance (의료 보험 가입 증명서) is required for a working holiday visa application.'
+      }
+    ]
+},
+{
+  country:"hungary",
+  qlist:[
+    {
+      question: 'What is the primary intention of a national of the Republic of Korea applying for a working holiday visa in Hungary?',
+      answer: 'The primary intention is to holiday in Hungary, with employment being incidental rather than the primary reason for the visit.'
+    },
+    {
+      question: 'Does a national of the Republic of Korea need to have a passport valid for at least the validity of the temporary residence permit to apply for a working holiday visa in Hungary?',
+      answer: 'Yes, the applicant must possess a passport issued by the Republic of Korea valid for at least the validity of the temporary residence permit.'
+    },
+    {
+      question: 'Can a national of the Republic of Korea be accompanied by dependants when applying for a working holiday visa in Hungary?',
+      answer: 'No, the applicant must not be accompanied by dependants.'
+    },
+    {
+      question: 'How long is a temporary residence permit valid for a national of the Republic of Korea in Hungary?',
+      answer: 'A temporary residence permit is valid for multiple entries and valid in Hungary for a period of one (1) year from the date of issuance.'
+    }
+  ]
+},
+{
+  country:"sweden",
+  qlist:[
+    {
+      question: 'What is the age range for young people to be eligible for a working holiday in Sweden?',
+      answer: '18 to 30 years old'
+    },
+    {
+      question: 'How long can a working holiday permit be granted for in Sweden?',
+      answer: 'One year, but never for longer than the passport is valid'
+    },
+    {
+      question: 'What is the minimum amount of money required to provide for oneself initially in Sweden for a working holiday?',
+      answer: 'At least SEK 15,000'
+    },
+    {
+      question: 'Can a working holiday permit be extended in Sweden?',
+      answer: 'No, a working holiday permit cannot be extended'
+    },
+    {
+      question: 'What is the application fee for a working holiday visa in Sweden?',
+      answer: 'SEK 1,500'
+    }
+  ]
+},
+{
+  country:"spain",
+  qlist:[
+    {
+      question: 'What are the age requirements for the Spanish Working Holiday Program?',
+      answer: 'The applicant must be between 18 and 30 years old (based on the passport birthdate).'
+    },
+    {
+      question: 'Can I participate in the Spanish Working Holiday Program if I have participated before?',
+      answer: 'No, the applicant cannot have participated in the Spanish Working Holiday Program before.'
+    },
+    {
+      question: 'Can I be accompanied by dependents during the Spanish Working Holiday Program?',
+      answer: 'No, the applicant cannot be accompanied by dependents.'
+    },
+    {
+      question: "What is the maximum duration of stay for the 'Residence – Temporary work' option in Spain?",
+      answer: 'Up to 9 months within a 1-year period.'
+    },
+    {
+      question: 'Do I need to have a job offer to participate in the Spanish Working Holiday Program?',
+      answer: 'Not necessarily, there are options available for individuals who want to work as an employee, start their own business, or participate in temporary work.'
+    }
+  ]
+},
+{
+  country:"taiwan",
+  qlist:[
+    {
+      question: 'What is the working holiday program in Taiwan?',
+      answer: 'The working holiday program is a program that allows foreign nationals to work in Taiwan for a short period of time while taking a holiday.'
+    },
+    {
+      question: 'How do I apply for a working holiday visa in Taiwan?',
+      answer: 'Applicants must submit their application in person at a Taiwanese embassy or consulate.'
+    },
+    {
+      question: 'What are the restrictions on the type of work I can do in Taiwan on a working holiday?',
+      answer: 'There are certain restrictions on the type of work that working holidaymakers can do in Taiwan, including not being allowed to work in places of ill repute and not engaging in full-time employment.'
+    },
+    {
+      question: "Do I need to participate in Taiwan's labor insurance scheme as a working holidaymaker?",
+      answer: "Yes, working holidaymakers are required to participate in Taiwan's labor insurance scheme."
+    },
+    {
+      question: 'Do I need to have health insurance to work in Taiwan on a working holiday?',
+      answer: 'Yes, working holidaymakers are required to have health insurance that covers them for the duration of their stay in Taiwan.'
+    }
+  ]
+}
 ]

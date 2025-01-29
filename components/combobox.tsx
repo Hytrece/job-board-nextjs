@@ -78,88 +78,88 @@ export default function ComboboxForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full flex justify-center gap-x-3">
-        <FormField
-          control={form.control}
-          name="language"
-          render={({ field }) => (
-            <FormItem className="flex flex-col">
-              <Popover>
-                <PopoverTrigger asChild>
-                  <FormControl>
-                    <Button
-                      variant="outline"
-                      role="combobox"
-                      className={cn(
-                        "w-[350px] justify-between transition duration-75 hover:border-2 hover:border-primary",
-                        !field.value && "text-muted-foreground",
-                      )}
-                    >
-                      {field.value ? (
-                        <div className="flex gap-x-3">
-                          <div>
-                            {
-                              countries.find(
-                                (country) => country.value === field.value,
-                              )?.label
-                            }
-                          </div>
-                          <Image
-                            src={`/${
-                              countries.find(
-                                (country) => country.value === field.value,
-                              )?.value
-                            }.png`}
-                            width={25}
-                            height={15}
-                            alt="flag"
-                          />
-                        </div>
-                      ) : (
-                        "Select Country"
-                      )}
-                      <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                    </Button>
-                  </FormControl>
-                </PopoverTrigger>
-                <PopoverContent className="w-[350px] p-0">
-                  <Command>
-                    <CommandInput placeholder="Search Country..." />
-                    <CommandEmpty>No Country found.</CommandEmpty>
-                    <CommandGroup>
-                      <CommandList>
-                        {countries.map((country) => (
-                          <CommandItem
-                            value={country.label}
-                            key={country.value}
-                            onSelect={() => {
-                              form.setValue("language", country.value);
-                            }}
-                          >
-                            <Check
-                              className={cn(
-                                "mr-2 h-4 w-4",
-                                country.value === field.value
-                                  ? "opacity-100"
-                                  : "opacity-0",
-                              )}
-                            />
-                            {country.label}
-                          </CommandItem>
-                        ))}
-                      </CommandList>
-                    </CommandGroup>
-                  </Command>
-                </PopoverContent>
-              </Popover>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit" className="w-[100px]">
-          Explore
-        </Button>
-      </form>
-    </Form>
+  <form onSubmit={form.handleSubmit(onSubmit)} className="w-full flex justify-center gap-x-3">
+    <FormField
+      control={form.control}
+      name="language"
+      render={({ field }) => (
+        <FormItem className="flex flex-col flex-1 max-w-[300px]">
+          <Popover>
+            <PopoverTrigger asChild>
+              <FormControl>
+                <Button
+                  variant="outline"
+                  role="combobox"
+                  className={cn(
+                    "w-full justify-between h-14 transition duration-75 hover:border-2 hover:border-primary",
+                    !field.value && "text-muted-foreground"
+                  )}
+                >
+                  {field.value ? (
+                    <div className="flex gap-x-3 items-center">
+                      <div>
+                        {
+                          countries.find(
+                            (country) => country.value === field.value
+                          )?.label
+                        }
+                      </div>
+                      <Image
+                        src={`/${
+                          countries.find(
+                            (country) => country.value === field.value
+                          )?.value
+                        }.png`}
+                        width={25}
+                        height={15}
+                        alt="flag"
+                      />
+                    </div>
+                  ) : (
+                    "Select Country"
+                  )}
+                  <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                </Button>
+              </FormControl>
+            </PopoverTrigger>
+            <PopoverContent className="w-[300px] p-0">
+              <Command>
+                <CommandInput placeholder="Search Country..." />
+                <CommandEmpty>No Country found.</CommandEmpty>
+                <CommandGroup>
+                  <CommandList>
+                    {countries.map((country) => (
+                      <CommandItem
+                        value={country.label}
+                        key={country.value}
+                        onSelect={() => {
+                          form.setValue("language", country.value);
+                        }}
+                      >
+                        <Check
+                          className={cn(
+                            "mr-2 h-4 w-4",
+                            country.value === field.value
+                              ? "opacity-100"
+                              : "opacity-0"
+                          )}
+                        />
+                        {country.label}
+                      </CommandItem>
+                    ))}
+                  </CommandList>
+                </CommandGroup>
+              </Command>
+            </PopoverContent>
+          </Popover>
+          <FormMessage />
+        </FormItem>
+      )}
+    />
+    <Button type="submit" className="w-[100px] h-14">
+      Explore
+    </Button>
+  </form>
+</Form>
   );
 }

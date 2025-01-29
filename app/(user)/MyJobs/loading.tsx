@@ -3,7 +3,7 @@ import {LoaderCircle,Ellipsis } from "lucide-react";
 async function Loading() {
     const {userId} = auth().protect()
     return(
-        <section className="w-full relative min-h-screen relative overflow-x-hidden overflow-y-auto opacity-75">
+        <section className="w-full relative bg-zinc-100 min-h-screen relative overflow-x-hidden overflow-y-auto opacity-75">
            <div className="mt-40 absolute relative left-[10%]">
                     <h2 className="font-bold text-xl text-indigo-600">My Jobs</h2>
                     <div className="flex mt-6 items-center gap-x-7">

@@ -1,22 +1,27 @@
-"use client"
+'use client'
+
+import React, { useState, useEffect } from 'react';
 import DrawDown from "./drawdown";
-import { Separator } from "./ui/separator";
-import LoginButton from "./ui/loginbutton";
-import Image from "next/image";
-import {cn} from "@/lib/utils";
-import React, {useState, useEffect} from "react";
-import UserBar from "./userbar";
-import { SignedIn,SignedOut } from "@clerk/nextjs";
+import { Heart, X } from 'lucide-react';
 import Link from "next/link";
-import { Heart } from 'lucide-react';
-import { X } from "lucide-react";
-interface Profile{
-  firstName: string , 
-  lastName: string,
-  userName:string,
-  photo: string,
+import UserBar from "./userbar";
+import {cn} from "@/lib/utils";
+
+interface Profile {
+  firstName: string;
+  lastName: string;
+  userName: string;
+  photo: string;
+  enableScrollAnimation?: boolean;
 }
-export default function  BarforHeader({firstName, lastName, userName, photo}: Profile) {
+
+export default function BarforHeader({ 
+  firstName, 
+  lastName, 
+  userName, 
+  photo, 
+  enableScrollAnimation = true 
+}: Profile) {
   const [banner, setBanner] = useState(true)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
@@ -24,9 +29,11 @@ export default function  BarforHeader({firstName, lastName, userName, photo}: Pr
   const [BannerVisible, setBannerVisible] = useState(true)
 
   useEffect(() => {
+    if (!enableScrollAnimation) return;
+
     const handleScroll = () => {
       const currentScrollPos = window.scrollY
-      const isBannerVisible = currentScrollPos < 50 // Adjust this value based on your banner height
+      const isBannerVisible = currentScrollPos < 50
       const isNavbarVisible = prevScrollPos > currentScrollPos
 
       setBannerVisible(banner && isBannerVisible)
@@ -37,15 +44,16 @@ export default function  BarforHeader({firstName, lastName, userName, photo}: Pr
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [prevScrollPos])
+  }, [prevScrollPos, banner, enableScrollAnimation])
 
   function handleClick() {
     setBanner(false)
     setBannerVisible(false)
   }
+
   return (
-    <div className="relative w-screen">
-      <div className="fixed top-0 left-0 right-0 z-50">
+    <div className={enableScrollAnimation ? "relative w-screen" : "w-screen"}>
+      <div className={enableScrollAnimation ? "fixed top-0 left-0 right-0 z-50" : ""}>
         {BannerVisible && (
           <div className="w-full bg-zinc-800 h-[50px] text-white flex justify-center items-center text-sm gap-x-5 font-medium">
             <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -58,36 +66,43 @@ export default function  BarforHeader({firstName, lastName, userName, photo}: Pr
           </div>
         )}
         <div 
-          className={`w-full z-40 flex shadow-md items-center shadow-b bg-white justify-between ${
-            hasScrolled ? 'transition-transform duration-300 ease-in-out' : ''
-          } ${
-            visible ? "translate-y-0" : "-translate-y-full"
-          }`}
+          className={cn(
+            "w-full z-40 flex items-center bg-white py-4 justify-between",
+            enableScrollAnimation && "shadow-md shadow-b",
+            enableScrollAnimation && hasScrolled && "transition-transform duration-300 ease-in-out",
+            enableScrollAnimation && (visible ? "translate-y-0" : "-translate-y-full")
+          )}
           style={{
-            top: BannerVisible ? '50px' : '0',
+            top: BannerVisible && enableScrollAnimation ? '50px' : '0',
           }}
         >
           <Link href="/" className="font-bold text-gradient ml-16 text-3xl">VIKB.IO</Link>
-          <div className="flex flex-nowrap text-center items-center w-max h-max gap-x-12 text-sm md:text-md p-1 invisible sm:visible font-semibold">
-            <div className="hover:cursor-pointer border-b-2 border-white h-full py-6 hover:border-indigo-600">
+          <div className="flex flex-nowrap text-center items-center w-max h-max gap-x-4 text-sm md:text-md p-1 invisible sm:visible font-semibold">
+            <NavItem>
               <DrawDown />
-            </div>
-            <Separator className="font-semibold" orientation="vertical" />
-            <Link href="/visachart"className="hover:cursor-pointer border-b-2 border-white h-full py-6 hover:border-indigo-600">VisaChart</Link>
-            <Separator orientation="vertical" />
-            <div className="hover:cursor-pointer border-b-2 border-white h-full py-6 hover:border-indigo-600">Blog</div>
-            <Separator orientation="vertical" />
-            <div className="text-nowrap hover:cursor-pointer border-white border-b-2 h-full py-6 hover:border-indigo-600">
-              About Us
-            </div>
-            <Separator orientation="vertical" />
+            </NavItem>
+            <NavItem>
+              <Link href="/visachart">VisaChart</Link>
+            </NavItem>
+            <NavItem>Blog</NavItem>
+            <NavItem>About Us</NavItem>
           </div>
           <div className="flex gap-5 mr-8 justify-between items-center">
-            <Link href="/MyJobs" className="hover:cursor-pointer animate duration-300 hover:scale-105"><Heart className="w-8 h-8"/></Link>
-            <UserBar firstName={firstName} lastName={lastName} userName = {userName} photo={photo} />
+            <Link href="/MyJobs" className="hover:cursor-pointer transition-all duration-300 hover:scale-110 hover:text-indigo-600">
+              <Heart className="w-8 h-8"/>
+            </Link>
+            <UserBar firstName={firstName} lastName={lastName} userName={userName} photo={photo} />
           </div>
         </div>
       </div>
+    </div>
+  )
+}
+
+function NavItem({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="relative py-2 px-4 rounded-full hover:cursor-pointer transition-all duration-100 ease-in-out hover:bg-indigo-100 hover:text-indigo-600 hover:scale-105">
+      {children}
     </div>
   )
 }

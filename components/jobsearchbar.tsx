@@ -20,9 +20,10 @@ const formSchema = z.object({
       message: "Keyword must be at least 2 characters.",
     }),
   })
-const JobsearchBar = () => {
+const JobsearchBar = ({countrykey, category}:{countrykey:string, category:string}) => {
     const searchParams = useSearchParams();
-    const search = searchParams.get("category") ?? "" ;
+    const search = category as string;
+    const countrykeyword = countrykey as string;
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -32,7 +33,7 @@ const JobsearchBar = () => {
     const router = useRouter();
 
     function onSubmit(values: z.infer<typeof formSchema>) {
-        router.push(`?${search==""?new URLSearchParams({q:values.keyword}):new URLSearchParams({category:search, q:values.keyword})}`)
+        router.push(`?${search==""?new URLSearchParams({q:values.keyword}):new URLSearchParams({country:countrykeyword, category:search, q:values.keyword})}`)
     }
     
 

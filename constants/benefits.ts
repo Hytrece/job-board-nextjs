@@ -84,7 +84,7 @@ export const benefits = [
         ]
     },
     {
-        country: "united kingdom",
+        country: "uk",
         benefitList: [
             {
                 title: "Rich History",
@@ -358,6 +358,69 @@ export const benefits = [
     },
     {
         country: "portugal",
+        benefitList: [
+            {
+                title: "Beautiful Beaches",
+                desc: "Enjoy stunning coastlines and a warm climate."
+            },
+            {
+                title: "Affordable Living",
+                desc: "Benefit from a lower cost of living compared to other Western European countries."
+            },
+            {
+                title: "Rich Culture",
+                desc: "Experience a vibrant culture and delicious cuisine."
+            },
+            {
+                title: "Friendly Locals",
+                desc: "Meet warm and welcoming people in a relaxed atmosphere."
+            }
+        ]
+    },
+    {
+        country: "czeckia",
+        benefitList: [
+            {
+                title: "Beautiful Beaches",
+                desc: "Enjoy stunning coastlines and a warm climate."
+            },
+            {
+                title: "Affordable Living",
+                desc: "Benefit from a lower cost of living compared to other Western European countries."
+            },
+            {
+                title: "Rich Culture",
+                desc: "Experience a vibrant culture and delicious cuisine."
+            },
+            {
+                title: "Friendly Locals",
+                desc: "Meet warm and welcoming people in a relaxed atmosphere."
+            }
+        ]
+    },
+    {
+        country: "taiwan",
+        benefitList: [
+            {
+                title: "Beautiful Beaches",
+                desc: "Enjoy stunning coastlines and a warm climate."
+            },
+            {
+                title: "Affordable Living",
+                desc: "Benefit from a lower cost of living compared to other Western European countries."
+            },
+            {
+                title: "Rich Culture",
+                desc: "Experience a vibrant culture and delicious cuisine."
+            },
+            {
+                title: "Friendly Locals",
+                desc: "Meet warm and welcoming people in a relaxed atmosphere."
+            }
+        ]
+    },
+    {
+        country: "hungary",
         benefitList: [
             {
                 title: "Beautiful Beaches",

@@ -64,73 +64,176 @@ export default function LandingPage() {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-gradient-to-b from-gray-100 to-white">
       {/* Hero Section with Diagonal Split */}
-      <div className="relative h-screen overflow-hidden bg-zinc-800">
-        <Bar/>
-        <div 
-          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-          style={{
-            backgroundImage: `url(${images[currentImageIndex]})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            clipPath: 'polygon(0 0, 100% 0, 100% 80%, 0 100%)',
-          }}
-        />
-        <div 
-          className="absolute inset-0 bg-black bg-opacity-40"
-          style={{
-            clipPath: 'polygon(0 0, 100% 0, 100% 80%, 0 100%)',
-          }}
-        />
+      <div className="relative h-screen overflow-hidden">
+      <Bar />
+      
+      {/* Background Image with Gradient Overlay */}
+      <div
+        className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+        style={{
+          backgroundImage: `url(${images[currentImageIndex]})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
+      {/* Content Container */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 lg:px-8">
         {/* Hero Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 lg:px-8">
-          <motion.h1 
-            className="mb-4 text-4xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl text-center"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Discover Your Perfect Working Holiday
-          </motion.h1>
-          <motion.p 
-            className="mb-8 text-xl text-white sm:text-2xl text-center"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Explore opportunities and adventures around the world
-          </motion.p>
-
-          {/* Search Bar */}
-          <motion.div 
-            className="w-full mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <ComboboxForm/>
-          </motion.div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1, repeat: Infinity, repeatType: 'reverse' }}
+        <motion.div
+          className="w-full max-w-6xl mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
         >
-          <svg className="w-6 h-6 text-white" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
+          <div className="grid gap-8 md:grid-cols-12 space-x-16 items-center">
+            {/* Left Side - Title and Text */}
+            <div className="md:col-span-6 text-left">
+              <motion.div
+                className="space-y-6"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium">
+                  Working Holiday Visas Available
+                </span>
+                
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+                  Discover Your
+                  <span className="block mt-2">Perfect Working</span>
+                  <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+                    Holiday
+                  </span>
+                </h1>
+                
+                <p className="text-xl text-white/90 max-w-2xl">
+                  Explore opportunities and adventures around the world
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Right Side - Search Box */}
+            <motion.div 
+              className="md:col-span-6"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <div className="bg-black/10 backdrop-blur-md p-8 rounded-2xl border border-white/10">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">
+                      Find Your Destination
+                    </h3>
+                    <p className="text-sm text-white/70 mt-1">
+                      Search from over 50+ destinations worldwide
+                    </p>
+                  </div>
+                  
+                  <ComboboxForm />
+                  
+                  <div className="space-y-3">
+                    <p className="text-sm font-medium text-white/80">
+                      Popular Destinations
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {['Tokyo', 'Berlin', 'Toronto'].map((city) => (
+                        <button
+                          key={city}
+                          className="px-3 py-1.5 text-sm text-white/90 bg-white/10 rounded-lg 
+                                   hover:bg-white/20 transition-colors duration-200"
+                        >
+                          {city}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
 
-      <RankingSection />
+      {/* Stats Bar */}
+      <motion.div 
+        className="absolute bottom-24 left-0 right-0 z-20"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+      >
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-6">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">50+</div>
+              <div className="text-sm text-white/70">Countries</div>
+            </div>
+            <div className="text-center border-x border-white/20">
+              <div className="text-2xl font-bold text-white">1000+</div>
+              <div className="text-sm text-white/70">Opportunities</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">24/7</div>
+              <div className="text-sm text-white/70">Support</div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
 
-      {/* Features Section <FeaturesSectionDemo/>
-*/}
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 1,
+          delay: 1,
+          repeat: Infinity,
+          repeatType: 'reverse',
+        }}
+      >
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-sm font-medium text-white/90">Scroll to explore</span>
+          <svg
+            className="w-6 h-6 text-white/90"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </motion.div>
+    </div>
+      <section className="py-24 h-screen bg-white">
+        <div className="container mx-auto px-4">
+          {/* Title Section */}
+          <div className="text-center mb-16">
+            <span className="text-sm font-semibold tracking-wider text-zinc-500 uppercase mb-3 block">
+              Popular Destinations
+            </span>
+            <h2 className="text-4xl font-bold text-zinc-900 mb-4">
+              Explore Global Cities
+            </h2>
+            <div className="flex items-center justify-center gap-3 max-w-2xl mx-auto">
+              <span className="h-px w-12 bg-zinc-200"></span>
+              <p className="text-zinc-600 text-lg">
+                Discover unique locations across vibrant metropolises
+              </p>
+              <span className="h-px w-12 bg-zinc-200"></span>
+            </div>
+          </div>
+            <RankingSection />
+        </div>
+      </section>
 
-      {/* Benefits Section with Parallax */}
       <BenefitSectionDemo/>
 
       <FAQSection />

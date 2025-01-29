@@ -148,36 +148,30 @@ export const stepsData = [
     country: "poland", // Change this to the appropriate country name
     stepList: [
         {
-            title: 'Check Eligibility',
-            description: 'Ensure you meet the eligibility criteria, including age (18-31 years old) and nationality (citizen of the Republic of Poland or the Republic of Korea).',
-            image: '/poland/check-eligibility.jpg'
+          title: 'Meet the Eligibility Criteria',
+          description: 'Applicants must be at least 18 years of age but have not turned 31, permanently resident in the territory of the sending country, and have not previously taken part in the Working Holiday Programme organized by the receiving country.'
         },
         {
-            title: 'Gather Required Documents',
-            description: 'Collect the necessary documents, including a valid passport, completed application form, recent photo, proof of financial means, proof of health insurance, proof of language proficiency, and a statement of purpose.',
-            image: '/poland/gather-documents.jpg'
+          title: ' Gather Required Documents',
+          description: 'Applicants need to gather required documents including a valid passport, a completed application form, a recent photo, proof of financial means, proof of health insurance, and proof of language proficiency.'
         },
         {
-            title: 'Download and Complete the Application Form',
-            description: 'Download the application form from the relevant government website and complete it accurately.',
-            image: '/poland/download-application-form.jpg'
+          title: 'Submit the Application',
+          description: "Applicants must submit their application online through the 'e-konsulat' system on the website www.e-konsulat.gov.pl and print the completed application form and a confirmation of the appointment date and time."
         },
         {
-            title: 'Submit the Application',
-            description: 'Submit the application form and required documents to the relevant authorities, either in person or by mail.',
-            image: '/poland/submit-application.jpg'
+          title: 'Pay the Application Fee',
+          description: 'The application fee for a working holiday visa is 193,590 KRW (approximately 150 EUR) for Korean citizens, and 360 PLN in cash for Polish citizens.'
         },
         {
-            title: 'Pay the Relevant Fees',
-            description: 'Pay the fees associated with the visa application.',
-            image: '/poland/pay-fees.jpg'
+          title: 'Wait for the Application to be Processed',
+          description: 'The processing time for a working holiday visa application is typically 15 days, but can take up to 30 days in some cases.'
         },
         {
-            title: 'Wait for the Visa to be Processed',
-            description: 'Wait for the visa to be processed, which typically takes 15 days but can take up to 30 days in some cases.',
-            image: '/poland/wait-processing.jpg'
+          title: 'Enter Poland and Start the Working Holiday',
+          description: 'Once the application is approved, applicants can enter Poland and start their working holiday. They must declare in writing that the main purpose of their participation in the Programme is to holiday, for a period of up to 12 calendar months.'
         }
-    ]
+      ]
   },
   {
     country: "austria",
@@ -290,39 +284,33 @@ export const stepsData = [
     ]
 },
 {
-    country: "united kingdom",
+    country: "uk",
     stepList: [
         {
-            title: 'Check Eligibility',
-            description: 'Check if you meet the eligibility criteria, including age, nationality, and savings requirements.',
-            image: '/uk/check-eligibility.jpg'
+          title: 'Check Eligibility',
+          description: 'Applicants must be between 18 and 30 or 18 and 35 years old, have £2,530 in savings, and be a citizen of a participating country or have certain types of British nationality.'
         },
         {
-            title: 'Gather Required Documents',
-            description: 'Collect the necessary documents, including a valid passport, proof of identity, and proof of qualifications and experience.',
-            image: '/uk/gather-documents.jpg'
+          title: 'Gather Required Documents',
+          description: 'Applicants must provide a valid passport, proof of identity, and proof of qualifications and experience.'
         },
         {
-            title: 'Apply Online',
-            description: 'Submit your application online and pay the application fee and healthcare surcharge.',
-            image: '/uk/apply-online.jpg'
+          title: 'Apply Online',
+          description: 'Applicants must submit their application online and pay the application fee of £298 and the healthcare surcharge of £776 per year.'
         },
         {
-            title: 'Attend a Biometric Appointment',
-            description: 'Attend an appointment at a visa application centre to provide your biometric information, such as fingerprints and a photograph.',
-            image: '/uk/attend-biometric-appointment.jpg'
+          title: 'Attend a Biometric Appointment',
+          description: 'Applicants may need to attend a biometric appointment at a visa application centre to provide fingerprints and a photograph.'
         },
         {
-            title: 'Wait for a Decision',
-            description: 'Wait for the UK Visa and Immigration department to process your application and make a decision.',
-            image: '/uk/wait-decision.jpg'
+          title: 'Wait for a Decision',
+          description: 'Applicants will receive a decision on their application within a specified timeframe, usually within 3 weeks.'
         },
         {
-            title: 'Enter the UK and Register with the Authorities',
-            description: 'Enter the UK within the specified timeframe and register with the relevant authorities, including the police and the National Health Service (NHS).',
-            image: '/uk/enter-register.jpg'
+          title: 'Enter the UK and Start the Working Holiday',
+          description: 'Once the application is approved, applicants can enter the UK and start their working holiday, which can last up to 24 months.'
         }
-    ]
+      ]
 },
     {
         country: "israel",
@@ -347,31 +335,30 @@ export const stepsData = [
     {
         country: "belgium",
         stepList: [
-            {
-                title: 'Meet the Eligibility Criteria',
-                description: 'Ensure you meet the eligibility criteria, including being between 18 and 30 years old, not having previously participated in the working holiday program, being a resident of South Korea, traveling alone, and having sufficient financial resources (at least €2,500).',
-                image: '/belgium/meet-eligibility.jpg'
-            },
-            {
-                title: 'Gather Required Documents',
-                description: 'Collect the required documents, including a passport, completed application form, 2 recent color passport photos, proof of sufficient financial resources, proof of health insurance, proof of return ticket or sufficient financial resources to purchase one, police certificate, medical certificate, and proof of language proficiency (if applicable).',
-                image: '/belgium/gather-documents.jpg'
-            },
-            {
-                title: 'Submit Application Online',
-                description: 'Submit your application online through the website [visaonweb.diplomatie.be](https://visaonweb.diplomatie.be/).',
-                image: '/belgium/submit-application-online.jpg'
-            },
-            {
-                title: 'Make an Appointment at the Embassy or Consulate',
-                description: 'Make an appointment at the embassy or consulate to submit your application and supporting documents.',
-                image: '/belgium/make-appointment.jpg'
-            },
-            {
-                title: 'Wait for Application Processing',
-                description: 'Wait for the application process to be completed, which typically takes 15 days, but may take longer if additional documents are required.',
-                image: '/belgium/wait-processing.jpg'
-            }
+        {
+            title: 'Check Eligibility',
+            description: 'Applicants must be between 18 and 30 or 18 and 35 years old, have £2,530 in savings, and be a citizen of a participating country or have certain types of British nationality.'
+        },
+        {
+            title: 'Gather Required Documents',
+            description: 'Applicants must provide a valid passport, proof of identity, and proof of qualifications and experience.'
+        },
+        {
+            title: 'Apply Online',
+            description: 'Applicants must submit their application online and pay the application fee of £298 and the healthcare surcharge of £776 per year.'
+        },
+        {
+            title: 'Attend a Biometric Appointment',
+            description: 'Applicants may need to attend a biometric appointment at a visa application centre to provide fingerprints and a photograph.'
+        },
+        {
+            title: 'Wait for a Decision',
+            description: 'Applicants will receive a decision on their application within a specified timeframe, usually within 3 weeks.'
+        },
+        {
+            title: 'Enter the UK and Start the Working Holiday',
+            description: 'Once the application is approved, applicants can enter the UK and start their working holiday, which can last up to 24 months.'
+        }
         ]
     },
     {
@@ -473,5 +460,150 @@ export const stepsData = [
                 image: '/france/employment.jpg'
             }
         ]
-    }
+    },
+    {
+        country: "czeckia", // Change this to the appropriate country name
+        stepList: [
+            {
+              title: 'Meet the Eligibility Criteria',
+              description: 'Ensure you meet the eligibility criteria, including being a South Korean citizen, aged 18-30, and not accompanied by dependents.'
+            },
+            {
+              title: 'Prepare Required Documents',
+              description: 'Prepare the required documents, including a valid passport, passport copy, 3 photos, proof of sufficient funds, bank statement, and a statement of purpose.'
+            },
+            {
+              title: 'Fill Out the Application Form',
+              description: "Fill out the application form, selecting 'Other' as the purpose of stay and specifying 'Working Holiday' in the 'Specify' field."
+            },
+            {
+              title: 'Book an Appointment',
+              description: 'Book an appointment at the Czech Embassy in Seoul by sending an email to seoul.visa@mzv.gov.cz with the required information and documents.'
+            },
+            {
+              title: 'Submit the Application',
+              description: 'Submit the application and required documents in person at the Czech Embassy in Seoul.'
+            },
+            {
+              title: 'Register with the Local Authorities',
+              description: 'After arriving in Czechia, register with the local authorities within 3 days and obtain a residence permit.'
+            }
+          ]
+      },
+      {
+        country: "hungary", // Change this to the appropriate country name
+        stepList: [
+            {
+              title: 'Check Eligibility',
+              description: 'Ensure you meet the requirements: aged between 18 and 30, a national of the Republic of Korea, resident in the Republic of Korea, not accompanied by dependants, and possessing a valid passport.'
+            },
+            {
+              title: 'Gather Required Documents',
+              description: 'Collect necessary documents, including a valid passport, proof of sufficient funds, and medical and comprehensive hospitalisation insurance.'
+            },
+            {
+              title: 'Apply for a Temporary Residence Permit',
+              description: 'Submit your application to the Hungarian diplomatic representation in the Republic of Korea, ensuring you meet the quota requirements.'
+            },
+            {
+              title: 'Wait for Application Processing',
+              description: 'Wait for the Hungarian authorities to process your application, which may take several weeks or months.'
+            },
+            {
+              title: 'Enter Hungary',
+              description: 'Once your application is approved, enter Hungary within the validity period of your temporary residence permit.'
+            },
+            {
+              title: 'Register with the Authorities',
+              description: 'Register with the Hungarian immigration office and obtain a residence permit, which will allow you to stay and work in Hungary for up to one year.'
+            }
+          ]
+      },
+      {
+        country: "sweden", // Change this to the appropriate country name
+        stepList: [
+            {
+              title: 'Check if you meet the requirements',
+              description: 'Be a citizen of Australia, Hong Kong, Canada, Japan, New Zealand or South Korea, be between 18 and 30 years old, have a valid passport, have enough money, have a return ticket or enough money to buy one, have comprehensive health insurance, and not have any accompanying children.'
+            },
+            {
+              title: 'Fill in the application form',
+              description: 'Fill in the form Application for working holiday visa for young people, 155011, and submit it to a Swedish embassy or consulate-general in the country where you live.'
+            },
+            {
+              title: 'Submit the required documents',
+              description: 'Submit the required documents, including a valid passport, proof of sufficient funds, return ticket or proof of sufficient funds to buy one, and comprehensive health insurance.'
+            },
+            {
+              title: 'Pay the application fee',
+              description: 'Pay the application fee of SEK 1,500, and submit a bank statement or receipt that clearly shows that you have paid the fee to the Swedish Migration Agency.'
+            },
+            {
+              title: 'Wait for the decision',
+              description: 'Wait for the decision on your application, which will be sent to the embassy or consulate-general you selected in your online application.'
+            },
+            {
+              title: 'Travel to Sweden and register with the Swedish Migration Agency',
+              description: 'Travel to Sweden, and register with the Swedish Migration Agency to obtain a residence permit card.'
+            }
+          ]
+      },
+      {
+        country: "spain", // Change this to the appropriate country name
+        stepList: [
+            {
+              title: 'Check Eligibility',
+              description: 'Check if you meet the eligibility criteria for the Spanish Working Holiday Program, including being a citizen of the Republic of Korea, being between 18 and 30 years old, and not having participated in the program before.'
+            },
+            {
+              title: 'Choose the Correct Visa Option',
+              description: 'Choose the correct visa option for your working holiday, including Residence – Temporary work (9 months in 1 year), Residence – Employee, or Residence – Self-employed.'
+            },
+            {
+              title: 'Gather Required Documents',
+              description: 'Gather all required documents, including your passport, proof of address in Spain, and information about your employer or company (if applicable).'
+            },
+            {
+              title: 'Submit Your Application',
+              description: 'Submit your application to the Spanish Embassy in Seoul in person, along with all required documents and the application fee.'
+            },
+            {
+              title: 'Wait for the Visa Decision',
+              description: "Wait for the visa decision, which may take several weeks or months. You can check the status of your application on the embassy's website or by contacting them directly."
+            },
+            {
+              title: 'Enter Spain and Start Your Working Holiday',
+              description: 'Once your visa is approved, enter Spain and start your working holiday. Make sure to register with the local authorities and obtain any necessary residence permits.'
+            }
+          ]
+      },
+      {
+        country: "taiwan", // Change this to the appropriate country name
+        stepList: [
+            {
+              title: 'Step 1: Check Eligibility',
+              description: 'Ensure you meet the eligibility criteria, including being a citizen of a country with a working holiday agreement with Taiwan, being between 18 and 35 years old, and having a valid passport with at least 12 months of remaining validity.'
+            },
+            {
+              title: 'Step 2: Gather Required Documents',
+              description: 'Prepare the necessary documents, including a completed and signed visa application form, a valid passport, and proof of sufficient funds and health insurance.'
+            },
+            {
+              title: 'Step 3: Submit Application in Person',
+              description: 'Submit your application in person at a Taiwanese embassy or consulate, and pay the required application fee.'
+            },
+            {
+              title: 'Step 4: Wait for Application Processing',
+              description: 'Wait for your application to be processed, which typically takes a few days to a few weeks, depending on the complexity of the application.'
+            },
+            {
+              title: 'Step 5: Enter Taiwan and Register with the Authorities',
+              description: 'Enter Taiwan and register with the authorities within a specified timeframe, usually 15 days, and obtain a residence certificate.'
+            },
+            {
+              title: 'Step 6: Open a Bank Account and Apply for Labor Insurance',
+              description: 'Open a bank account in Taiwan and apply for labor insurance, which is required for working holidaymakers.'
+            }
+          ]
+      }
 ]

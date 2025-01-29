@@ -1,16 +1,16 @@
-import WorkingHolidayGuide from "@/components/steps";
+import WorkingHolidayGuide from "@/components/stepsalternative";
 import { stepsData } from "@/constants/step-by-step";
 interface Step{
   title:string,
   description:string,
-  image:string
+  image?:string
 }
 const StepSection = ({country}:{country:string}) => {
     const countryName = country.charAt(0).toUpperCase() + country.slice(1);
     const getCountry = stepsData.find((e)=>e.country == country)
     const stepData: Step[] = getCountry?.stepList || [];
     return (
-        <section className="w-full mt-28 mx-auto px-4 py-7 md:px-8">
+        <section className="w-full mt-28 px-4 py-7 md:px-8">
          <div className="max-w-xl">
             <h4 className="text-primary font-semibold text-lg">How to apply</h4>
             <div className="flex gap-x-7 items-center">

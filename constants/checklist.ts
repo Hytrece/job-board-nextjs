@@ -1,7 +1,7 @@
 export const checks = [
     {
         country:"canada",
-        listA: [
+        eligibility: [
             {
                 title: 'Citizenship',
                 description: 'Be a citizen of a participating country.'
@@ -23,7 +23,7 @@ export const checks = [
                 description: 'Have health insurance that covers medical care, hospitalization, and repatriation for the entire stay in Canada.'
             }
         ],
-        listB:  [
+        documents:  [
             {
                 title: 'Passport',
                 description: 'A valid passport is required to apply for the Working Holiday program in Canada.'
@@ -45,7 +45,7 @@ export const checks = [
                 description: 'Applicants must meet the language requirements for the category they are applying for, which may include English or French language proficiency.'
             }
         ],
-        listC:  [
+        employment:  [
             {
                 title: 'Job Research',
                 description: 'Research job opportunities and prepare your resume and cover letter tailored to the Canadian job market.'
@@ -59,7 +59,7 @@ export const checks = [
                 description: 'Notify your bank of your travel plans and consider setting up a local bank account in Canada.'
             }
         ],
-        listD:  [
+        living:  [
             {
                 title: 'Health Insurance',
                 description: 'Obtain travel health insurance that covers medical expenses during your stay in Canada.'
@@ -92,7 +92,7 @@ export const checks = [
     },
     {
       country: "australia",
-      listA: [
+      eligibility: [
         {
             title: 'Age Limit',
             description: 'You must be aged between 18 and 30 (or 35 in some cases).'
@@ -118,7 +118,7 @@ export const checks = [
             description: 'You must have sufficient funds to support yourself in Australia, usually AUD $5,000.'
         }
     ],
-      listB: [
+      documents: [
         {
             title: 'Identity Documents',
             description: 'Passport and other identity documents.'
@@ -140,7 +140,7 @@ export const checks = [
             description: 'May be required to provide a police certificate.'
         }
     ],
-      listC: [
+      employment: [
         {
             title: 'Job Research',
             description: 'Research job opportunities and prepare your resume and cover letter tailored to the Australian job market.'
@@ -154,7 +154,7 @@ export const checks = [
             description: 'Notify your bank of your travel plans and consider setting up a local bank account in Australia.'
         }
     ],
-      listD: [
+      living: [
         {
             title: 'Health Insurance',
             description: 'Obtain travel health insurance that covers medical expenses during your stay in Australia.'
@@ -188,7 +188,7 @@ export const checks = [
   
     {
         country:"newzealand",
-        listA:[
+        eligibility:[
             {
                 title: 'Identity',
                 description: 'Proof of identity, including a valid passport.'
@@ -210,7 +210,7 @@ export const checks = [
                 description: 'Full medical insurance for the length of stay.'
             }
         ],
-    listB:[
+    documents:[
         {
             title: 'Age',
             description: 'Must be between 18-30 years.'
@@ -228,7 +228,7 @@ export const checks = [
             description: 'At least NZD $4,200 to live on while in New Zealand.'
         },
     ],
-    listC:[
+    employment:[
         {
             title: 'Job Research',
             description: 'Research job opportunities and prepare your resume and cover letter tailored to the New Zealand job market.'
@@ -242,7 +242,7 @@ export const checks = [
             description: 'Notify your bank of your travel plans and consider setting up a local bank account in New Zealand.'
         }
     ],
-    listD:[
+    living:[
         {
             title: 'Health Insurance',
             description: 'Obtain travel health insurance that covers medical expenses during your stay in New Zealand.'
@@ -275,7 +275,7 @@ export const checks = [
     },
     {
         country:"netherlands",
-        listA:[
+        eligibility:[
             {
                 title: 'Age',
                 description: 'Applicant must be between 18-30 years old.'
@@ -289,7 +289,7 @@ export const checks = [
                 description: 'The main purpose of the stay is cultural exchange and not paid employment.'
             }
         ],
-        listB: [
+        documents: [
             {
                 title: 'Completed and Signed Application Form',
                 description: 'The application form must be completed and signed by the applicant.'
@@ -303,7 +303,7 @@ export const checks = [
                 description: 'Two passport photographs that meet the Dutch requirements are required.'
             }
         ],
-        listC: [
+        employment: [
             {
                 title: 'Job Research',
                 description: 'Research job opportunities and prepare your CV and cover letter tailored to the Dutch job market.'
@@ -317,7 +317,7 @@ export const checks = [
                 description: 'Notify your bank of your travel plans and consider setting up a local bank account in the Netherlands.'
             }
         ],
-        listD:[
+        living:[
             {
                 title: 'Health Insurance',
                 description: 'Obtain travel health insurance that covers medical expenses during your stay in the Netherlands.'
@@ -349,104 +349,8 @@ export const checks = [
         ]
     },
     {
-        country:"poland",
-        listA:[
-            {
-                title: 'Age Requirement',
-                description: 'Applicants must be at least 18 years of age but have not turned 31 at the time of the application for the visa.'
-            },
-            {
-                title: 'Residency Requirement',
-                description: 'Applicants must be permanently resident in the territory of the sending country (Party of the Agreement) at the time of the visa application.'
-            },
-            {
-                title: 'Purpose of Stay',
-                description: 'Applicants must declare in writing that the main purpose of their participation in the Programme is to holiday, for a period of up to 12 calendar months.'
-            },
-            {
-                title: 'Dependants',
-                description: 'Applicants must not be accompanied by dependants.'
-            },
-            {
-                title: 'Previous Participation',
-                description: 'Applicants must not have previously taken part in the Working Holiday Programme organized by the receiving country.'
-            },
-            {
-                title: 'Criminal Record',
-                description: 'Applicants must have no criminal record.'
-            },
-            {
-                title: 'Health Requirements',
-                description: 'Applicants must comply with any health requirements as specified in the laws and regulations of the receiving country.'
-            },
-            {
-                title: 'Insurance Requirements',
-                description: 'Applicants must purchase comprehensive medical and hospital care insurance, according to laws and regulations of the receiving country.'
-            },
-            {
-                title: 'Financial Requirements',
-                description: 'Applicants must possess sufficient funds for personal support during their stay in the amount specified by the relevant authorities of the receiving country.'
-            },
-        ],
-        listB:[
-            {
-            title: 'Travel Documents',
-            description: 'Applicants must hold a valid passport issued no earlier than 10 years before applying for the visa, which has at least 2 blank pages and will be valid for at least 90 days after the end of the planned stay.'
-        },
-        {
-            title: 'Return Ticket',
-            description: 'Applicants must have a return ticket or sufficient funds to purchase such a ticket.'
-        }
-    ],
-        listC:[
-        {
-            title: 'Job Research',
-            description: 'Research job opportunities in Poland and tailor your resume and cover letter for the Polish job market.'
-        },
-        {
-            title: 'Verify Qualifications',
-            description: 'Ensure your qualifications are recognized in Poland, and prepare any necessary documentation for employers.'
-        },
-        {
-            title: 'Network and Connect',
-            description: 'Join online forums and local groups to network with professionals in your field and explore job openings.'
-        },
-    ],
-        listD:
-        [
-            {
-                title: 'Health Insurance',
-                description: 'Obtain health insurance that covers medical expenses during your stay in Poland.'
-            },
-            {
-                title: 'Accommodation Arrangements',
-                description: 'Book temporary accommodation for your arrival, such as a hotel, hostel, or short-term rental.'
-            },
-            {
-                title: 'Pack Essentials',
-                description: 'Pack necessary clothing for Poland’s climate, important documents, and personal items.'
-            },
-            {
-                title: 'Learn Basic Polish',
-                description: 'Familiarize yourself with basic Polish phrases to help ease your transition and interactions with locals.'
-            },
-            {
-                title: 'Research Local Amenities',
-                description: 'Look into local amenities, such as grocery stores, transportation options, and healthcare facilities in your area.'
-            },
-            {
-                title: 'Understand Local Customs',
-                description: 'Learn about Polish culture, customs, and etiquette to facilitate smoother interactions and integration.'
-            },
-            {
-                title: 'Emergency Contacts',
-                description: 'Make a list of emergency contacts, including local authorities and your country’s embassy or consulate.'
-            }
-        ]
-    },
-    {
         country: "austria",
-        listA:
+        eligibility:
         [
             {
               title: "Age Requirement",
@@ -469,7 +373,7 @@ export const checks = [
               description: "Participants must have health insurance that covers them for the duration of their stay in Austria."
             }
           ],
-        listB: [
+        documents: [
             {
               title: "Valid Passport",
               description: "A valid passport is required to apply for the working holiday in Austria."
@@ -496,7 +400,7 @@ export const checks = [
             }
           ]
         ,
-        listC: [
+        employment: [
             {
                 title: 'Job Research',
                 description: 'Research job opportunities in Austria and tailor your application materials accordingly.'
@@ -510,7 +414,7 @@ export const checks = [
                 description: 'Join expat groups and professional networks in Austria.'
             }
         ],
-        listD: [
+        living: [
             {
                 title: 'Health Insurance',
                 description: 'Obtain health insurance that covers medical expenses in Austria.'
@@ -543,7 +447,7 @@ export const checks = [
     },
     {
         country: "germany",
-        listA: [
+        eligibility: [
             {
               title: "Age",
               description: "Applicant must be between 18 and 30 years old (at the time of application)."
@@ -561,7 +465,7 @@ export const checks = [
               description: "Applicant must be in good health (no medical certificate required)."
             }
           ],
-        listB: [
+        documents: [
             {
               title: "Passport",
               description: "A valid passport with at least 12 months' validity."
@@ -596,7 +500,7 @@ export const checks = [
             }
           ],
           
-        listC: [
+        employment: [
             {
                 title: 'Job Research',
                 description: 'Look for job opportunities in Germany.'
@@ -610,7 +514,7 @@ export const checks = [
                 description: 'Join local professional groups and online forums.'
             }
         ],
-        listD: [
+        living: [
             {
                 title: 'Health Insurance',
                 description: 'Get health insurance for your stay in Germany.'
@@ -643,7 +547,7 @@ export const checks = [
     },
     {
         country: "argentina",
-        listA: [
+        eligibility: [
             {
               title: "Age Requirement",
               description: "The applicant must be aged between eighteen (18) and thirty (30), both inclusive."
@@ -682,7 +586,7 @@ export const checks = [
             }
           ],
           
-          listB: [
+          documents: [
             {
               title: "Valid Korean passport",
               description: "Valid Korean passport with at least one blank page and valid for at least the duration of the estimated stay in the country."
@@ -721,7 +625,7 @@ export const checks = [
             }
           ],
           
-        listC: [
+        employment: [
             {
                 title: 'Job Research',
                 description: 'Research job opportunities in Argentina.'
@@ -735,7 +639,7 @@ export const checks = [
                 description: 'Join local expat groups and professional networks.'
             }
         ],
-        listD: [
+        living: [
             {
                 title: 'Health Insurance',
                 description: 'Obtain health insurance for Argentina.'
@@ -767,49 +671,49 @@ export const checks = [
         ]
     },
     {
-        country: "united kingdom",
-        listA: [
+        country: "uk",
+        eligibility: [
             {
-              title: "Age",
-              description: "Applicants must be between 18 to 30 or 18 to 35 years old, depending on the country of origin."
+              title: 'Age',
+              description: '18 to 30 or 18 to 35, depending on the country of origin'
             },
             {
-              title: "Savings",
-              description: "Applicants must have £2,530 in savings."
+              title: 'Savings',
+              description: '£2,530 in savings'
             },
             {
-              title: "Nationality",
-              description: "Applicants must have certain types of British Nationality or be from certain countries or territories listed in the eligibility requirements."
+              title: 'Nationality',
+              description: 'Certain types of British Nationality or from certain countries or territories listed in the eligibility requirements'
             }
           ],
           
-          listB: [
+          documents: [
             {
-              title: "Valid Passport",
-              description: "A valid passport or other document that shows your identity and nationality."
+              title: 'Valid Passport',
+              description: 'A valid passport or other document that shows your identity and nationality'
             },
             {
-              title: "Bank Statement",
-              description: "A bank statement showing you have at least £2,530 in savings."
+              title: 'Bank Statement',
+              description: 'A bank statement showing you have at least £2,530 in savings'
             },
             {
-              title: "Tuberculosis (TB) Test Results",
-              description: "TB test results if you are from a country where you have to take the test."
+              title: 'Tuberculosis (TB) Test Results',
+              description: 'TB test results if you are from a country where you have to take the test'
             },
             {
-              title: "Proof of Identity",
-              description: "Proof of identity and provide documents."
+              title: 'Proof of Identity',
+              description: 'Proof of identity and nationality'
             },
             {
-              title: "Proof of Qualifications and Experience",
-              description: "Proof of qualifications and experience."
+              title: 'Proof of Qualifications and Experience',
+              description: 'Proof of qualifications and experience (if required)'
             },
             {
-              title: "Certified Translation of Documents",
-              description: "Certified translation of any documents that are not in English or Welsh."
+              title: 'Certified Translation of Documents',
+              description: 'Certified translation of any documents that are not in English or Welsh (if required)'
             }
           ],
-        listC: [
+        employment: [
             {
                 title: 'Job Research',
                 description: 'Look for job opportunities in the UK.'
@@ -823,7 +727,7 @@ export const checks = [
                 description: 'Join local professional and expat groups.'
             }
         ],
-        listD: [
+        living: [
             {
                 title: 'Health Insurance',
                 description: 'Get travel health insurance for your stay in the UK.'
@@ -856,7 +760,7 @@ export const checks = [
     },  
     {
         country: "israel",
-        listA: [
+        eligibility: [
             {
               title: "Age Requirement",
               description: "Applicant must be between 18 and 30 years old."
@@ -891,7 +795,7 @@ export const checks = [
             }
           ],
           
-          listB: [
+          documents: [
             {
               title: "워킹홀리데이 신청서",
               description: "워킹홀리데이 신청서 다운로드."
@@ -925,7 +829,7 @@ export const checks = [
               description: "왕복 항공 예약현황 (발권X)."
             }
           ],
-        listC: [
+        employment: [
             {
                 title: 'Job Research',
                 description: 'Research job opportunities in Israel.'
@@ -939,7 +843,7 @@ export const checks = [
                 description: 'Join local expat and professional groups.'
             }
         ],
-        listD: [
+        living: [
             {
                 title: 'Health Insurance',
                 description: 'Obtain health insurance for your stay in Israel.'
@@ -972,7 +876,7 @@ export const checks = [
     },
     {
         country: "belgium",
-        listA: [
+        eligibility: [
             {
               title: "Age Requirement",
               description: "Applicants must be between 18 and 30 years old."
@@ -994,7 +898,7 @@ export const checks = [
               description: "Applicants must have sufficient financial resources (at least €2,500)."
             }
           ],
-        listB: [
+        documents: [
             {
               title: "Passport",
               description: "Valid for at least 3 months beyond the intended stay in Belgium."
@@ -1032,7 +936,7 @@ export const checks = [
               description: "If applicable."
             }
           ],
-        listC: [
+        employment: [
             {
                 title: 'Job Research',
                 description: 'Look for job opportunities in Belgium.'
@@ -1046,7 +950,7 @@ export const checks = [
                 description: 'Join local professional and expat groups.'
             }
         ],
-        listD: [
+        living: [
             {
                 title: 'Health Insurance',
                 description: 'Obtain health insurance for your stay in Belgium.'
@@ -1079,12 +983,12 @@ export const checks = [
     },
     {
         country: "ireland",
-        listA: [
+        eligibility: [
             { title: 'Required Documents', 
             description: 'Applicants must submit the required documents, including a completed application form, a copy of their passport, and proof of sufficient funds.' 
             }
           ],
-        listB: [
+        documents: [
             {
               title: "Completed Application Form",
               description: "Applicants must submit a completed application form via email."
@@ -1098,7 +1002,7 @@ export const checks = [
               description: "Applicants must submit proof of sufficient funds."
             }
           ],
-        listC: [
+        employment: [
             {
                 title: 'Job Research',
                 description: 'Research job opportunities in Ireland.'
@@ -1112,7 +1016,7 @@ export const checks = [
                 description: 'Join local expat groups and professional networks.'
             }
         ],
-        listD: [
+        living: [
             {
                 title: 'Health Insurance',
                 description: 'Obtain health insurance for your stay in Ireland.'
@@ -1145,7 +1049,7 @@ export const checks = [
     },
     {
         country: "denmark",
-        listA: [
+        eligibility: [
             {
               title: "Age Limit",
               description: "The age limit for participating in the Korea-Denmark Working Holiday Program has been adjusted from 18-30 years old to 18-34 years old, effective June 1, 2024."
@@ -1159,7 +1063,7 @@ export const checks = [
               description: "Citizens of eligible countries must click on the provided link to apply for a Working Holiday residence permit in Denmark."
             }
           ],
-        listB: [
+        documents: [
             {
               title: "Valid Passport",
               description: "A valid passport with at least 12 months' validity."
@@ -1189,7 +1093,7 @@ export const checks = [
               description: "Other documents may be required depending on your individual circumstances."
             }
           ],
-        listC: [
+        employment: [
             {
                 title: 'Job Research',
                 description: 'Look for job opportunities in Denmark.'
@@ -1203,7 +1107,7 @@ export const checks = [
                 description: 'Join local professional and expat groups.'
             }
         ],
-        listD: [
+        living: [
             {
                 title: 'Health Insurance',
                 description: 'Obtain health insurance for your stay in Denmark.'
@@ -1236,7 +1140,7 @@ export const checks = [
     },
     {
       country: "france",
-      listA: [
+      eligibility: [
         {
             title: 'Nationality',
             description: 'The work holiday programme is available to young travelers from 16 countries or territories that have signed an agreement with France.'
@@ -1258,7 +1162,7 @@ export const checks = [
             description: 'The visa entitles the holder to undertake paid employment on a secondary basis, without prior approval from the French Administration.'
         }
     ],
-      listB: [
+      documents: [
         {
             title: 'Valid Passport',
             description: "A valid passport with at least 12 months' validity"
@@ -1292,7 +1196,7 @@ export const checks = [
             description: 'Proof of language proficiency in French (not always required)'
         }
     ],
-      listC: [
+      employment: [
           {
               title: 'Job Research',
               description: 'Look for job opportunities in France.'
@@ -1306,7 +1210,7 @@ export const checks = [
               description: 'Join local professional and expat groups in France.'
           }
       ],
-      listD: [
+      living: [
     {
         title: 'Health Insurance',
         description: 'Obtain health insurance for your stay in France.'
@@ -1336,6 +1240,602 @@ export const checks = [
         description: 'Prepare a list of emergency contacts, including local authorities in France.'
     }
       ]
+  },
+  {
+    country: "poland",
+    eligibility: [
+        {
+          title: 'Age Requirement',
+          description: 'Applicant must be at least 18 years of age but have not turned 31 at the time of the application for the visa.'
+        },
+        {
+          title: 'Nationality Requirement',
+          description: 'Applicant must be a citizen of the Republic of Korea.'
+        },
+        {
+          title: 'Residency Requirement',
+          description: 'Applicant must be permanently resident in the territory of the sending country (Party of the Agreement) at the time of the visa application.'
+        },
+        {
+          title: 'Dependants',
+          description: 'Applicant must not be accompanied by dependants.'
+        },
+        {
+          title: 'Previous Participation',
+          description: 'Applicant must not have previously taken part in the Working Holiday Programme organized by the receiving country.'
+        },
+        {
+          title: 'Return Ticket',
+          description: 'Applicant must have a return ticket or sufficient funds to purchase such a ticket.'
+        }
+      ],
+      
+      documents: [
+        {
+          title: 'Visa Application',
+          description: "All Poland visa applications, including national and Schengen visas, must be submitted online through the 'e-konsulat' system on the website www.e-konsulat.gov.pl"
+        },
+        {
+          title: 'Application Fee',
+          description: 'The application fee for a working holiday visa is 193,590 KRW (approximately 150 EUR)'
+        },
+        {
+          title: 'Passport',
+          description: 'A valid passport issued no earlier than 10 years before applying for the visa, which has at least 2 blank pages and will be valid for at least 90 days after the end of the planned stay'
+        },
+        {
+          title: 'Non-Criminal Record Certificate',
+          description: 'A non-criminal record certificate'
+        },
+        {
+          title: 'Health Certificate',
+          description: 'A health certificate'
+        },
+        {
+          title: 'Bank Account Statement',
+          description: 'A bank account statement proving the possession of necessary funds for the stay in the Republic of Korea (USD 3,000)'
+        },
+        {
+          title: 'Documents Proving Educational Process',
+          description: 'Documents proving the educational process (last diploma obtained or copies of both sides of student’s ID if such person is in the course of studies)'
+        },
+        {
+          title: 'Plan for Job Seeking in Korea and Journey Plan',
+          description: 'A plan for job seeking in Korea and the journey plan'
+        }
+      ],
+      
+    employment: [
+        {
+          title: 'Job Research',
+          description: 'Research job opportunities in Poland.'
+        },
+        {
+          title: 'Verify Qualifications',
+          description: 'Check recognition of your qualifications in Poland.'
+        },
+        {
+          title: 'Network and Connect',
+          description: 'Join local expat groups and professional networks in Poland.'
+        }
+      ],
+    living: [
+        {
+          title: 'Health Insurance',
+          description: 'Obtain health insurance for your stay in Poland.'
+        },
+        {
+          title: 'Accommodation Arrangements',
+          description: 'Book temporary housing for your arrival in Poland.'
+        },
+        {
+          title: 'Pack Essentials',
+          description: 'Prepare necessary items based on Poland’s climate.'
+        },
+        {
+          title: 'Learn Basic Polish',
+          description: 'Familiarize yourself with basic Polish phrases.'
+        },
+        {
+          title: 'Research Local Amenities',
+          description: 'Look into local grocery stores, transport options, and services in Poland.'
+        },
+        {
+          title: 'Understand Local Customs',
+          description: 'Learn about Polish culture, traditions, and etiquette.'
+        },
+        {
+          title: 'Emergency Contacts',
+          description: 'Prepare a list of emergency contacts, including the nearest embassy in Poland.'
+        }
+      ]
+},
+{
+    country: "czeckia",
+    eligibility:
+    [
+        {
+          title: 'Age Requirement',
+          description: 'Applicant must be between 18 and 30 years old'
+        },
+        {
+          title: 'Nationality Requirement',
+          description: 'Applicant must be a citizen of the Republic of Korea'
+        },
+        {
+          title: 'Residency Requirement',
+          description: 'Applicant must have a permanent residence in the Republic of Korea'
+        },
+        {
+          title: 'Travel Purpose',
+          description: 'Applicant must intend to travel in Czechia with work as a secondary purpose'
+        },
+        {
+          title: 'Family Accompaniment',
+          description: 'Applicant must not be accompanied by dependents'
+        }
+      ],
+    documents: [
+        {
+          title: 'Passport and a copy of the passport',
+          description: 'A valid passport and a copy of the passport'
+        },
+        {
+          title: 'Photos',
+          description: '3 photos'
+        },
+        {
+          title: 'Proof of sufficient funds',
+          description: 'Proof of sufficient funds for the trip, such as a bank statement or a proof of purchase of a return ticket'
+        },
+        {
+          title: 'Bank statement or proof of income',
+          description: 'A bank statement or a proof of income, such as a pay stub or a letter from an employer'
+        },
+        {
+          title: 'Criminal record certificate',
+          description: 'A certificate of no criminal record'
+        },
+        {
+          title: 'Affidavit',
+          description: 'A sworn affidavit stating that the purpose of the trip is to travel and that work is only a secondary purpose'
+        },
+        {
+          title: 'Health insurance certificate',
+          description: 'A certificate of health insurance that covers the applicant for the duration of their stay in Czechia'
+        },
+        {
+          title: 'Address in Czechia',
+          description: 'The address where the applicant will be staying in Czechia'
+        },
+        {
+          title: 'Address of the workplace',
+          description: 'The address of the workplace, if applicable'
+        }
+      ]
+    ,
+    employment: [
+        {
+          title: 'Job Research',
+          description: 'Research job opportunities in Czechia and tailor your application materials to meet local job market expectations and employer requirements.'
+        },
+        {
+          title: 'Verify Qualifications',
+          description: 'Ensure that your qualifications are officially recognized in Czechia by checking with the relevant authorities or professional organizations.'
+        },
+        {
+          title: 'Network and Connect',
+          description: 'Engage with local expat communities and professional networks in Czechia to enhance your job prospects and gain insights into living and working in the country.'
+        }
+      ],
+    living:  [
+        {
+          title: 'Health Insurance',
+          description: 'Obtain comprehensive health insurance coverage that meets Czech legal requirements and covers medical expenses for the duration of your stay.'
+        },
+        {
+          title: 'Accommodation Arrangements',
+          description: 'Make arrangements for temporary accommodation upon arrival, ensuring that it meets your needs and provides access to essential services and transportation.'
+        },
+        {
+          title: 'Pack Essentials',
+          description: 'Pack essential items tailored to Czechia’s climate, considering seasonal variations and local conditions to ensure comfort and practicality during your stay.'
+        },
+        {
+          title: 'Learn Basic Czech',
+          description: 'Familiarize yourself with key Czech phrases to facilitate communication, particularly with local authorities, healthcare providers, and employers.'
+        },
+        {
+          title: 'Research Local Amenities',
+          description: 'Investigate local grocery stores, transportation networks, and healthcare services to familiarize yourself with the available amenities and services in Czechia.'
+        },
+        {
+          title: 'Understand Local Customs',
+          description: 'Learn about Czech culture, social etiquette, and business practices to better integrate into local society and effectively interact with Czech colleagues and residents.'
+        },
+        {
+          title: 'Emergency Contacts',
+          description: 'Prepare a list of emergency contacts, including local authorities, healthcare providers, and your country’s embassy in Czechia, to ensure swift assistance if needed.'
+        }
+      ]
+},
+{
+    country: "hungary",
+    eligibility:
+    [
+        {
+          title: 'Age Requirement',
+          description: 'The applicant must be aged between eighteen (18) and thirty (30) years, both inclusive, at the time of application.'
+        },
+        {
+          title: 'No Dependents',
+          description: 'The applicant must not be accompanied by dependants.'
+        },
+        {
+          title: 'Valid Passport',
+          description: 'The applicant must possess a passport issued by the Republic of Korea valid for at least the validity of the temporary residence permit.'
+        },
+        {
+          title: 'Departure Ticket or Funds',
+          description: 'The applicant must possess a ticket for departure from Hungary, or sufficient funds to purchase such a ticket.'
+        },
+        {
+          title: 'Health Requirements',
+          description: 'The applicant must comply with any health requirements imposed by Hungary.'
+        },
+        {
+          title: 'No Previous Participation',
+          description: 'The applicant must not have participated in this Working Holiday Program previously.'
+        },
+        {
+          title: 'No Criminal Record',
+          description: 'The applicant must not have a criminal record.'
+        },
+        {
+          title: 'Medical and Comprehensive Hospitalisation Insurance',
+          description: 'The applicant must agree to hold medical and comprehensive hospitalisation insurance to remain in force throughout their stay in Hungary, to the extent that this is not covered by the national health insurance of the Republic of Korea.'
+        }
+      ],
+    documents: [
+        {
+          title: 'Passport',
+          description: 'A valid passport issued by the Republic of Hungary with at least the validity of the temporary residence permit.'
+        },
+        {
+          title: 'Ticket for Departure',
+          description: 'A ticket for departure from Hungary or sufficient funds to purchase such a ticket.'
+        },
+        {
+          title: 'Proof of Sufficient Funds',
+          description: 'Proof of sufficient funds for maintenance during the period of stay in Hungary, as determined by the relevant authorities.'
+        },
+        {
+          title: 'Medical and Comprehensive Hospitalisation Insurance',
+          description: 'Medical and comprehensive hospitalisation insurance to remain in force throughout the stay in Hungary, to the extent that this is not covered by the national health insurance of Hungary.'
+        },
+        {
+          title: 'Proof of No Criminal Record',
+          description: 'A document proving that the applicant does not have a criminal record.'
+        },
+        {
+          title: 'Proof of No Previous Participation in the Working Holiday Program',
+          description: 'A document proving that the applicant has not participated in the Working Holiday Program previously.'
+        }
+      ]
+    ,
+    employment: [
+        {
+          title: 'Job Research',
+          description: 'Research job opportunities in Hungary and tailor your application materials to meet local job market expectations and employer requirements.'
+        },
+        {
+          title: 'Verify Qualifications',
+          description: 'Ensure that your qualifications are officially recognized in Hungary by checking with the relevant authorities or professional organizations.'
+        },
+        {
+          title: 'Network and Connect',
+          description: 'Engage with local expat communities and professional networks in Hungary to enhance your job prospects and gain insights into living and working in the country.'
+        }
+      ],
+    living:  [
+        {
+          title: 'Health Insurance',
+          description: 'Obtain comprehensive health insurance coverage that meets Hungarian legal requirements and covers medical expenses for the duration of your stay.'
+        },
+        {
+          title: 'Accommodation Arrangements',
+          description: 'Make arrangements for temporary accommodation upon arrival, ensuring that it meets your needs and provides access to essential services and transportation.'
+        },
+        {
+          title: 'Pack Essentials',
+          description: 'Pack essential items tailored to Hungary’s climate, considering seasonal variations and local conditions to ensure comfort and practicality during your stay.'
+        },
+        {
+          title: 'Learn Basic Hungarian',
+          description: 'Familiarize yourself with key Hungarian phrases to facilitate communication, particularly with local authorities, healthcare providers, and employers.'
+        },
+        {
+          title: 'Research Local Amenities',
+          description: 'Investigate local grocery stores, transportation networks, and healthcare services to familiarize yourself with the available amenities and services in Hungary.'
+        },
+        {
+          title: 'Understand Local Customs',
+          description: 'Learn about Hungarian culture, social etiquette, and business practices to better integrate into local society and effectively interact with Hungarian colleagues and residents.'
+        },
+        {
+          title: 'Emergency Contacts',
+          description: 'Prepare a list of emergency contacts, including local authorities, healthcare providers, and your country’s embassy in Hungary, to ensure swift assistance if needed.'
+        }
+      ]
+},
+{
+    country: "sweden",
+    eligibility:
+    [
+        {
+          title: 'Age Requirement',
+          description: 'Be between 18 and 30 years old'
+        },
+        {
+          title: 'Citizenship Requirement',
+          description: 'Be a citizen of Australia, Hong Kong, Canada, Japan, New Zealand, or South Korea'
+        },
+        {
+          title: 'Valid Passport',
+          description: 'Have a valid passport (if your passport is about to expire, you should extend it because you cannot get a permit for longer than your passport is valid)'
+        },
+        {
+          title: 'Financial Requirement',
+          description: 'Have enough money so you can provide for yourself initially in Sweden (at least SEK 15,000)'
+        },
+        {
+          title: 'Return Ticket',
+          description: 'Have a return ticket or enough money to buy one'
+        },
+        {
+          title: 'Health Insurance',
+          description: 'Have comprehensive health insurance that covers healthcare in Sweden (not applicable to citizens of Australia)'
+        },
+        {
+          title: 'No Accompanying Children',
+          description: 'Not have any accompanying children'
+        }
+      ],
+    documents:  [
+        {
+          title: 'Valid Passport',
+          description: 'A valid passport that will not expire during your stay in Sweden'
+        },
+        {
+          title: 'Proof of Funds',
+          description: 'Proof of at least SEK 15,000 to support yourself initially in Sweden'
+        },
+        {
+          title: 'Return Ticket or Funds',
+          description: 'A return ticket or proof of funds to buy one'
+        },
+        {
+          title: 'Comprehensive Health Insurance',
+          description: 'Comprehensive health insurance that covers healthcare in Sweden (not applicable to citizens of Australia)'
+        },
+        {
+          title: 'Application Form',
+          description: 'Completed application form for a working holiday visa'
+        },
+        {
+          title: 'Bank Statement or Receipt',
+          description: 'A bank statement or receipt that clearly shows payment of the application fee'
+        }
+      ]
+    ,
+    employment: [
+        {
+          title: 'Job Research',
+          description: 'Research job opportunities in Sweden and tailor your application materials to meet local job market expectations and employer requirements.'
+        },
+        {
+          title: 'Verify Qualifications',
+          description: 'Ensure that your qualifications are officially recognized in Sweden by checking with the relevant authorities or professional organizations.'
+        },
+        {
+          title: 'Network and Connect',
+          description: 'Engage with local expat communities and professional networks in Sweden to enhance your job prospects and gain insights into living and working in the country.'
+        }
+      ],
+    living:  [
+        {
+          title: 'Health Insurance',
+          description: 'Obtain comprehensive health insurance coverage that meets Swedish legal requirements and covers medical expenses for the duration of your stay (required for non-EU citizens).'
+        },
+        {
+          title: 'Accommodation Arrangements',
+          description: 'Make arrangements for temporary accommodation upon arrival, ensuring that it meets your needs and provides access to essential services and transportation.'
+        },
+        {
+          title: 'Pack Essentials',
+          description: 'Pack essential items tailored to Sweden’s climate, considering the cold winters and varying weather conditions throughout the year.'
+        },
+        {
+          title: 'Learn Basic Swedish',
+          description: 'Familiarize yourself with key Swedish phrases to facilitate communication, particularly with local authorities, healthcare providers, and employers.'
+        },
+        {
+          title: 'Research Local Amenities',
+          description: 'Investigate local grocery stores, transportation networks, and healthcare services to familiarize yourself with the available amenities and services in Sweden.'
+        },
+        {
+          title: 'Understand Local Customs',
+          description: 'Learn about Swedish culture, social etiquette, and business practices to better integrate into local society and effectively interact with Swedish colleagues and residents.'
+        },
+        {
+          title: 'Emergency Contacts',
+          description: 'Prepare a list of emergency contacts, including local authorities, healthcare providers, and your country’s embassy in Sweden, to ensure swift assistance if needed.'
+        }
+      ]
+},
+{
+    country: "spain",
+    eligibility:
+    [
+        {
+          title: 'Citizenship',
+          description: 'The applicant must be a citizen of the Republic of Korea.'
+        },
+        {
+          title: 'Age',
+          description: 'The applicant must be between 18 and 30 years old (based on the passport birthdate).'
+        },
+        {
+          title: 'Previous Participation',
+          description: 'The applicant must not have participated in the Spanish Working Holiday Program before.'
+        },
+        {
+          title: 'Dependents',
+          description: 'The applicant cannot be accompanied by dependents.'
+        }
+      ],
+    documents:  [
+        {
+            title: 'General Documents',
+            description: 'All documents must be in Spanish. If the original document is in English, no translation is required. All documents must be original (color) and accompanied by a black and white photocopy (front and back). All documents must have the same name as the passport. All documents must be typed on a computer and signed by hand.'
+          }
+      ]
+    ,
+    employment: [
+        {
+          title: 'Job Research',
+          description: 'Research job opportunities in Spain and tailor your application materials to meet local job market expectations and employer requirements.'
+        },
+        {
+          title: 'Verify Qualifications',
+          description: 'Ensure that your qualifications are officially recognized in Spain by checking with the relevant authorities or professional organizations.'
+        },
+        {
+          title: 'Network and Connect',
+          description: 'Engage with local expat communities and professional networks in Spain to enhance your job prospects and gain insights into living and working in the country.'
+        }
+      ],
+    living:  [
+        {
+          title: 'Health Insurance',
+          description: 'Obtain comprehensive health insurance coverage that meets Spanish legal requirements and covers medical expenses for the duration of your stay (mandatory for non-EU citizens).'
+        },
+        {
+          title: 'Accommodation Arrangements',
+          description: 'Make arrangements for temporary accommodation upon arrival, ensuring that it meets your needs and provides access to essential services and transportation.'
+        },
+        {
+          title: 'Pack Essentials',
+          description: 'Pack essential items tailored to Spain’s climate, considering the hot summers, mild winters, and regional weather differences across the country.'
+        },
+        {
+          title: 'Learn Basic Spanish',
+          description: 'Familiarize yourself with key Spanish phrases to facilitate communication, particularly with local authorities, healthcare providers, and employers.'
+        },
+        {
+          title: 'Research Local Amenities',
+          description: 'Investigate local grocery stores, transportation networks, and healthcare services to familiarize yourself with the available amenities and services in Spain.'
+        },
+        {
+          title: 'Understand Local Customs',
+          description: 'Learn about Spanish culture, social etiquette, and business practices to better integrate into local society and effectively interact with Spanish colleagues and residents.'
+        },
+        {
+          title: 'Emergency Contacts',
+          description: 'Prepare a list of emergency contacts, including local authorities, healthcare providers, and your country’s embassy in Spain, to ensure swift assistance if needed.'
+        }
+      ]
+},
+{
+    country: "taiwan",
+    eligibility: [
+        {
+          title: 'Citizenship',
+          description: 'Be a citizen of a country that has signed a working holiday agreement with Taiwan'
+        },
+        {
+          title: 'Age',
+          description: 'Be between the ages of 18 and 35'
+        },
+        {
+          title: 'Passport',
+          description: 'Have a valid passport with at least 12 months of remaining validity'
+        },
+        {
+          title: 'Funds',
+          description: 'Have sufficient funds to support themselves during their stay in Taiwan'
+        },
+        {
+          title: 'Health Insurance',
+          description: 'Have health insurance that covers them for the duration of their stay in Taiwan'
+        },
+        {
+          title: 'Previous Participation',
+          description: 'Not have previously received a working holiday visa for Taiwan'
+        }
+      ],
+    documents: [
+        {
+          title: 'Completed and signed visa application form',
+          description: 'A completed application form filled out on the website of the R.O.C. (Taiwan) Bureau of Consular Affairs that has been printed out and signed on the second page.'
+        },
+        {
+          title: 'Proof of funds',
+          description: "Proof of funds of at least ₩3,000,000 (approx. US$2,500) or the equivalent thereof to cover the applicant's living expenses during the initial stay in Taiwan."
+        },
+        {
+          title: 'Health insurance',
+          description: 'Insurance covering medical care and hospitalization valid for a minimum of one year.'
+        },
+        {
+          title: 'Other documents',
+          description: 'Any other documents deemed necessary by the processing overseas mission.'
+        }
+      ],
+    employment: [
+      {
+        "title": "Job Research",
+        "description": "Research job opportunities in Taiwan and tailor your application materials to meet local job market expectations and employer requirements."
+      },
+      {
+        "title": "Verify Qualifications",
+        "description": "Ensure that your qualifications are officially recognized in Taiwan by checking with the relevant authorities or professional organizations."
+      },
+      {
+        "title": "Network and Connect",
+        "description": "Engage with local expat communities and professional networks in Taiwan to enhance your job prospects and gain insights into living and working in the country."
+      }
+    ],
+    living: [
+      {
+        "title": "Health Insurance",
+        "description": "Obtain comprehensive health insurance coverage that meets Taiwanese legal requirements and covers medical expenses for the duration of your stay (mandatory for non-Taiwanese citizens)."
+      },
+      {
+        "title": "Accommodation Arrangements",
+        "description": "Make arrangements for temporary accommodation upon arrival, ensuring that it meets your needs and provides access to essential services and transportation."
+      },
+      {
+        "title": "Pack Essentials",
+        "description": "Pack essential items tailored to Taiwan’s subtropical climate, considering the hot and humid summers and mild winters."
+      },
+      {
+        "title": "Learn Basic Mandarin",
+        "description": "Familiarize yourself with key Mandarin phrases to facilitate communication, particularly with local authorities, healthcare providers, and employers."
+      },
+      {
+        "title": "Research Local Amenities",
+        "description": "Investigate local grocery stores, transportation networks, and healthcare services to familiarize yourself with the available amenities and services in Taiwan."
+      },
+      {
+        "title": "Understand Local Customs",
+        "description": "Learn about Taiwanese culture, social etiquette, and business practices to better integrate into local society and effectively interact with Taiwanese colleagues and residents."
+      },
+      {
+        "title": "Emergency Contacts",
+        "description": "Prepare a list of emergency contacts, including local authorities, healthcare providers, and your country’s embassy in Taiwan, to ensure swift assistance if needed."
+      }
+    ]
   }
     
 ]

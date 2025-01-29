@@ -1,114 +1,78 @@
+'use client'
+
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const topDestinations = [
-  {
-    "city": "Sydney",
-    "country": "Australia",
-    "image": "/australia/bg.jpg",
-    "description": "Iconic beaches, vibrant culture, and endless job opportunities in a sun-soaked metropolis."
-  },
-  {
-    "city": "Vancouver",
-    "country": "Canada",
-    "image": "/toronto-landing.jpg",
-    "description": "A perfect blend of urban life and nature, with a booming tech scene and stunning landscapes."
-  },
-  {
-    "city": "Dublin",
-    "country": "Ireland",
-    "image": "/dublin-landing.jpg",
-    "description": "Rich history meets modern innovation in this friendly, pub-filled city with a strong job market."
-  },
-  {
-    "city": "Tokyo",
-    "country": "Japan",
-    "image": "/tokyo-landing.jpg",
-    "description": "Futuristic technology alongside ancient traditions in the world's largest metropolitan area."
-  },
-  {
-    "city": "Berlin",
-    "country": "Germany",
-    "image": "/germany/bg.jpg",
-    "description": "A hub of creativity and startups with a rich history and vibrant nightlife."
-  },
-  {
-    "city": "Barcelona",
-    "country": "Spain",
-    "image": "/barcelona-landing.jpg",
-    "description": "A captivating city known for its art, architecture, and Mediterranean beaches, offering a lively atmosphere."
-  },
-  {
-    "city": "Amsterdam",
-    "country": "Netherlands",
-    "image": "/netherlands/bg.jpg",
-    "description": "Famous for its canals, museums, and progressive culture, it's a charming city with a vibrant tech scene."
-  },
-  {
-    "city": "Lisbon",
-    "country": "Portugal",
-    "image": "/lisbon-landing.jpg",
-    "description": "A sun-kissed city with rich history, vibrant neighborhoods, and stunning views over the Atlantic Ocean."
-  }
-]
+const cities = [
+  { city: "Dublin", image: "/dublin-landing.jpg", gridArea: "1 / 1 / 2 / 5" },
+  { city: "Berlin", image: "/germany/bg.jpg", gridArea: "1 / 5 / 2 / 9" },
+  { city: "Lisbon", image: "/lisbon-landing.jpg", gridArea: "1 / 9 / 2 / 13" },
+  { city: "Tokyo", image: "/tokyo-landing.jpg", gridArea: "2 / 1 / 3 / 7" },
+  { city: "Toronto", image: "/toronto-landing.jpg", gridArea: "2 / 7 / 3 / 13" },
+  { city: "Barcelona", image: "/barcelona-landing.jpg", gridArea: "3 / 1 / 4 / 13" }
+];
 
-
-export default function RankingSection() {
+export default function CitiesGrid() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section className="py-16 bg-gradient-to-b from-zinc-800 to-zinc-700">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">Top Working Holiday Destinations</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
-          {topDestinations.map((destination, index) => (
-            <motion.div
-              key={destination.city}
-              className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              onHoverStart={() => setHoveredIndex(index)}
-              onHoverEnd={() => setHoveredIndex(null)}
-            >
-              <Link href={`/${destination.country.charAt(0).toLowerCase()+destination.country.substring(1)}`}>
-              <div className="relative h-64 w-full">
-                <Image
-                  src={destination.image}
-                  alt={`${destination.city}, ${destination.country}`}
-                  fill={true}
-                  objectFit='cover'
-                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 group-hover:opacity-60" />
+    <div className="grid grid-cols-12 gap-4">
+      {cities.map((city, index) => (
+        <motion.div
+          key={city.city}
+          className="relative overflow-hidden rounded-lg group"
+          style={{ gridArea: city.gridArea }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          onHoverStart={() => setHoveredIndex(index)}
+          onHoverEnd={() => setHoveredIndex(null)}
+        >
+          <Link href={`/${city.city.toLowerCase()}`} className="block h-full">
+            <div className="relative h-full w-full min-h-[200px]">
+              <Image
+                src={city.image}
+                alt={city.city}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
+              
+              <div className="absolute bottom-4 left-4 right-4">
+                <h3 className="text-2xl font-bold text-white mb-1">
+                  {city.city.toUpperCase()}
+                </h3>
+                <p className="text-sm text-white/90">
+                  220 Locations
+                </p>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                <h3 className="text-xl font-semibold mb-1">{destination.city}</h3>
-                <p className="text-sm">{destination.country}</p>
-              </div>
+
+              {/* Hover effect for all cities */}
               <motion.div
-                className="absolute inset-0 p-4 flex items-center justify-center bg-black bg-opacity-75 text-white opacity-0 transition-opacity duration-300"
+                className="absolute inset-0 flex items-center justify-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: hoveredIndex === index ? 1 : 0 }}
+                transition={{ duration: 0.2 }}
               >
-                <p className="text-center">{destination.description}</p>
+                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <svg 
+                    className="w-6 h-6 text-white" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2"
+                  >
+                    <path d="M13 13l6 6m0 0l-6 6m6-6H7m4-4l6-6m0 0l-6-6m6 6H7"/>
+                  </svg>
+                </div>
               </motion.div>
-              <motion.div
-                className="absolute bottom-4 right-4 bg-primary text-white p-2 rounded-full"
-                initial={{ scale: 0 }}
-                animate={{ scale: hoveredIndex === index ? 1 : 0 }}
-                transition={{ type: "spring", stiffness: 260, damping: 20 }}
-              >
-                <ChevronRight className="w-6 h-6" />
-              </motion.div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+            </div>
+          </Link>
+        </motion.div>
+      ))}
+
+    </div>
   )
 }

@@ -13,7 +13,9 @@ const Bar = () => {
             <DrawDown />
           </div>
           <Separator className="font-semibold" orientation="vertical" />
-          <div className="hover:cursor-pointer hover:scale-105 animate duration-500">Jobs</div>
+          <div className="hover:cursor-pointer hover:scale-105 animate duration-500">
+            <Link href="/jobs">Jobs</Link>
+          </div>
           <Separator orientation="vertical" />
           <div className="hover:cursor-pointer hover:scale-105 animate duration-500">Blog</div>
           <Separator orientation="vertical" />

@@ -17,7 +17,7 @@ export const countryData = {
     { value: "austria", label: "Austria", flag: "/austria.png" },
     { value: "belgium", label: "Belgium", flag: "/belgium.png" },
     {
-      value: "czech republic",
+      value: "czeckia",
       label: "Czech Republic",
       flag: "/czech republic.png",
     },
@@ -36,7 +36,7 @@ export const countryData = {
     { value: "spain", label: "Spain", flag: "/spain.png" },
     { value: "sweden", label: "Sweden", flag: "/sweden.png" },
     {
-      value: "united kingdom",
+      value: "uk",
       label: "United Kingdom",
       flag: "/united kingdom.png",
     },
@@ -77,7 +77,7 @@ export default function DrawDown() {
                     <a
                       href={`/${country.value}`}
                       key={country.value}
-                      className="transition delay-75 overflow-hidden hover:scale-105 flex gap-x-4"
+                      className="transition overflow-hidden hover:scale-105 flex gap-x-4"
                     >
                       <Image
                         src={`${country.flag}`}

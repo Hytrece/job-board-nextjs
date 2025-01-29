@@ -17,8 +17,8 @@ const CountryPage = () => {
           <Information country = {"denmark"}/>
           <JobSection country = {"denmark"}/> 
           <StepSection country = {"denmark"}/>
-          <BenefitSection country = {"denmark"}/>
           <CheckList country = {"denmark"}/>
+          <BenefitSection country = {"denmark"}/>
           <QASection country = {"denmark"}/>
           <Subscribe country={countryName}/>
         </TracingBeam>

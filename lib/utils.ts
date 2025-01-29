@@ -12,22 +12,41 @@ interface Param{
   type?:string,
 };
 
-export function checkNullandCall(param:Param){
-  let returnObject = new Map()
-  returnObject.set("country",param.country);
-  if(param.industry!="none" || param.industry==undefined){
-    returnObject.set("category",param.industry);
+interface Param {
+  country: string;
+  industry?: string;
+  s?: string;
+  page?: string;
+  type?: string;
+}
+
+export function checkNullandCall(param: Param): URLSearchParams {
+  const paramMap = new Map<string, string>();
+  
+  // Always include country
+  paramMap.set("country", param.country);
+  
+  // Only include industry/category if it exists and isn't "none"
+  if (param.industry && param.industry !== "none") {
+    paramMap.set("category", param.industry);
   }
-  if(param.s!="" || param.s==undefined){
-    returnObject.set("q" ,param.s);
+  
+  // Only include search query if it exists and isn't empty
+  if (param.s && param.s.trim() !== "") {
+    paramMap.set("q", param.s);
   }
-  if(param.page!="1" || param.page==undefined){
-    returnObject.set("page",param.page);
+  
+  // Only include page if it exists and isn't "1"
+  if (param.page && param.page !== "1") {
+    paramMap.set("page", param.page);
   }
-  if(param.type!="" || param.type==undefined){
-    returnObject.set("type",param.type);
+  
+  // Only include type if it exists and isn't empty
+  if (param.type && param.type !== "") {
+    paramMap.set("type", param.type);
   }
-  return new URLSearchParams(Object.fromEntries(returnObject));
+  
+  return new URLSearchParams(Object.fromEntries(paramMap));
 }
 export function formatDate(input: string): string {
   // Create a Date object from the input string
@@ -44,3 +63,4 @@ export function formatDate(input: string): string {
 
   return formattedDate;
 }
+export const formatCountry = (country: string): string => country.toLowerCase().trim();

@@ -12,7 +12,7 @@ export const information = [
         info: `New Zealand captivates South Korean participants with its stunning natural beauty and rich Maori culture. The IEC program allows young adults to gain valuable work experience while immersing themselves in a friendly and welcoming environment. Participants can improve their English language skills and explore diverse landscapes, from lush forests to pristine beaches. The country’s emphasis on safety and quality of life makes it an ideal destination for personal and professional growth.`
     },
     {
-        country: "united kingdom",
+        country: "uk",
         info: `The United Kingdom is a vibrant destination for South Korean participants, offering a rich historical backdrop and diverse work opportunities. Young adults can immerse themselves in British culture while enhancing their language skills and building a global network. Exploring iconic landmarks such as Big Ben and Buckingham Palace adds to the experience. With a focus on safety and quality of life, the UK provides a supportive environment for international visitors.`
     },
     {

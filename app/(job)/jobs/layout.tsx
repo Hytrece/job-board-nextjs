@@ -35,7 +35,7 @@ export default async function CountryLayout({
   return (
     <>
     <Container>
-      <BarforHeader firstName = {firstName}  lastName = {lastName} userName={userName} photo = {photourl} />
+      <BarforHeader firstName = {firstName}  lastName = {lastName} userName={userName} photo = {photourl}/>
       {children}
       <Footer/>
     </Container>
