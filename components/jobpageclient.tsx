@@ -12,6 +12,7 @@ import { BackgroundGradientDemo } from "@/components/cta";
 import { CareerJetCta } from "@/components/careerjetcta";
 import JobList from "@/components/joblist";
 import { JobKeyword, jobIconsMap } from "@/components/jobiconsmap";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 // Types
 export interface JobFilters {
@@ -21,15 +22,9 @@ export interface JobFilters {
   page: number;
   type: string;
 }
-
-// Add proper types for the component props
-interface ComboboxFormProps {
-  defaultValue: string;
-}
-
-interface JobSearchBarProps {
-  countrykey: string;
-  category: string;
+interface FilterUpdate {
+  key: keyof JobFilters;
+  value: string | number;  
 }
 
 interface Category {
@@ -43,7 +38,11 @@ interface JobPageClientProps {
   initialFilters: JobFilters;
   categories: Category[];
 }
-
+interface ActiveFiltersProps {
+  filters: JobFilters;
+  onClear: (key: keyof JobFilters, filter:JobFilters, router:AppRouterInstance) => void;
+  router:AppRouterInstance
+}
 const WORK_TYPES = [
   { name: "All", type: "" },
   { name: "Permanent", type: "p" },
@@ -54,6 +53,19 @@ const WORK_TYPES = [
 interface FilterTagProps {
   label: string;
   onClear: () => void;
+}
+function FilterTag({ label, onClear }: FilterTagProps) {
+  return (
+    <div className="mb-5 min-w-[100px] py-2 bg-indigo-200 flex justify-center px-2 w-max relative group text-sm text-indigo-600 shadow-lg rounded-md">
+      {label}
+      <button
+        onClick={onClear}
+        className="absolute top-0 right-0 p-[0.5px] w-4 h-4 rounded-full flex justify-center items-center bg-indigo-700 hover:cursor-pointer group-hover:scale-110 duration-300 translate-x-1/4 -translate-y-1/4 text-white text-sm"
+      >
+        <X className="group-hover:scale-110" />
+      </button>
+    </div>
+  );
 }
 function BreadCrumb({country,countryName}:{country:string,countryName:string}){
   console.log(country);
@@ -68,104 +80,87 @@ function BreadCrumb({country,countryName}:{country:string,countryName:string}){
       />
   )
 }
+const isValidJobKeyword = (keyword: string): keyword is JobKeyword => {
+  return Object.keys(jobIconsMap).includes(keyword);
+};
+
+function NewFilters(newfilter:FilterUpdate, filters:JobFilters){
+  return{
+    ...filters,
+    [newfilter.key]:newfilter.value
+  }
+}
+function replaceRouter(newfilter:FilterUpdate, initialFilters:JobFilters, router:AppRouterInstance){
+    const params = new URLSearchParams();
+    Object.entries(NewFilters(newfilter, initialFilters)).forEach(([key, value]) => {
+      if (value && value !== 'none') {
+        const paramKey = key === 'industry' ? 'category' : key;
+        params.set(paramKey, String(value));
+      }
+    });
+  
+    return router.replace(`?${params.toString()}`);
+  }
+function clearFilter(keyword:string,initialFilters:JobFilters, router:AppRouterInstance){
+  if(keyword == "industry"){
+    replaceRouter({key:keyword,value:"none"}, initialFilters, router)
+  }
+  if(keyword == "query"){
+    replaceRouter({key:keyword,value:""}, initialFilters, router)
+  }
+  if(keyword == "type"){
+    replaceRouter({key:keyword,value:""}, initialFilters, router)
+  }
+  else{
+    return
+  }
+}
+function ActiveFilters({ filters, onClear,router}: ActiveFiltersProps) {
+  if (!filters) return null;
+
+  return (
+    <>
+      {filters.industry !== "none" && (
+        <FilterTag
+          label={filters.industry.charAt(0).toUpperCase() + filters.industry.slice(1)}
+          onClear={() => onClear("industry",filters, router)}
+        />
+      )}
+      {filters.query && (
+        <FilterTag
+          label={`"${filters.query}" Jobs`}
+          onClear={() => onClear("query",filters, router)}
+        />
+      )}
+      {filters.type && (
+        <FilterTag
+          label={filters.type === "p" ? "Permanent" : "Contract"}
+          onClear={() => onClear("type",filters,router)}
+        />
+      )}
+    </>
+  );
+}
+
 export default function JobPageClient({
   initialJobs,
   nextPage,
   initialFilters,
   categories
 }: JobPageClientProps) {
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  const [filters, setFilters] = useState<JobFilters>(initialFilters);
-
-  const isValidJobKeyword = (keyword: string): keyword is JobKeyword => {
-    return Object.keys(jobIconsMap).includes(keyword);
-  };
-
-  function FilterTag({ label, onClear }: FilterTagProps) {
-    return (
-      <div className="mb-5 min-w-[100px] py-2 bg-indigo-200 flex justify-center px-2 w-max relative group text-sm text-indigo-600 shadow-lg rounded-md">
-        {label}
-        <button
-          onClick={onClear}
-          className="absolute top-0 right-0 p-[0.5px] w-4 h-4 rounded-full flex justify-center items-center bg-indigo-700 hover:cursor-pointer group-hover:scale-110 duration-300 translate-x-1/4 -translate-y-1/4 text-white text-sm"
-        >
-          <X className="group-hover:scale-110" />
-        </button>
-      </div>
-    );
-  }
-  
-  interface ActiveFiltersProps {
-    filters: JobFilters;
-    onClear: (key: keyof JobFilters) => void;
-  }
-  
-  function ActiveFilters({ filters, onClear }: ActiveFiltersProps) {
-    if (!filters) return null;
-  
-    return (
-      <>
-        {filters.industry !== "none" && (
-          <FilterTag
-            label={filters.industry.charAt(0).toUpperCase() + filters.industry.slice(1)}
-            onClear={() => onClear("industry")}
-          />
-        )}
-        {filters.query && (
-          <FilterTag
-            label={`"${filters.query}" Jobs`}
-            onClear={() => onClear("query")}
-          />
-        )}
-        {filters.type && (
-          <FilterTag
-            label={filters.type === "p" ? "Permanent" : "Contract"}
-            onClear={() => onClear("type")}
-          />
-        )}
-      </>
-    );
-  }
-  const updateFilter = useCallback((key: keyof JobFilters, value: string | number) => {
-    const newFilters = {
-      ...filters,
-      [key]: key === "page" ? Number(value) : value,
-      page: key !== "page" ? 1 : Number(value) 
-    };
-    setFilters(newFilters);
-
-    const params = new URLSearchParams();
-    Object.entries(newFilters).forEach(([k, v]) => {
-      if (v) {
-        params.set(k === "industry" ? "category" : k, String(v));
-      }
-    });
-    
-    router.push(`?${params.toString()}`);
-  }, [filters, router]);
-
-  const clearFilter = useCallback((key: keyof JobFilters) => {
-    const newFilters = {
-        country: filters.country,
-        industry: "none",
-        query: "",
-        page: 1,
-        type: ""
-    };
-    setFilters(newFilters);
-
-    const params = new URLSearchParams();
-    Object.entries(newFilters).forEach(([k, v]) => {
-        if (v) {
-            params.set(k === "industry" ? "category" : k, String(v));
-        }
-    });
-    
-    router.push(`?${params.toString()}`);
-}, [filters.country, router]);
-
+  const filters = initialFilters;
   const countryName = filters.country.charAt(0).toUpperCase() + filters.country.slice(1);
-
+  const handleFilterChange = useCallback(async (newFilter: FilterUpdate) => {
+    setIsLoading(true);
+    
+    try {
+      await replaceRouter(newFilter, initialFilters, router);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [initialFilters, router]);
   return (
     <section className="min-h-screen w-[80%] max-h-[500vh]">
       <BreadCrumb country={filters.country} countryName={countryName}/>
@@ -176,8 +171,7 @@ export default function JobPageClient({
               defaultValue={filters.country}
               onChange={
                 (value) => {
-                updateFilter("country", value);
-                clearFilter("country")
+                  handleFilterChange({key:"country", value:value});
                 }
               }
             />
@@ -213,7 +207,7 @@ export default function JobPageClient({
                 return (
                   <button
                     key={cat.keyword}
-                    onClick={() => updateFilter("industry", cat.keyword)}
+                    onClick={() => handleFilterChange({key:"industry", value:cat.keyword})}
                     className={cn(
                       filters.industry === cat.keyword
                         ? "bg-black text-white hover:text-white hover:bg-black"
@@ -234,7 +228,7 @@ export default function JobPageClient({
             {WORK_TYPES.map((work) => (
               <button
                 key={work.type}
-                onClick={() => updateFilter("type", work.type)}
+                onClick={() => handleFilterChange({key:"type", value:work.type})}
                 className={cn(
                   filters.type === work.type
                     ? "bg-black text-white hover:text-white hover:bg-black"
@@ -268,19 +262,25 @@ export default function JobPageClient({
             </h1>
 
             {/* Active Filters */}
-            <ActiveFilters filters={filters} onClear={clearFilter} />
+            <ActiveFilters filters={filters} onClear={clearFilter} router={router} />
           </div>
 
-          <JobList
-            joblist={initialJobs}
-            nextPage={nextPage}
-            country={filters.country}
-            industry={filters.industry}
-            s={filters.query}
-            pageNum={String(filters.page)}
-            type={filters.type}
-
-          />
+          {isLoading ? (
+            <div className="flex justify-center items-center min-h-[200px]">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900" />
+            </div>
+          ) : (
+            <JobList
+              key={`${initialFilters.country}-${initialFilters.industry}-${initialFilters.query}-${initialFilters.page}-${initialFilters.type}`}
+              joblist={initialJobs}
+              nextPage={nextPage}
+              country={initialFilters.country}
+              industry={initialFilters.industry}
+              s={initialFilters.query}
+              pageNum={String(initialFilters.page)}
+              type={initialFilters.type}
+            />
+          )}
         </main>
       </div>
     </section>

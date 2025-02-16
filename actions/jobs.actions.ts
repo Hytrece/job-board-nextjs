@@ -3,9 +3,9 @@ import { connectToDB } from "@/lib/db"
 import User from "@/lib/models/user.model";
 import mongoose, { ObjectId } from "mongoose";
 import Job from "@/lib/models/job-schema";
+import { revalidatePath } from 'next/cache'
 import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
-import { revalidatePath } from "next/cache";
 import { JobType, MidType, MidTypePopulate } from "@/lib/types/jobtype";
 export async function saveJob(userId:string,jobId:string){
     var Id = new mongoose.Types.ObjectId(jobId);
@@ -32,27 +32,61 @@ interface Params{
     pageNumInt:number,
     type:string
 }
-export async function fetchJob({country, industry,s,pageNumInt,type}:Params){
-    connectToDB();
-    let joblist;
-    let nextPage;
-    const regex = RegExp(s,'i');
-    try{
-        if(type==""){
-            joblist = industry == "none" ? await Job.find({country:country, 'title.en': {$regex: regex}}).skip((pageNumInt-1)*10).limit(10).lean().exec() : await Job.find({country:country,category:industry,'title.en': {$regex: regex}}).skip((pageNumInt-1)*20).limit(10).lean().exec();
-            nextPage = industry == "none" ? await Job.find({country:country,'title.en': {$regex: regex}}).lean().skip((pageNumInt)*10).countDocuments() : await Job.find({country:country,category:industry,'title.en': {$regex: regex}}).lean().skip((pageNumInt)*10).countDocuments();
-        }
-        else{
-            console.log(`job type=${type}`);
-            joblist = industry == "none" ? await Job.find({country:country, 'title.en': {$regex: regex},contracttype:type}).skip((pageNumInt-1)*10).limit(10).lean().exec() : await Job.find({country:country,category:industry,'title.en': {$regex: regex},contracttype:type}).skip((pageNumInt-1)*10).limit(10).lean().exec();
-            nextPage = industry == "none" ? await Job.find({country:country,'title.en': {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*10).countDocuments() : await Job.find({country:country,category:industry,'title.en': {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*10).countDocuments();
-        }
-    }
-    catch(error){
-        console.log(error);
-    }
-    console.log(joblist);
-    return {joblist:joblist, nextPage:nextPage};
+
+
+export async function fetchJob({
+  country,
+  industry,
+  s,
+  pageNumInt,
+  type
+}: Params) {
+  await connectToDB();
+  
+  console.log('Fetching jobs with params:', {
+    country,
+    industry,
+    s,
+    pageNumInt,
+    type
+  });
+
+  const regex = new RegExp(s, 'i');
+  const pageSize = 10;
+  const skip = (pageNumInt - 1) * pageSize;
+
+  try {
+    // Base query object
+    const baseQuery = {
+      country,
+      'title.en': { $regex: regex },
+      ...(type && { contracttype: type }),
+      ...(industry !== 'none' && { category: industry })
+    };
+
+    console.log('MongoDB query:', JSON.stringify(baseQuery, null, 2));
+
+    const [joblist, nextPage] = await Promise.all([
+      Job.find(baseQuery)
+        .skip(skip)
+        .limit(pageSize)
+        .lean()
+        .exec(),
+      Job.find(baseQuery)
+        .skip(pageNumInt * pageSize)
+        .countDocuments()
+    ]);
+
+    console.log(`Found ${joblist.length} jobs, nextPage count: ${nextPage}`);
+
+    // Force revalidation of the jobs page
+    revalidatePath('/jobs');
+
+    return { joblist, nextPage };
+  } catch (error) {
+    console.error('Error in fetchJob:', error);
+    throw error; // Let the page component handle the error
+  }
 }
 export async function deleteJob(jobId:string){
     const {userId} = auth();
