@@ -5,7 +5,7 @@ import { useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { MoveRight, LoaderCircle, Check, CircleX,Heart} from "lucide-react";
+import { MoveRight, LoaderCircle, Check, CircleX, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -26,23 +26,22 @@ import {
 import { saveJob } from "@/actions/jobs.actions";
 import { cn, checkNullandCall, formatDate } from "@/lib/utils";
 
-// Types
 interface Job {
   _id: string;
   url: string;
   title: {
-    en: String,
-    kr: String,
+    en: String;
+    kr: String;
   };
   location: {
-    en: String,
-    kr: String,
+    en: String;
+    kr: String;
   };
   company: string;
   date: string;
   salary: string;
   category: string;
-  contracttype: 'p' | 'c';
+  contracttype: "p" | "c";
 }
 
 interface JobListProps {
@@ -55,7 +54,6 @@ interface JobListProps {
   type: string;
 }
 
-// Loading states enum for better type safety
 enum SaveStatus {
   IDLE = 0,
   LOADING = 1,
@@ -63,12 +61,11 @@ enum SaveStatus {
   ERROR = 3,
 }
 
-// Subcomponents for better organization
 const SaveJobDialog = ({
   isLoading,
   onSave,
   onNavigate,
-  onReset
+  onReset,
 }: {
   isLoading: SaveStatus;
   onSave: () => void;
@@ -133,22 +130,31 @@ const SaveJobDialog = ({
 };
 
 const JobCard = ({ 
-  job, 
-  onSave,
+  job,
+  onSaveJob,
+  isSignedIn 
 }: { 
   job: Job;
-  onSave: (jobId: string) => void;
+  onSaveJob: (jobId: string) => Promise<boolean>;
+  isSignedIn: boolean;
 }) => {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState<SaveStatus>(SaveStatus.IDLE);
+  const [saveStatus, setSaveStatus] = useState<SaveStatus>(SaveStatus.IDLE);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleSave = async (jobId: string) => {
+    if (!isSignedIn) {
+      setSaveStatus(SaveStatus.LOADING);
+      router.push("/sign-up");
+      return;
+    }
+
     try {
-      setIsLoading(SaveStatus.LOADING);
-      await onSave(jobId);
-      setIsLoading(SaveStatus.SUCCESS);
+      setSaveStatus(SaveStatus.LOADING);
+      const success = await onSaveJob(jobId);
+      setSaveStatus(success ? SaveStatus.SUCCESS : SaveStatus.ERROR);
     } catch (error) {
-      setIsLoading(SaveStatus.ERROR);
+      setSaveStatus(SaveStatus.ERROR);
     }
   };
 
@@ -158,20 +164,29 @@ const JobCard = ({
         <div className="flex flex-col">
           <div className="flex items-start group gap-x-4">
             <h1 className="font-bold text-lg max-w-[500px]">{job.title.en}</h1>
-            <Dialog>
-              <DialogTrigger>
+            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+              <DialogTrigger asChild>
                 <button className="z-10">
                   <div className="hover:cursor-pointer transition-all group-hover:visible invisible hover:scale-110 hover:text-indigo-600">
                     <Heart className="w-7 h-7"/>
                   </div>
                 </button>
               </DialogTrigger>
-              <DialogContent>
+              <DialogContent onInteractOutside={() => {
+                setIsDialogOpen(false);
+                setSaveStatus(SaveStatus.IDLE);
+              }}>
                 <SaveJobDialog
-                  isLoading={isLoading}
+                  isLoading={saveStatus}
                   onSave={() => handleSave(job._id)}
-                  onNavigate={() => router.push("/myjobs")}
-                  onReset={() => setIsLoading(SaveStatus.IDLE)}
+                  onNavigate={() => {
+                    setIsDialogOpen(false);
+                    router.push("/myjobs");
+                  }}
+                  onReset={() => {
+                    setIsDialogOpen(false);
+                    setSaveStatus(SaveStatus.IDLE);
+                  }}
                 />
               </DialogContent>
             </Dialog>
@@ -231,29 +246,17 @@ export default function JobList({
   pageNum,
   type,
 }: JobListProps) {
-  const [isLoading, setIsLoading] = useState<SaveStatus>(SaveStatus.IDLE);
   const router = useRouter();
   const { isSignedIn, userId } = useAuth();
   const pageNumInt = parseInt(pageNum, 10);
 
-  const handleSaveJob = async (jobId: string) => {
-    if (!isSignedIn) {
-      router.push("/sign-up");
-      return;
-    }
-
+  const handleSaveJob = async (jobId: string): Promise<boolean> => {
     try {
-      setIsLoading(SaveStatus.LOADING);
       const res = await saveJob(userId!, jobId);
-      
-      if (res.status === 200) {
-        setIsLoading(SaveStatus.SUCCESS);
-      } else {
-        setIsLoading(SaveStatus.ERROR);
-      }
+      return res.status === 200;
     } catch (error) {
       console.error(error);
-      setIsLoading(SaveStatus.ERROR);
+      return false;
     }
   };
 
@@ -270,9 +273,10 @@ export default function JobList({
       <ul className="mb-1 ml-5">
         {joblist.map((job) => (
           <JobCard 
-            key={job.url} 
+            key={job._id} 
             job={job} 
-            onSave={handleSaveJob}
+            onSaveJob={handleSaveJob}
+            isSignedIn={isSignedIn ?? false}
           />
         ))}
       </ul>

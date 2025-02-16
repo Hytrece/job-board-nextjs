@@ -70,7 +70,7 @@ export default function Loading(){
           </div>
           <div className="w-full flex flex-col justify-start pt-5 pb-10 pl-4 col-span-3">
             <h1 className="font-bold text-xl ml-1">Job Search</h1>
-            <div className="bg-zinc-100 border-2 border-zinc-200 p-3 flex flex-col lg:flex-row gap-y-5 items-center gap-x-5 py-5 w-full mt-3 ml-1 rounded-lg"><JobsearchBar/><ToKorean/></div>
+            <div className="bg-zinc-100 border-2 border-zinc-200 p-3 flex flex-col lg:flex-row gap-y-5 items-center gap-x-5 py-5 w-full mt-3 ml-1 rounded-lg"><ToKorean/></div>
           </div>
         </div>
         <div className="w-full grid grid-cols-4">

@@ -43,9 +43,13 @@ export const countryData = {
     { value: "taiwan", label: "대만", flag: "/taiwan.png" },
   ],
 };
-
+type ContinentKey = 'oceania' | 'europe' | 'america' | 'asia';
+type ContinentDictionary = {
+  [key in ContinentKey]: string;
+};
 export default function DrawDown() {
-  const continentNames = {
+
+  const continentNames:ContinentDictionary = {
     oceania: "오세아니아",
     europe: "유럽",
     america: "아메리카",
@@ -67,7 +71,12 @@ export default function DrawDown() {
             {Object.entries(countryData).map(([continent, countries]) => (
               <div key={continent} className="mt-8">
                 <h2 className="font-semibold text-xl mb-5">
-                  {continentNames[continent]}
+                  {
+                  continent in continentNames
+                  ?
+                  continentNames[continent as ContinentKey]
+                  :"unknown content"
+                  }
                 </h2>
                 <div className="grid grid-cols-4 justify-start lg:grid-cols-5 gap-y-5">
                   {countries.map((country) => (

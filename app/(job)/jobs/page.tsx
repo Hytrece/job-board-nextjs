@@ -1,10 +1,11 @@
+export const dynamic = 'force-dynamic';
 import { fetchJob } from "@/actions/jobs.actions";
 import { workingHolidayJobs } from "@/constants/jobs";
 import JobPageClient from "@/components/jobpageclient";
 import { Suspense } from "react";
 import Loading from "./loading";
 
-// Types
+export const revalidate = 0;
 interface Category {
   name: string;
   keyword: string;
