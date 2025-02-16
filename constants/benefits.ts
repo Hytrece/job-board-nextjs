@@ -3,20 +3,20 @@ export const benefits = [
         country: "canada",
         benefitList: [
             {
-                title: "Diverse Job Opportunities",
-                desc: "Access a wide range of job opportunities in various sectors, from hospitality to technology."
+                title: "다양한 취업 기회",
+                desc: "호텔/관광부터 IT까지, 다양한 분야에서의 취업 기회를 만나보세요."
             },
             {
-                title: "Breathtaking Nature",
-                desc: "Explore Canada’s stunning landscapes, including mountains, lakes, and national parks."
+                title: "아름다운 자연환경",
+                desc: "산맥, 호수, 국립공원 등 캐나다의 웅장한 자연을 경험해보세요."
             },
             {
-                title: "Cultural Experiences",
-                desc: "Immerse yourself in Canada’s rich cultural mosaic and vibrant communities."
+                title: "문화적 경험",
+                desc: "캐나다의 풍부한 문화적 다양성과 활기찬 지역사회를 체험하세요."
             },
             {
-                title: "High Quality of Life",
-                desc: "Benefit from a high standard of living, excellent healthcare, and education."
+                title: "높은 삶의 질",
+                desc: "우수한 의료 시스템과 교육을 통해 높은 생활 수준을 누려보세요."
             }
         ]
     },
@@ -24,20 +24,20 @@ export const benefits = [
         country: "denmark",
         benefitList: [
             {
-                title: "Robust Job Market",
-                desc: "Access diverse job opportunities in innovative industries, from tech to design."
+                title: "안정적인 취업 시장",
+                desc: "IT부터 디자인까지, 혁신적인 산업 분야의 다양한 취업 기회를 만나보세요."
             },
             {
-                title: "Stunning Scenery",
-                desc: "Discover Denmark’s beautiful coastlines, charming countryside, and picturesque cities."
+                title: "매력적인 풍경",
+                desc: "덴마크의 아름다운 해안선, 평화로운 시골, 그리고 아기자기한 도시를 발견해보세요."
             },
             {
-                title: "Rich Cultural Heritage",
-                desc: "Immerse yourself in Denmark’s vibrant culture, including festivals, museums, and culinary delights."
+                title: "풍부한 문화유산",
+                desc: "축제, 박물관, 미식 등 덴마크의 활기찬 문화를 경험해보세요."
             },
             {
-                title: "Exceptional Quality of Life",
-                desc: "Enjoy a high standard of living with excellent healthcare, education, and work-life balance."
+                title: "우수한 삶의 질",
+                desc: "훌륭한 의료, 교육 시스템과 워라밸을 통해 높은 삶의 질을 누려보세요."
             }
         ]
     },
@@ -45,20 +45,20 @@ export const benefits = [
         country: "australia",
         benefitList: [
             {
-                title: "Vibrant Job Market",
-                desc: "Access a booming job market in various sectors."
+                title: "활기찬 취업시장",
+                desc: "다양한 분야에서 성장하는 취업 시장을 만나보세요."
             },
             {
-                title: "Cultural Diversity",
-                desc: "Experience a mix of cultures and make international connections."
+                title: "문화적 다양성",
+                desc: "다양한 문화를 경험하고 국제적인 인맥을 쌓아보세요."
             },
             {
-                title: "Travel Opportunities",
-                desc: "Explore stunning landscapes and iconic landmarks."
+                title: "여행 기회",
+                desc: "멋진 자연경관과 상징적인 명소들을 둘러보세요."
             },
             {
-                title: "Outdoor Lifestyle",
-                desc: "Engage in an active lifestyle with outdoor activities year-round."
+                title: "아웃도어 라이프스타일",
+                desc: "연중 즐길 수 있는 야외 활동으로 활기찬 생활을 경험해보세요."
             }
         ]
     },
@@ -66,20 +66,20 @@ export const benefits = [
         country: "newzealand",
         benefitList: [
             {
-                title: "Stunning Scenery",
-                desc: "Work amidst breathtaking natural landscapes."
+                title: "아름다운 자연경관",
+                desc: "숨막히게 아름다운 자연 속에서 일해보세요."
             },
             {
-                title: "Friendly Locals",
-                desc: "Experience a warm and welcoming community."
+                title: "친근한 현지인",
+                desc: "따뜻하고 환영하는 지역사회를 경험해보세요."
             },
             {
-                title: "Work-Life Balance",
-                desc: "Enjoy a laid-back lifestyle with a focus on well-being."
+                title: "워라밸",
+                desc: "여유로운 라이프스타일과 함께 삶의 균형을 찾아보세요."
             },
             {
-                title: "Adventure Sports",
-                desc: "Take part in exciting outdoor adventures during your free time."
+                title: "모험 스포츠",
+                desc: "여가 시간에 짜릿한 야외 모험을 즐겨보세요."
             }
         ]
     },
@@ -87,20 +87,20 @@ export const benefits = [
         country: "uk",
         benefitList: [
             {
-                title: "Rich History",
-                desc: "Immerse yourself in a country with a vibrant cultural heritage."
+                title: "풍부한 역사",
+                desc: "활기찬 문화유산을 가진 나라에서 생활해보세요."
             },
             {
-                title: "Diverse Work Opportunities",
-                desc: "Access a wide range of job opportunities across various industries."
+                title: "다양한 취업 기회",
+                desc: "여러 산업 분야에서 폭넓은 취업 기회를 만나보세요."
             },
             {
-                title: "Travel Within Europe",
-                desc: "Easily explore nearby European countries during your stay."
+                title: "유럽 여행",
+                desc: "체류 기간 동안 주변 유럽 국가들을 쉽게 여행해보세요."
             },
             {
-                title: "Networking Potential",
-                desc: "Build professional connections in a global hub."
+                title: "네트워킹 가능성",
+                desc: "글로벌 허브에서 전문적인 인맥을 구축해보세요."
             }
         ]
     },
@@ -108,20 +108,20 @@ export const benefits = [
         country: "ireland",
         benefitList: [
             {
-                title: "Welcoming Atmosphere",
-                desc: "Experience the famous Irish hospitality and friendliness."
+                title: "따뜻한 분위기",
+                desc: "유명한 아일랜드의 환대와 친근함을 경험해보세요."
             },
             {
-                title: "Cultural Events",
-                desc: "Participate in numerous festivals and cultural activities."
+                title: "문화 행사",
+                desc: "다양한 축제와 문화 활동에 참여해보세요."
             },
             {
-                title: "Unique Landscapes",
-                desc: "Explore stunning natural beauty and historical sites."
+                title: "독특한 자연경관",
+                desc: "아름다운 자연과 역사적인 명소를 탐험해보세요."
             },
             {
-                title: "Growing Economy",
-                desc: "Tap into a fast-growing job market, especially in tech."
+                title: "성장하는 경제",
+                desc: "특히 IT 분야에서 빠르게 성장하는 취업 시장을 경험해보세요."
             }
         ]
     },
@@ -129,20 +129,20 @@ export const benefits = [
         country: "japan",
         benefitList: [
             {
-                title: "Cultural Immersion",
-                desc: "Dive deep into a unique culture and way of life."
+                title: "문화 몰입",
+                desc: "독특한 일본 문화와 라이프스타일을 직접 체험해보세요."
             },
             {
-                title: "Technology Hub",
-                desc: "Gain experience in one of the world's leading tech markets."
+                title: "기술 허브",
+                desc: "세계 최고 수준의 기술 시장에서 경험을 쌓아보세요."
             },
             {
-                title: "Travel Opportunities",
-                desc: "Explore beautiful landscapes, temples, and vibrant cities."
+                title: "여행 기회",
+                desc: "아름다운 자연, 전통 사찰, 활기찬 도시를 탐험해보세요."
             },
             {
-                title: "Safety and Cleanliness",
-                desc: "Enjoy a safe and clean living environment."
+                title: "안전하고 깨끗한 환경",
+                desc: "안전하고 청결한 생활환경을 즐겨보세요."
             }
         ]
     },
@@ -150,20 +150,20 @@ export const benefits = [
         country: "south korea",
         benefitList: [
             {
-                title: "Dynamic Culture",
-                desc: "Experience the fusion of tradition and modernity."
+                title: "역동적인 문화",
+                desc: "전통과 현대가 어우러진 문화를 경험해보세요."
             },
             {
-                title: "Language Skills",
-                desc: "Improve your Korean language skills through immersion."
+                title: "언어 능력",
+                desc: "현지 생활을 통해 한국어 실력을 향상시켜보세요."
             },
             {
-                title: "Job Opportunities",
-                desc: "Access a growing job market in education, technology, and more."
+                title: "취업 기회",
+                desc: "교육, 기술 등 성장하는 취업 시장에서 기회를 찾아보세요."
             },
             {
-                title: "Korean Cuisine",
-                desc: "Savor a diverse range of delicious and healthy foods."
+                title: "한식 문화",
+                desc: "다양하고 건강한 한식을 즐겨보세요."
             }
         ]
     },
@@ -171,20 +171,20 @@ export const benefits = [
         country: "france",
         benefitList: [
             {
-                title: "Rich Culture",
-                desc: "Immerse yourself in art, fashion, and culinary delights."
+                title: "풍부한 문화",
+                desc: "예술, 패션, 미식의 나라에서 생활해보세요."
             },
             {
-                title: "Travel Within Europe",
-                desc: "Easily explore other European countries and cultures."
+                title: "유럽 여행",
+                desc: "다른 유럽 국가들과 문화를 쉽게 탐험해보세요."
             },
             {
-                title: "Work-Life Balance",
-                desc: "Enjoy a lifestyle that values leisure and relaxation."
+                title: "워라밸",
+                desc: "여가와 휴식을 중시하는 라이프스타일을 즐겨보세요."
             },
             {
-                title: "Language Skills",
-                desc: "Enhance your French language skills while working."
+                title: "언어 능력",
+                desc: "일하면서 프랑스어 실력을 향상시켜보세요."
             }
         ]
     },
@@ -192,20 +192,20 @@ export const benefits = [
         country: "germany",
         benefitList: [
             {
-                title: "Strong Economy",
-                desc: "Work in one of Europe's strongest economies."
+                title: "강력한 경제",
+                desc: "유럽의 최강 경제국 중 하나에서 일해보세요."
             },
             {
-                title: "Innovative Industries",
-                desc: "Gain experience in cutting-edge industries and startups."
+                title: "혁신적인 산업",
+                desc: "최첨단 산업과 스타트업에서 경험을 쌓아보세요."
             },
             {
-                title: "Cultural Diversity",
-                desc: "Experience a rich tapestry of cultures and traditions."
+                title: "문화적 다양성",
+                desc: "다양한 문화와 전통이 어우러진 환경을 경험해보세요."
             },
             {
-                title: "Travel Opportunities",
-                desc: "Explore beautiful landscapes and historic cities."
+                title: "여행 기회",
+                desc: "아름다운 자연과 역사적인 도시들을 탐험해보세요."
             }
         ]
     },
@@ -213,20 +213,20 @@ export const benefits = [
         country: "italy",
         benefitList: [
             {
-                title: "Culinary Experiences",
-                desc: "Indulge in world-renowned Italian cuisine."
+                title: "미식 경험",
+                desc: "세계적으로 유명한 이탈리아 요리를 즐겨보세요."
             },
             {
-                title: "Art and History",
-                desc: "Experience Italy's rich artistic and historical heritage."
+                title: "예술과 역사",
+                desc: "이탈리아의 풍부한 예술과 역사적 유산을 체험해보세요."
             },
             {
-                title: "Diverse Job Market",
-                desc: "Explore opportunities in tourism, fashion, and more."
+                title: "다양한 취업 시장",
+                desc: "관광, 패션 등 다양한 분야의 기회를 탐색해보세요."
             },
             {
-                title: "Vibrant Cities",
-                desc: "Enjoy the lively atmosphere of Italy's cities."
+                title: "활기찬 도시들",
+                desc: "이탈리아 도시들의 생동감 넘치는 분위기를 경험해보세요."
             }
         ]
     },
@@ -234,20 +234,20 @@ export const benefits = [
         country: "spain",
         benefitList: [
             {
-                title: "Laid-Back Lifestyle",
-                desc: "Enjoy a relaxed approach to life with long lunch breaks."
+                title: "여유로운 라이프스타일",
+                desc: "긴 점심 시간과 함께하는 여유로운 생활을 즐겨보세요."
             },
             {
-                title: "Cultural Festivals",
-                desc: "Participate in vibrant cultural celebrations and traditions."
+                title: "문화 축제",
+                desc: "활기찬 문화 축제와 전통 행사에 참여해보세요."
             },
             {
-                title: "Diverse Opportunities",
-                desc: "Access job opportunities in various sectors, including tourism."
+                title: "다양한 기회",
+                desc: "관광을 포함한 여러 분야에서 취업 기회를 찾아보세요."
             },
             {
-                title: "Beautiful Landscapes",
-                desc: "Explore stunning coastlines, mountains, and historical sites."
+                title: "아름다운 풍경",
+                desc: "멋진 해안선, 산맥, 역사적인 명소를 탐험해보세요."
             }
         ]
     },
@@ -255,20 +255,20 @@ export const benefits = [
         country: "sweden",
         benefitList: [
             {
-                title: "Quality of Life",
-                desc: "Experience a high standard of living and work-life balance."
+                title: "삶의 질",
+                desc: "높은 생활 수준과 워라밸을 경험해보세요."
             },
             {
-                title: "Innovative Work Culture",
-                desc: "Work in a progressive and innovative environment."
+                title: "혁신적인 직장 문화",
+                desc: "진보적이고 혁신적인 환경에서 일해보세요."
             },
             {
-                title: "Natural Beauty",
-                desc: "Enjoy breathtaking nature and outdoor activities."
+                title: "자연의 아름다움",
+                desc: "멋진 자연과 야외 활동을 즐겨보세요."
             },
             {
-                title: "Social Security",
-                desc: "Benefit from a comprehensive social welfare system."
+                title: "사회 보장",
+                desc: "포괄적인 사회 복지 시스템의 혜택을 누려보세요."
             }
         ]
     },
@@ -276,20 +276,20 @@ export const benefits = [
         country: "norway",
         benefitList: [
             {
-                title: "Stunning Nature",
-                desc: "Work surrounded by breathtaking fjords and mountains."
+                title: "웅장한 자연",
+                desc: "아름다운 피오르드와 산맥이 있는 곳에서 일해보세요."
             },
             {
-                title: "High Wages",
-                desc: "Benefit from competitive salaries and strong labor rights."
+                title: "높은 임금",
+                desc: "경쟁력 있는 급여와 강력한 노동권을 누려보세요."
             },
             {
-                title: "Cultural Experiences",
-                desc: "Immerse yourself in a unique and rich cultural landscape."
+                title: "문화 체험",
+                desc: "독특하고 풍부한 문화를 경험해보세요."
             },
             {
-                title: "Quality of Life",
-                desc: "Enjoy a high quality of life with excellent public services."
+                title: "삶의 질",
+                desc: "우수한 공공 서비스와 함께 높은 삶의 질을 즐겨보세요."
             }
         ]
     },
@@ -297,20 +297,20 @@ export const benefits = [
         country: "finland",
         benefitList: [
             {
-                title: "Education System",
-                desc: "Experience a world-renowned education system firsthand."
+                title: "교육 시스템",
+                desc: "세계적으로 유명한 교육 시스템을 직접 경험해보세요."
             },
             {
-                title: "Nature and Wilderness",
-                desc: "Explore pristine forests, lakes, and national parks."
+                title: "자연과 야생",
+                desc: "깨끗한 숲, 호수, 국립공원을 탐험해보세요."
             },
             {
-                title: "Work-Life Balance",
-                desc: "Enjoy a great balance between work and leisure."
+                title: "워라밸",
+                desc: "일과 여가 생활의 완벽한 균형을 즐겨보세요."
             },
             {
-                title: "Safe Environment",
-                desc: "Live in one of the safest countries in the world."
+                title: "안전한 환경",
+                desc: "세계에서 가장 안전한 국가 중 하나에서 생활해보세요."
             }
         ]
     },
@@ -318,20 +318,20 @@ export const benefits = [
         country: "netherlands",
         benefitList: [
             {
-                title: "Innovative Work Environment",
-                desc: "Work in a country known for its progressive and innovative industries."
+                title: "혁신적인 근무 환경",
+                desc: "진보적이고 혁신적인 산업으로 유명한 나라에서 일해보세요."
             },
             {
-                title: "Biking Culture",
-                desc: "Enjoy a unique biking culture and beautiful landscapes."
+                title: "자전거 문화",
+                desc: "독특한 자전거 문화와 아름다운 풍경을 즐겨보세요."
             },
             {
-                title: "Cultural Diversity",
-                desc: "Experience a rich tapestry of cultures and traditions."
+                title: "문화적 다양성",
+                desc: "다양한 문화와 전통이 어우러진 환경을 경험해보세요."
             },
             {
-                title: "High Quality of Life",
-                desc: "Benefit from a high standard of living and social security."
+                title: "높은 삶의 질",
+                desc: "높은 생활 수준과 사회 보장 제도를 누려보세요."
             }
         ]
     },
@@ -339,20 +339,20 @@ export const benefits = [
         country: "belgium",
         benefitList: [
             {
-                title: "Culinary Delights",
-                desc: "Indulge in delicious chocolates, waffles, and beers."
+                title: "미식 천국",
+                desc: "맛있는 초콜릿, 와플, 맥주를 즐겨보세요."
             },
             {
-                title: "Central Location",
-                desc: "Easily travel to neighboring countries in Europe."
+                title: "중심 위치",
+                desc: "유럽의 이웃 국가들을 쉽게 여행해보세요."
             },
             {
-                title: "Rich History",
-                desc: "Explore historic cities and cultural landmarks."
+                title: "풍부한 역사",
+                desc: "역사적인 도시와 문화 명소를 탐험해보세요."
             },
             {
-                title: "Multilingual Environment",
-                desc: "Enhance your language skills in a multilingual society."
+                title: "다국어 환경",
+                desc: "다국어 사회에서 언어 실력을 향상시켜보세요."
             }
         ]
     },
@@ -360,20 +360,20 @@ export const benefits = [
         country: "portugal",
         benefitList: [
             {
-                title: "Beautiful Beaches",
-                desc: "Enjoy stunning coastlines and a warm climate."
+                title: "아름다운 해변",
+                desc: "멋진 해안선과 따뜻한 기후를 즐겨보세요."
             },
             {
-                title: "Affordable Living",
-                desc: "Benefit from a lower cost of living compared to other Western European countries."
+                title: "합리적인 물가",
+                desc: "다른 서유럽 국가들에 비해 저렴한 생활비를 누려보세요."
             },
             {
-                title: "Rich Culture",
-                desc: "Experience a vibrant culture and delicious cuisine."
+                title: "풍부한 문화",
+                desc: "활기찬 문화와 맛있는 요리를 경험해보세요."
             },
             {
-                title: "Friendly Locals",
-                desc: "Meet warm and welcoming people in a relaxed atmosphere."
+                title: "친근한 현지인",
+                desc: "여유로운 분위기 속에서 따뜻한 환영을 받아보세요."
             }
         ]
     },
@@ -381,20 +381,20 @@ export const benefits = [
         country: "czeckia",
         benefitList: [
             {
-                title: "Beautiful Beaches",
-                desc: "Enjoy stunning coastlines and a warm climate."
+                title: "역사적인 도시",
+                desc: "아름다운 건축물과 풍부한 역사를 체험해보세요."
             },
             {
-                title: "Affordable Living",
-                desc: "Benefit from a lower cost of living compared to other Western European countries."
+                title: "경제적인 생활",
+                desc: "합리적인 물가로 여유로운 생활을 즐겨보세요."
             },
             {
-                title: "Rich Culture",
-                desc: "Experience a vibrant culture and delicious cuisine."
+                title: "중부 유럽의 중심",
+                desc: "유럽의 중심에서 다양한 문화를 경험해보세요."
             },
             {
-                title: "Friendly Locals",
-                desc: "Meet warm and welcoming people in a relaxed atmosphere."
+                title: "맥주 문화",
+                desc: "세계적으로 유명한 체코 맥주와 함께 현지 문화를 즐겨보세요."
             }
         ]
     },
@@ -402,20 +402,20 @@ export const benefits = [
         country: "taiwan",
         benefitList: [
             {
-                title: "Beautiful Beaches",
-                desc: "Enjoy stunning coastlines and a warm climate."
+                title: "다채로운 문화",
+                desc: "전통과 현대가 어우러진 독특한 문화를 경험해보세요."
             },
             {
-                title: "Affordable Living",
-                desc: "Benefit from a lower cost of living compared to other Western European countries."
+                title: "맛있는 음식",
+                desc: "다양한 현지 음식과 야시장 문화를 즐겨보세요."
             },
             {
-                title: "Rich Culture",
-                desc: "Experience a vibrant culture and delicious cuisine."
+                title: "친절한 사람들",
+                desc: "따뜻하고 환영하는 지역사회를 만나보세요."
             },
             {
-                title: "Friendly Locals",
-                desc: "Meet warm and welcoming people in a relaxed atmosphere."
+                title: "편리한 생활",
+                desc: "현대적인 도시 생활과 풍부한 자연을 함께 누려보세요."
             }
         ]
     },
@@ -423,21 +423,21 @@ export const benefits = [
         country: "hungary",
         benefitList: [
             {
-                title: "Beautiful Beaches",
-                desc: "Enjoy stunning coastlines and a warm climate."
+                title: "온천 문화",
+                desc: "유명한 온천과 스파를 즐기며 휴식을 취해보세요."
             },
             {
-                title: "Affordable Living",
-                desc: "Benefit from a lower cost of living compared to other Western European countries."
+                title: "매력적인 수도",
+                desc: "아름다운 부다페스트에서 독특한 도시 생활을 경험해보세요."
             },
             {
-                title: "Rich Culture",
-                desc: "Experience a vibrant culture and delicious cuisine."
+                title: "풍부한 문화유산",
+                desc: "오랜 역사와 전통이 살아있는 문화를 체험해보세요."
             },
             {
-                title: "Friendly Locals",
-                desc: "Meet warm and welcoming people in a relaxed atmosphere."
+                title: "중부 유럽의 허브",
+                desc: "유럽 여행의 중심지에서 다양한 기회를 만나보세요."
             }
         ]
     }
-]
+];

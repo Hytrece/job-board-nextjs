@@ -68,52 +68,6 @@ function BreadCrumb({country,countryName}:{country:string,countryName:string}){
       />
   )
 }
-function FilterTag({ label, onClear }: FilterTagProps) {
-  return (
-    <div className="mb-5 min-w-[100px] py-2 bg-indigo-200 flex justify-center px-2 w-max relative group text-sm text-indigo-600 shadow-lg rounded-md">
-      {label}
-      <button
-        onClick={onClear}
-        className="absolute top-0 right-0 p-[0.5px] w-4 h-4 rounded-full flex justify-center items-center bg-indigo-700 hover:cursor-pointer group-hover:scale-110 duration-300 translate-x-1/4 -translate-y-1/4 text-white text-sm"
-      >
-        <X className="group-hover:scale-110" />
-      </button>
-    </div>
-  );
-}
-
-interface ActiveFiltersProps {
-  filters: JobFilters;
-  onClear: (key: keyof JobFilters) => void;
-}
-
-function ActiveFilters({ filters, onClear }: ActiveFiltersProps) {
-  if (!filters) return null;
-
-  return (
-    <>
-      {filters.industry !== "none" && (
-        <FilterTag
-          label={filters.industry.charAt(0).toUpperCase() + filters.industry.slice(1)}
-          onClear={() => onClear("industry")}
-        />
-      )}
-      {filters.query && (
-        <FilterTag
-          label={`"${filters.query}" Jobs`}
-          onClear={() => onClear("query")}
-        />
-      )}
-      {filters.type && (
-        <FilterTag
-          label={filters.type === "p" ? "Permanent" : "Contract"}
-          onClear={() => onClear("type")}
-        />
-      )}
-    </>
-  );
-}
-
 export default function JobPageClient({
   initialJobs,
   nextPage,
@@ -127,7 +81,51 @@ export default function JobPageClient({
     return Object.keys(jobIconsMap).includes(keyword);
   };
 
-
+  function FilterTag({ label, onClear }: FilterTagProps) {
+    return (
+      <div className="mb-5 min-w-[100px] py-2 bg-indigo-200 flex justify-center px-2 w-max relative group text-sm text-indigo-600 shadow-lg rounded-md">
+        {label}
+        <button
+          onClick={onClear}
+          className="absolute top-0 right-0 p-[0.5px] w-4 h-4 rounded-full flex justify-center items-center bg-indigo-700 hover:cursor-pointer group-hover:scale-110 duration-300 translate-x-1/4 -translate-y-1/4 text-white text-sm"
+        >
+          <X className="group-hover:scale-110" />
+        </button>
+      </div>
+    );
+  }
+  
+  interface ActiveFiltersProps {
+    filters: JobFilters;
+    onClear: (key: keyof JobFilters) => void;
+  }
+  
+  function ActiveFilters({ filters, onClear }: ActiveFiltersProps) {
+    if (!filters) return null;
+  
+    return (
+      <>
+        {filters.industry !== "none" && (
+          <FilterTag
+            label={filters.industry.charAt(0).toUpperCase() + filters.industry.slice(1)}
+            onClear={() => onClear("industry")}
+          />
+        )}
+        {filters.query && (
+          <FilterTag
+            label={`"${filters.query}" Jobs`}
+            onClear={() => onClear("query")}
+          />
+        )}
+        {filters.type && (
+          <FilterTag
+            label={filters.type === "p" ? "Permanent" : "Contract"}
+            onClear={() => onClear("type")}
+          />
+        )}
+      </>
+    );
+  }
   const updateFilter = useCallback((key: keyof JobFilters, value: string | number) => {
     const newFilters = {
       ...filters,

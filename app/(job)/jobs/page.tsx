@@ -46,8 +46,8 @@ export default async function JobPage({ searchParams }: PageProps) {
     return (
       <Suspense fallback={<Loading />}>
         <JobPageClient
-          initialJobs={joblist}
-          nextPage={nextPage}
+          initialJobs={joblist ?? []}
+          nextPage={nextPage ?? 0}
           initialFilters={filters}
           categories={category}
         />

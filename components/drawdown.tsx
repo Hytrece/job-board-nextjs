@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Sheet,
   SheetContent,
@@ -8,69 +9,65 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Image from "next/image";
+
 export const countryData = {
   oceania: [
-    { value: "australia", label: "Australia", flag: "/australia.png" },
-    { value: "newzealand", label: "New Zealand", flag: "/newzealand.png" },
+    { value: "australia", label: "호주", flag: "/australia.png" },
+    { value: "newzealand", label: "뉴질랜드", flag: "/newzealand.png" },
   ],
   europe: [
-    { value: "austria", label: "Austria", flag: "/austria.png" },
-    { value: "belgium", label: "Belgium", flag: "/belgium.png" },
-    {
-      value: "czeckia",
-      label: "Czech Republic",
-      flag: "/czech republic.png",
-    },
-    { value: "denmark", label: "Denmark", flag: "/denmark.png" },
-    { value: "finland", label: "Finland", flag: "/finland.png" },
-    { value: "france", label: "France", flag: "/france.png" },
-    { value: "germany", label: "Germany", flag: "/germany.png" },
-    { value: "hungary", label: "Hungary", flag: "/hungary.png" },
-    { value: "ireland", label: "Ireland", flag: "/ireland.png" },
-    { value: "italy", label: "Italy", flag: "/italy.png" },
-    { value: "netherlands", label: "Netherlands", flag: "/netherlands.png" },
-    { value: "norway", label: "Norway", flag: "/norway.png" },
-    { value: "poland", label: "Poland", flag: "/poland.png" },
-    { value: "portugal", label: "Portugal", flag: "/portugal.png" },
-    { value: "slovakia", label: "Slovakia", flag: "/slovakia.png" },
-    { value: "spain", label: "Spain", flag: "/spain.png" },
-    { value: "sweden", label: "Sweden", flag: "/sweden.png" },
-    {
-      value: "uk",
-      label: "United Kingdom",
-      flag: "/united kingdom.png",
-    },
+    { value: "austria", label: "오스트리아", flag: "/austria.png" },
+    { value: "belgium", label: "벨기에", flag: "/belgium.png" },
+    { value: "czeckia", label: "체코", flag: "/czech republic.png" },
+    { value: "denmark", label: "덴마크", flag: "/denmark.png" },
+    { value: "finland", label: "핀란드", flag: "/finland.png" },
+    { value: "france", label: "프랑스", flag: "/france.png" },
+    { value: "germany", label: "독일", flag: "/germany.png" },
+    { value: "hungary", label: "헝가리", flag: "/hungary.png" },
+    { value: "ireland", label: "아일랜드", flag: "/ireland.png" },
+    { value: "italy", label: "이탈리아", flag: "/italy.png" },
+    { value: "netherlands", label: "네덜란드", flag: "/netherlands.png" },
+    { value: "norway", label: "노르웨이", flag: "/norway.png" },
+    { value: "poland", label: "폴란드", flag: "/poland.png" },
+    { value: "portugal", label: "포르투갈", flag: "/portugal.png" },
+    { value: "spain", label: "스페인", flag: "/spain.png" },
+    { value: "sweden", label: "스웨덴", flag: "/sweden.png" },
+    { value: "uk", label: "영국", flag: "/united kingdom.png" },
   ],
   america: [
-    { value: "canada", label: "Canada", flag: "/canada.png" },
-    { value: "chile", label: "Chile", flag: "/chile.png" },
+    { value: "canada", label: "캐나다", flag: "/canada.png" },
+    { value: "chile", label: "칠레", flag: "/chile.png" },
   ],
   asia: [
-    { value: "hong kong", label: "Hong Kong", flag: "/hong kong.png" },
-    { value: "israel", label: "Israel", flag: "/israel.png" },
-    { value: "japan", label: "Japan", flag: "/japan.png" },
-    { value: "taiwan", label: "Taiwan", flag: "/taiwan.png" },
+    { value: "japan", label: "일본", flag: "/japan.png" },
+    { value: "taiwan", label: "대만", flag: "/taiwan.png" },
   ],
 };
+
 export default function DrawDown() {
+  const continentNames = {
+    oceania: "오세아니아",
+    europe: "유럽",
+    america: "아메리카",
+    asia: "아시아"
+  };
+
   return (
     <Sheet>
-      <SheetTrigger>Working Holidays</SheetTrigger>
+      <SheetTrigger>워킹홀리데이</SheetTrigger>
       <SheetContent side="top" className="h-screen lg:h-[85%] overflow-y-auto">
         <SheetHeader>
           <SheetTitle className="mt-7 ml-5 text-2xl">
-            Working Holidays
+            워킹홀리데이
           </SheetTitle>
           <SheetDescription className="ml-5 mt-7 text-md">
-            These are the list of countries Koreans can visit for a working
-            holiday.
+            한국인이 워킹홀리데이를 떠날 수 있는 국가 목록입니다.
           </SheetDescription>
           <div className="ml-5">
             {Object.entries(countryData).map(([continent, countries]) => (
               <div key={continent} className="mt-8">
                 <h2 className="font-semibold text-xl mb-5">
-                  {continent.charAt(0).toUpperCase() +
-                    continent.slice(1).replace("_", " ")}
+                  {continentNames[continent]}
                 </h2>
                 <div className="grid grid-cols-4 justify-start lg:grid-cols-5 gap-y-5">
                   {countries.map((country) => (

@@ -2,7 +2,7 @@ import { connectToDB } from "@/lib/db";
 import User from "@/lib/models/user.model";
 import { MidTypePopulate } from "@/lib/types/jobtype";
 import { auth } from "@clerk/nextjs/server";
-import Country from "@/lib/models/country-schema";
+import Country from "@/lib/models/job-schema";
 import { Loader,MousePointer2,Speech,PartyPopper,Plus } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import Image from "next/image"

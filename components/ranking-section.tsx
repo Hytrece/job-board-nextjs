@@ -6,12 +6,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const cities = [
-  { city: "Dublin", image: "/dublin-landing.jpg", gridArea: "1 / 1 / 2 / 5" },
-  { city: "Berlin", image: "/germany/bg.jpg", gridArea: "1 / 5 / 2 / 9" },
-  { city: "Lisbon", image: "/lisbon-landing.jpg", gridArea: "1 / 9 / 2 / 13" },
-  { city: "Tokyo", image: "/tokyo-landing.jpg", gridArea: "2 / 1 / 3 / 7" },
-  { city: "Toronto", image: "/toronto-landing.jpg", gridArea: "2 / 7 / 3 / 13" },
-  { city: "Barcelona", image: "/barcelona-landing.jpg", gridArea: "3 / 1 / 4 / 13" }
+  { city: "Dublin", image: "/dublin-landing.jpg", gridArea: "1 / 1 / 2 / 5", korean:"더블린"},
+  { city: "Berlin", image: "/germany/bg.jpg", gridArea: "1 / 5 / 2 / 9" ,korean:"베를린"},
+  { city: "Lisbon", image: "/lisbon-landing.jpg", gridArea: "1 / 9 / 2 / 13" ,korean:"리스본"},
+  { city: "Tokyo", image: "/tokyo-landing.jpg", gridArea: "2 / 1 / 3 / 7" ,korean:"도쿄"},
+  { city: "Toronto", image: "/toronto-landing.jpg", gridArea: "2 / 7 / 3 / 13" ,korean:"토론토"},
+  { city: "Barcelona", image: "/barcelona-landing.jpg", gridArea: "3 / 1 / 4 / 13" ,korean:"바르셀로나"}
 ];
 
 export default function CitiesGrid() {
@@ -42,7 +42,7 @@ export default function CitiesGrid() {
               
               <div className="absolute bottom-4 left-4 right-4">
                 <h3 className="text-2xl font-bold text-white mb-1">
-                  {city.city.toUpperCase()}
+                  {city.korean}
                 </h3>
                 <p className="text-sm text-white/90">
                   220 Locations

@@ -2,7 +2,7 @@
 import { connectToDB } from "@/lib/db"
 import User from "@/lib/models/user.model";
 import mongoose, { ObjectId } from "mongoose";
-import Country from "@/lib/models/country-schema";
+import Job from "@/lib/models/job-schema";
 import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
@@ -37,15 +37,21 @@ export async function fetchJob({country, industry,s,pageNumInt,type}:Params){
     let joblist;
     let nextPage;
     const regex = RegExp(s,'i');
-    if(type==""){
-        joblist = industry == "none" ? await Country.find({country:country, title: {$regex: regex}}).skip((pageNumInt-1)*10).limit(10).lean().exec() : await Country.find({country:country,category:industry,title: {$regex: regex}}).skip((pageNumInt-1)*20).limit(10).lean().exec();
-        nextPage = industry == "none" ? await Country.find({country:country,title: {$regex: regex}}).lean().skip((pageNumInt)*10).countDocuments() : await Country.find({country:country,category:industry,title: {$regex: regex}}).lean().skip((pageNumInt)*10).countDocuments();
+    try{
+        if(type==""){
+            joblist = industry == "none" ? await Job.find({country:country, 'title.en': {$regex: regex}}).skip((pageNumInt-1)*10).limit(10).lean().exec() : await Job.find({country:country,category:industry,'title.en': {$regex: regex}}).skip((pageNumInt-1)*20).limit(10).lean().exec();
+            nextPage = industry == "none" ? await Job.find({country:country,'title.en': {$regex: regex}}).lean().skip((pageNumInt)*10).countDocuments() : await Job.find({country:country,category:industry,'title.en': {$regex: regex}}).lean().skip((pageNumInt)*10).countDocuments();
+        }
+        else{
+            console.log(`job type=${type}`);
+            joblist = industry == "none" ? await Job.find({country:country, 'title.en': {$regex: regex},contracttype:type}).skip((pageNumInt-1)*10).limit(10).lean().exec() : await Job.find({country:country,category:industry,'title.en': {$regex: regex},contracttype:type}).skip((pageNumInt-1)*10).limit(10).lean().exec();
+            nextPage = industry == "none" ? await Job.find({country:country,'title.en': {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*10).countDocuments() : await Job.find({country:country,category:industry,'title.en': {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*10).countDocuments();
+        }
     }
-    else{
-        console.log(`job type=${type}`);
-        joblist = industry == "none" ? await Country.find({country:country, title: {$regex: regex},contracttype:type}).skip((pageNumInt-1)*10).limit(10).lean().exec() : await Country.find({country:country,category:industry,title: {$regex: regex},contracttype:type}).skip((pageNumInt-1)*10).limit(10).lean().exec();
-        nextPage = industry == "none" ? await Country.find({country:country,title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*10).countDocuments() : await Country.find({country:country,category:industry,title: {$regex: regex},contracttype:type}).lean().skip((pageNumInt)*10).countDocuments();
+    catch(error){
+        console.log(error);
     }
+    console.log(joblist);
     return {joblist:joblist, nextPage:nextPage};
 }
 export async function deleteJob(jobId:string){

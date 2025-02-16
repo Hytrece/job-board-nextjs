@@ -99,19 +99,19 @@ export default function LandingPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium">
-                  Working Holiday Visas Available
+                  워킹 홀리데이 비자 지원 가능
                 </span>
                 
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
-                  Discover Your
-                  <span className="block mt-2">Perfect Working</span>
+                  당신의
+                  <span className="block mt-2">완벽한 워킹</span>
                   <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
-                    Holiday
+                    홀리데이를 찾아보세요
                   </span>
                 </h1>
                 
                 <p className="text-xl text-white/90 max-w-2xl">
-                  Explore opportunities and adventures around the world
+                  전 세계의 기회와 모험을 탐험하세요
                 </p>
               </motion.div>
             </div>
@@ -127,10 +127,10 @@ export default function LandingPage() {
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-semibold text-white">
-                      Find Your Destination
+                      여행지를 찾아보세요
                     </h3>
                     <p className="text-sm text-white/70 mt-1">
-                      Search from over 50+ destinations worldwide
+                      전 세계 50개 이상의 여행지 중에서 검색하세요
                     </p>
                   </div>
                   
@@ -138,10 +138,10 @@ export default function LandingPage() {
                   
                   <div className="space-y-3">
                     <p className="text-sm font-medium text-white/80">
-                      Popular Destinations
+                      인기 여행지
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {['Tokyo', 'Berlin', 'Toronto'].map((city) => (
+                      {['도쿄', '베를린', '토론토'].map((city) => (
                         <button
                           key={city}
                           className="px-3 py-1.5 text-sm text-white/90 bg-white/10 rounded-lg 
@@ -170,15 +170,15 @@ export default function LandingPage() {
           <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-6">
             <div className="text-center">
               <div className="text-2xl font-bold text-white">50+</div>
-              <div className="text-sm text-white/70">Countries</div>
+              <div className="text-sm text-white/70">국가</div>
             </div>
             <div className="text-center border-x border-white/20">
               <div className="text-2xl font-bold text-white">1000+</div>
-              <div className="text-sm text-white/70">Opportunities</div>
+              <div className="text-sm text-white/70">기회</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-white">24/7</div>
-              <div className="text-sm text-white/70">Support</div>
+              <div className="text-sm text-white/70">지원</div>
             </div>
           </div>
         </div>
@@ -197,7 +197,7 @@ export default function LandingPage() {
         }}
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-sm font-medium text-white/90">Scroll to explore</span>
+          <span className="text-sm font-medium text-white/90">스크롤하여 탐색하세요</span>
           <svg
             className="w-6 h-6 text-white/90"
             fill="none"
@@ -217,15 +217,15 @@ export default function LandingPage() {
           {/* Title Section */}
           <div className="text-center mb-16">
             <span className="text-sm font-semibold tracking-wider text-zinc-500 uppercase mb-3 block">
-              Popular Destinations
+              인기 여행지
             </span>
             <h2 className="text-4xl font-bold text-zinc-900 mb-4">
-              Explore Global Cities
+              글로벌 도시 탐험
             </h2>
             <div className="flex items-center justify-center gap-3 max-w-2xl mx-auto">
               <span className="h-px w-12 bg-zinc-200"></span>
               <p className="text-zinc-600 text-lg">
-                Discover unique locations across vibrant metropolises
+                활기찬 대도시의 독특한 장소를 발견하세요
               </p>
               <span className="h-px w-12 bg-zinc-200"></span>
             </div>
@@ -245,13 +245,13 @@ export default function LandingPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <ScrollAnimation variants={fadeInUpVariants}>
-            <h2 className="text-3xl font-bold text-center mb-12">What Our Travelers Say</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">여행자들의 후기</h2>
           </ScrollAnimation>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: "Sarah L.", country: "Canada", text: "My working holiday in Australia was life-changing. This platform made it so easy to plan and prepare!" },
-              { name: "Miguel R.", country: "Spain", text: "I found an amazing job in New Zealand through this site. The visa guidance was incredibly helpful." },
-              { name: "Yuki T.", country: "Japan", text: "Working in Ireland was a dream come true. Thank you for making it possible and stress-free!" }
+              { name: "Sarah L.", country: "캐나다", text: "호주에서의 워킹 홀리데이는 제 인생을 바꿨어요. 이 플랫폼 덕분에 계획과 준비가 정말 쉬웠어요!" },
+              { name: "Miguel R.", country: "스페인", text: "이 사이트를 통해 뉴질랜드에서 멋진 일자리를 찾았어요. 비자 안내가 정말 도움이 됐어요." },
+              { name: "Yuki T.", country: "일본", text: "아일랜드에서 일하는 것은 꿈이었어요. 스트레스 없이 가능하게 해줘서 감사합니다!" }
             ].map((testimonial, index) => (
               <ScrollAnimation key={index} variants={fadeInUpVariants}>
                 <div className="bg-white p-6 rounded-lg shadow-md">
@@ -270,29 +270,29 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">About Us</h3>
-              <p className="text-sm">Were passionate about connecting travelers with life-changing working holiday opportunities around the world.</p>
+              <h3 className="text-lg font-semibold mb-4">회사 소개</h3>
+              <p className="text-sm">우리는 전 세계의 여행자들에게 삶을 바꾸는 워킹 홀리데이 기회를 제공하는 데 열정을 가지고 있습니다.</p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4">Popular Destinations</h3>
+              <h3 className="text-lg font-semibold mb-4">인기 여행지</h3>
               <ul className="text-sm">
-                <li className="mb-2">Australia</li>
-                <li className="mb-2">New Zealand</li>
-                <li className="mb-2">Canada</li>
-                <li className="mb-2">Japan</li>
+                <li className="mb-2">호주</li>
+                <li className="mb-2">뉴질랜드</li>
+                <li className="mb-2">캐나다</li>
+                <li className="mb-2">일본</li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4">Resources</h3>
+              <h3 className="text-lg font-semibold mb-4">리소스</h3>
               <ul className="text-sm">
-                <li className="mb-2">Visa Information</li>
-                <li className="mb-2">Job Board</li>
-                <li className="mb-2">Travel Tips</li>
-                <li className="mb-2">FAQs</li>
+                <li className="mb-2">비자 정보</li>
+                <li className="mb-2">구인 게시판</li>
+                <li className="mb-2">여행 팁</li>
+                <li className="mb-2">자주 묻는 질문</li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
+              <h3 className="text-lg font-semibold mb-4">연락처</h3>
               <div className="flex space-x-4">
                 <a href="#" className="text-white hover:text-primary">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

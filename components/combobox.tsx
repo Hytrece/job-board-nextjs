@@ -31,32 +31,29 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 const countries = [
-  { value: "australia", label: "Australia" },
-  { value: "austria", label: "Austria" },
-  { value: "belgium", label: "Belgium" },
-  { value: "canada", label: "Canada" },
-  { value: "chile", label: "Chile" },
-  { value: "czech republic", label: "Czech Republic" },
-  { value: "denmark", label: "Denmark" },
-  { value: "finland", label: "Finland" },
-  { value: "france", label: "France" },
-  { value: "germany", label: "Germany" },
-  { value: "hong kong", label: "Hong Kong" },
-  { value: "hungary", label: "Hungary" },
-  { value: "ireland", label: "Ireland" },
-  { value: "israel", label: "Israel" },
-  { value: "italy", label: "Italy" },
-  { value: "japan", label: "Japan" },
-  { value: "netherlands", label: "Netherlands" },
-  { value: "new zealand", label: "New Zealand" },
-  { value: "norway", label: "Norway" },
-  { value: "poland", label: "Poland" },
-  { value: "portugal", label: "Portugal" },
-  { value: "slovakia", label: "Slovakia" },
-  { value: "spain", label: "Spain" },
-  { value: "sweden", label: "Sweden" },
-  { value: "taiwan", label: "Taiwan" },
-  { value: "united kingdom", label: "United Kingdom" },
+  { value: "australia", label: "Australia", korean: "호주" },
+  { value: "austria", label: "Austria", korean: "오스트리아" },
+  { value: "belgium", label: "Belgium", korean: "벨기에" },
+  { value: "canada", label: "Canada", korean: "캐나다" },
+  { value: "chile", label: "Chile", korean: "칠레" },
+  { value: "czech republic", label: "Czech Republic", korean: "체코" },
+  { value: "denmark", label: "Denmark", korean: "덴마크" },
+  { value: "finland", label: "Finland", korean: "핀란드" },
+  { value: "france", label: "France", korean: "프랑스" },
+  { value: "germany", label: "Germany", korean: "독일" },
+  { value: "hungary", label: "Hungary", korean: "헝가리" },
+  { value: "ireland", label: "Ireland", korean: "아일랜드" },
+  { value: "italy", label: "Italy", korean: "이탈리아" },
+  { value: "japan", label: "Japan", korean: "일본" },
+  { value: "netherlands", label: "Netherlands", korean: "네덜란드" },
+  { value: "new zealand", label: "New Zealand", korean: "뉴질랜드" },
+  { value: "norway", label: "Norway", korean: "노르웨이" },
+  { value: "poland", label: "Poland", korean: "폴란드" },
+  { value: "portugal", label: "Portugal", korean: "포르투갈" },
+  { value: "spain", label: "Spain", korean: "스페인" },
+  { value: "sweden", label: "Sweden", korean: "스웨덴" },
+  { value: "taiwan", label: "Taiwan", korean: "대만" },
+  { value: "united kingdom", label: "United Kingdom", korean: "영국" },
 ] as const;
 
 const FormSchema = z.object({
@@ -95,57 +92,49 @@ export default function ComboboxForm() {
                     !field.value && "text-muted-foreground"
                   )}
                 >
-                  {field.value ? (
-                    <div className="flex gap-x-3 items-center">
-                      <div>
-                        {
-                          countries.find(
-                            (country) => country.value === field.value
-                          )?.label
-                        }
-                      </div>
-                      <Image
-                        src={`/${
-                          countries.find(
-                            (country) => country.value === field.value
-                          )?.value
-                        }.png`}
-                        width={25}
-                        height={15}
-                        alt="flag"
-                      />
-                    </div>
-                  ) : (
-                    "Select Country"
-                  )}
+                {field.value ? (
+                <div className="flex gap-x-3 items-center">
+                  <div>
+                    {countries.find((country) => country.value === field.value)?.korean}
+                  </div>
+                  <Image
+                    src={`/${countries.find((country) => country.value === field.value)?.value}.png`}
+                    width={25}
+                    height={15}
+                    alt="flag"
+                  />
+                </div>
+              ) : (
+                "국가를 선택하세요"
+              )}
                   <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                 </Button>
               </FormControl>
             </PopoverTrigger>
             <PopoverContent className="w-[300px] p-0">
               <Command>
-                <CommandInput placeholder="Search Country..." />
-                <CommandEmpty>No Country found.</CommandEmpty>
+                <CommandInput placeholder="나라 검색..." />
+                <CommandEmpty>원하시는 나라가 없습니다.</CommandEmpty>
                 <CommandGroup>
                   <CommandList>
                     {countries.map((country) => (
                       <CommandItem
-                        value={country.label}
-                        key={country.value}
-                        onSelect={() => {
-                          form.setValue("language", country.value);
-                        }}
-                      >
-                        <Check
-                          className={cn(
-                            "mr-2 h-4 w-4",
-                            country.value === field.value
-                              ? "opacity-100"
-                              : "opacity-0"
-                          )}
-                        />
-                        {country.label}
-                      </CommandItem>
+                      value={country.label}
+                      key={country.value}
+                      onSelect={() => {
+                        form.setValue("language", country.value);
+                      }}
+                    >
+                      <Check
+                        className={cn(
+                          "mr-2 h-4 w-4",
+                          country.value === field.value
+                            ? "opacity-100"
+                            : "opacity-0"
+                        )}
+                      />
+                      {country.korean}
+                    </CommandItem>
                     ))}
                   </CommandList>
                 </CommandGroup>
@@ -157,7 +146,7 @@ export default function ComboboxForm() {
       )}
     />
     <Button type="submit" className="w-[100px] h-14">
-      Explore
+      검색
     </Button>
   </form>
 </Form>

@@ -1,518 +1,519 @@
 export const questions = [
-    {
-        country:"canada",
-        qlist:[
-            {
-              question: "What is the age range for eligibility for the International Experience Canada (IEC) program?",
-              answer: "The age range for eligibility for the International Experience Canada (IEC) program is 18-35 years old (or 18-30 for some countries)."
-            },
-            {
-              question: "What type of work permit is available under the Working Holiday category of the IEC program?",
-              answer: "An open work permit that allows participants to work for almost any employer in Canada."
-            },
-            {
-              question: "What are the requirements for participants with an open work permit under the Working Holiday category?",
-              answer: "There are no restrictions on how long they can work or how many hours they can work."
-            },
-            {
-              question: "What happens if a participant with an open work permit leaves Canada and returns while their work permit is still valid?",
-              answer: "The border services officer will re-assess their admissibility each time they enter Canada."
-            },
-            {
-              question: "What type of insurance is required for participants in the IEC program?",
-              answer: "Health insurance that covers medical care, hospitalization, and repatriation for their entire stay in Canada."
-            },
-            {
-              question: "Can family members of IEC participants visit or study in Canada?",
-              answer: "Yes, family members can apply to visit or study in Canada."
-            },
-            {
-              question: "What are the categories available under the IEC program?",
-              answer: "The IEC program has three categories: International Co-op (Internship), Working Holiday, and Young Professionals."
-            },
-            {
-              question: "What is the duration of stay allowed under the IEC program?",
-              answer: "Up to 2 years."
-            }
-          ]
-    },
-    {
-      country:"australia",
+  {
+      country:"canada",
       qlist:[
           {
-              question: "What is the age limit for a Working Holiday in Australia?",
-              answer: "The Australian Working Holiday visa is open to applicants aged between 18 and 30 (18 to 35 in some cases)."
+            question: "국제 경험 캐나다(IEC) 프로그램의 나이 제한이 어떻게 되나요? 🇨🇦",
+            answer: "국제 경험 캐나다(IEC) 프로그램의 나이 제한은 18-35세예요. 일부 국가의 경우 18-30세로 제한될 수 있어요. 🎂"
           },
           {
-              question: "Where can I find more information about Working Holiday visas in Australia?",
-              answer: "Find the most up to date information regarding visas and the Working Holiday Maker program on the Department of Home Affairs website."
+            question: "IEC 프로그램의 워킹홀리데이 카테고리에서 어떤 종류의 취업 허가증을 받을 수 있나요? 💼",
+            answer: "캐나다에서 거의 모든 고용주를 위해 일할 수 있는 오픈 취업 허가증을 받을 수 있어요. 🌟"
           },
           {
-              question: "Which Australian Working Holiday visa should I apply for if I hold a passport from the USA?",
-              answer: "Apply for the Work and Holiday visa (Subclass 462) if you hold a passport from the USA."
+            question: "워킹홀리데이 카테고리의 오픈 취업 허가증 소지자의 근무 조건은 어떻게 되나요? 👥",
+            answer: "근무 기간이나 시간에 대한 제한이 없어요. 자유롭게 일할 수 있답니다! 💪"
           },
           {
-              question: "Can I leave and re-enter Australia during a working holiday?",
-              answer: "Yes. You can leave and re-enter Australia any number of times while the visa is valid."
+            question: "취업 허가증이 유효한 동안 캐나다를 나갔다 다시 들어오면 어떻게 되나요? 🛂",
+            answer: "입국할 때마다 국경 관리 공무원이 입국 자격을 다시 심사해요. 📝"
           },
           {
-              question: "How long does an Australian Working Holiday visa last?",
-              answer: "Your first Working Holiday visa lasts for 12 months. However, there are options to stay for two or even three years on your working holiday."
+            question: "IEC 프로그램 참가자들은 어떤 보험에 가입해야 하나요? 🏥",
+            answer: "캐나다 체류 전 기간 동안 의료 치료, 입원, 귀국 비용을 보장하는 건강 보험에 가입해야 해요. 💉"
           },
           {
-              question: "What is required to complete the Australian Working Holiday visa application?",
-              answer: "Check the Department of Home Affairs website for the latest updates."
+            question: "IEC 참가자의 가족들도 캐나다를 방문하거나 공부할 수 있나요? 👨‍👩‍👧",
+            answer: "네, 가족들도 캐나다 방문이나 공부를 신청할 수 있어요. 🌈"
+          },
+          {
+            question: "IEC 프로그램에는 어떤 카테고리들이 있나요? 🌍",
+            answer: "국제 협력(인턴십), 워킹홀리데이, 청년 전문가 등 세 가지 카테고리가 있어요. 🏆"
+          },
+          {
+            question: "IEC 프로그램으로 얼마나 오래 머물 수 있나요? ⏳",
+            answer: "최대 2년 동안 체류할 수 있어요. 🗓️"
+          }
+        ]
+  }
+,
+  {
+      country:"newzealand",
+      qlist:[
+          {
+            question: "한국-뉴질랜드 워킹홀리데이 프로그램의 나이 제한이 어떻게 되나요? 🇳🇿",
+            answer: "한국-뉴질랜드 워킹홀리데이 프로그램의 나이 제한은 18-30세예요. 🎂"
+          },
+          {
+            question: "한국-뉴질랜드 워킹홀리데이 프로그램에 참여할 수 있는 국가는 어디인가요? 🌍",
+            answer: "한국과 뉴질랜드 국민들만 이 프로그램에 참여할 수 있어요. 🤝"
+          },
+          {
+            question: "뉴질랜드에서 워킹홀리데이 비자를 어떻게 신청하나요? 📝",
+            answer: "자격이 되는 국가의 시민들은 뉴질랜드 이민국 웹사이트를 통해 워킹홀리데이 비자를 신청할 수 있어요. 💻"
+          },
+          {
+            question: "한국-뉴질랜드 워킹홀리데이 프로그램의 목적은 무엇인가요? 🌈",
+            answer: "양국의 젊은이들이 서로의 문화를 경험하면서 최대 12개월 동안 일하고 여행할 수 있는 프로그램이에요. ✈️"
           }
       ]
-    },
-    {
-        country:"newzealand",
+  },
+  {
+      country:"netherlands",
+      qlist:[
+          {
+            question: "네덜란드 워킹홀리데이의 나이 제한이 어떻게 되나요? 🇳🇱",
+            answer: "18-30세까지 참여할 수 있어요. 🎈"
+          },
+          {
+            question: "네덜란드 워킹홀리데이의 주요 목적은 무엇인가요? 🌟",
+            answer: "문화 교류가 주된 목적이에요. 돈 벌기보다는 경험에 중점을 둡니다. 🤝"
+          },
+          {
+            question: "네덜란드에서 일시적인 아르바이트는 허용되나요? 💼",
+            answer: "네, 휴가를 재정적으로 지원하기 위해 간헐적인 일은 가능해요. 💰"
+          },
+          {
+            question: "네덜란드 워킹홀리데이 정책에 대해 더 자세한 정보는 어디서 얻을 수 있나요? 🌐",
+            answer: "네덜란드 이민 및 귀화 서비스(IND) 공식 웹사이트를 방문하거나 직접 문의해보세요. 🕵️‍♀️"
+          },
+          {
+            question: "네덜란드 워킹홀리데이 거주 허가를 신청하려면 무엇이 필요한가요? 📋",
+            answer: "작성된 신청서, 유효한 여권 및 여권 사본, 네덜란드 요구 사항을 충족하는 2장의 여권 사진이 필요해요. 📸"
+          }
+      ]
+  },
+  {
+      country:"poland",
+      qlist:[
+          {
+            question: "워킹홀리데이 프로그램 참여의 주요 목적은 무엇인가요? 🌍",
+            answer: "최대 12개월 동안 휴가를 즐기는 것이 주된 목적이에요. 🏖️"
+          },
+          {
+            question: "폴란드 워킹홀리데이 비자 신청 비용은 얼마인가요? 💸",
+            answer: "약 193,590원(대략 150유로) 정도예요. 💰"
+          },
+          {
+            question: "폴란드 워킹홀리데이 비자 처리 기간은 얼마나 되나요? ⏰",
+            answer: "보통 15일 정도 걸리지만, 경우에 따라 30일까지 소요될 수 있어요. 📅"
+          },
+          {
+            question: "대한민국에서 체류하기 위해 필요한 자금은 얼마인가요? 💵",
+            answer: "3,000달러가 필요해요. 🌟"
+          },
+          {
+            question: "폴란드에서 워킹홀리데이 비자는 어디에서 신청할 수 있나요? 🏢",
+            answer: "바르샤바 주재 대한민국 대사관에서 신청할 수 있어요. 🇵🇱"
+          }
+      ]
+  },
+  {
+      country:"austria",
+      qlist:[
+          {
+            question: "오스트리아 워킹홀리데이 프로그램(WHP)의 목적은 무엇인가요? 🇦🇹",
+            answer: "젊은이들이 다른 나라와 문화를 이해하고, 해외 전문 경험을 쌓으며, 외국어 능력을 향상시키는 것이 목적이에요. 🌍"
+          },
+          {
+            question: "오스트리아와 워킹홀리데이 협정을 맺은 국가들은 어디인가요? 🤝",
+            answer: "아르헨티나, 호주, 캐나다, 칠레, 홍콩, 이스라엘, 일본, 뉴질랜드, 한국, 대만, 미국 등과 협정을 맺었어요. 🌐"
+          },
+          {
+            question: "오스트리아 WHP의 신청 비용은 얼마인가요? 💸",
+            answer: "신청 비용은 120유로(약 15만원) 정도예요. 💰"
+          },
+          {
+            question: "WHP 신청 처리 기간은 얼마나 걸리나요? ⏳",
+            answer: "보통 최대 2주 정도 소요될 수 있어요. 📅"
+          },
+          {
+            question: "WHP에 필요한 서류 정보는 어디서 찾을 수 있나요? 📋",
+            answer: "https://www.bmeia.gv.at/fileadmin/user_upload/Vertretungen/Seoul/Dokumente/005_Visainformation_SV-D_Working_Holiday__D_K__2024.pdf 에서 확인할 수 있어요. 💻"
+          },
+          {
+            question: "WHP 신청은 어디에서 직접 해야 하나요? 🏢",
+            answer: "서울 주재 오스트리아 대사관에서 직접 신청해야 해요. 🇦🇹"
+          }
+      ]
+  }
+,
+  {
+      country:"germany",
+      qlist:[
+          {
+            question: "독일 워킹홀리데이 비자 신청 나이 제한이 어떻게 되나요? 🇩🇪",
+            answer: "워킹홀리데이 비자 신청 나이 제한은 18-30세예요. 🎂"
+          },
+          {
+            question: "이전에 독일에 다녀온 적이 있어도 워킹홀리데이 비자를 신청할 수 있나요? 🌍",
+            answer: "네, 이전에 독일에 다녀온 적이 있어도 신청 가능해요. 다만 지원서에 체류 목적을 자세히 설명해야 해요. 📝"
+          },
+          {
+            question: "독일 워킹홀리데이 비자는 얼마나 오래 유효한가요? ⏳",
+            answer: "최대 12개월 동안 유효해요. 🗓️"
+          },
+          {
+            question: "독일 워킹홀리데이 비자로 1년 동안 풀타임으로 일할 수 있나요? 💼",
+            answer: "아니요, 풀타임으로 일할 수 없어요. 풀타임 근무를 원한다면 별도의 취업 비자를 신청해야 해요. 🚫"
+          },
+          {
+            question: "독일 워킹홀리데이 비자 신청에 은행 계좌에 얼마가 있어야 하나요? 💰",
+            answer: "최소 2,000유로가 은행 계좌에 있어야 해요. 💸"
+          },
+          {
+            question: "독일 워킹홀리데이 비자 신청에 건강보험이 필요한가요? 🏥",
+            answer: "네, 최소 30,000유로를 보장하는 건강보험에 가입해야 하며, 체류 기간 전체를 커버해야 해요. 💉"
+          }
+      ]
+  },
+  {
+      country:"argentina",
+      qlist:[
+          {
+            question: "아르헨티나 워킹홀리데이 비자 기간은 얼마나 되나요? 🇦🇷",
+            answer: "최대 12개월 동안 유효하며, 연장은 불가능해요. ⏳"
+          },
+          {
+            question: "아르헨티나 워킹홀리데이 비자의 연간 할당량은 얼마인가요? 📊",
+            answer: "연간 200개의 비자가 할당돼요. 🎫"
+          },
+          {
+            question: "아르헨티나 체류 초기에 필요한 최소 자금은 얼마인가요? 💵",
+            answer: "최소 2,500달러가 필요해요. 💰"
+          },
+          {
+            question: "아르헨티나 워킹홀리데이 비자에 필요한 의료 및 사고 보험 최소 금액은 얼마인가요? 🏥",
+            answer: "최소 30,000달러 이상의 보험(유해 송환 및 의료 송환 포함)이 필요해요. 🚑"
+          },
+          {
+            question: "한국인의 아르헨티나 워킹홀리데이 비자 나이 제한은 어떻게 되나요? 🎂",
+            answer: "18-30세 사이면 지원 가능해요. 🌟"
+          },
+          {
+            question: "가족들도 함께 워킹홀리데이 비자로 올 수 있나요? 👨‍👩‍👧",
+            answer: "아니요, 가족들은 별도의 비자를 받아야 해요. 🚫"
+          }
+      ]
+  },
+  {
+      country:"uk",
+      qlist:[
+          {
+            question: "영국 워킹홀리데이에 필요한 최소 예산은 얼마인가요? 💷",
+            answer: "2,530파운드의 저축액이 필요해요. 💰"
+          },
+          {
+            question: "영국에서 워킹홀리데이로 얼마나 오래 머물 수 있나요? ⏳",
+            answer: "최대 24개월 동안 체류할 수 있어요. 🗓️"
+          },
+          {
+            question: "영국 워킹홀리데이 비자로 프로 스포츠 선수로 일할 수 있나요? 🏆",
+            answer: "아니요, 프로 스포츠 선수로는 일할 수 없어요. 🚫"
+          },
+          {
+            question: "영국에서 워킹홀리데이 비자를 연장할 수 있나요? ✈️",
+            answer: "호주, 캐나다, 뉴질랜드 출신이라면 2년 기간 후 1년 더 연장 가능해요. 🌍"
+          },
+          {
+            question: "영국 워킹홀리데이 비자 신청 비용은 얼마인가요? 💸",
+            answer: "298파운드예요. 💰"
+          }
+      ]
+  },
+  {
+    country:"spain",
+    qlist:[
+        {
+          question: "스페인 워킹홀리데이 프로그램의 나이 요건은 어떻게 되나요? 🇪🇸",
+          answer: "여권 생년월일 기준으로 18-30세 사이여야 해요. 🎂"
+        },
+        {
+          question: "스페인 워킹홀리데이 프로그램에 이전에 참여한 적이 있으면 다시 신청할 수 있나요? 🔄",
+          answer: "아니요, 이전에 참여한 적이 있으면 다시 신청할 수 없어요. 🚫"
+        },
+        {
+          question: "스페인 워킹홀리데이 프로그램에 가족을 동반할 수 있나요? 👨‍👩‍👧",
+          answer: "안됩니다. 혼자 참여해야 해요. 🚫"
+        },
+        {
+          question: "스페인의 '임시 거주-근로' 옵션 체류 기간은 얼마나 되나요? ⏳",
+          answer: "1년 내에 최대 9개월 동안 체류할 수 있어요. 🗓️"
+        },
+        {
+          question: "스페인 워킹홀리데이 프로그램에 참여하려면 구직 증명서가 필요한가요? 💼",
+          answer: "반드시 필요하지는 않아요. 직원으로 일하거나, 개인 사업을 하거나, 임시 근로에 참여하는 등 다양한 옵션이 있어요. 🌟"
+        }
+    ]
+},
+      {
+          country:"taiwan",
+          qlist:[
+              {
+                question: "대만 워킹홀리데이 프로그램이 무엇인가요? 🇹🇼",
+                answer: "외국인이 잠시 대만에서 휴가를 즐기면서 단기간 일할 수 있는 프로그램이에요. 🌍"
+              },
+              {
+                question: "대만 워킹홀리데이 비자는 어떻게 신청하나요? 📝",
+                answer: "대만 대사관이나 영사관에 직접 방문해서 신청해야 해요. 🏢"
+              },
+              {
+                question: "대만에서 워킹홀리데이로 할 수 있는 일에 제한이 있나요? 💼",
+                answer: "일부 제한이 있어요. 불건전한 장소에서 일할 수 없고, 풀타임 고용도 불가능해요. 🚫"
+              },
+              {
+                question: "대만의 노동보험에 의무적으로 가입해야 하나요? 📋",
+                answer: "네, 워킹홀리데이 참가자는 대만의 노동보험에 의무적으로 가입해야 해요. 🏥"
+              },
+              {
+                question: "대만에서 워킹홀리데이로 일하려면 건강보험이 필요한가요? 🩺",
+                answer: "네, 체류 기간 전체를 보장하는 건강보험에 가입해야 해요. 💉"
+              }
+          ]
+      },
+      {
+        country:"france",
         qlist:[
             {
-              question: 'What is the age limit for participating in the Korea-New Zealand Working Holiday Program?',
-              answer: 'The age limit for participating in the Korea-New Zealand Working Holiday Program is 18-30 years old.'
+              question: "프랑스 워킹홀리데이 비자는 얼마나 오래 유효한가요? 🇫🇷",
+              answer: "1년 동안 유효하며, 특별한 경우를 제외하고는 연장할 수 없어요. ⏳"
             },
             {
-              question: 'Which countries are eligible for the Korea-New Zealand Working Holiday Program?',
-              answer: 'Eligible countries for the Korea-New Zealand Working Holiday Program include South Korea and New Zealand.'
+              question: "프랑스 워킹홀리데이에 필요한 비자 종류는 무엇인가요? 📝",
+              answer: "장기 체류 비자로, 'vacances travail'(워킹홀리데이) 문구가 적힌 비자예요. ✈️"
             },
             {
-              question: 'How can I apply for a Working Holiday Visa in New Zealand?',
-              answer: 'Citizens of eligible countries can apply for a Working Holiday Visa in New Zealand by visiting the New Zealand Immigration website.'
+              question: "프랑스 워킹홀리데이 비자를 연장할 수 있나요? 🔄",
+              answer: "특별한 경우를 제외하고는 연장이 불가능해요. 🚫"
             },
             {
-              question: 'What is the purpose of the Korea-New Zealand Working Holiday Program?',
-              answer: 'The Korea-New Zealand Working Holiday Program allows young people from both countries to experience each other\'s culture while being able to work and travel for up to 12 months.'
+              question: "프랑스 워킹홀리데이 비자 신청 나이 제한은 어떻게 되나요? 🎂",
+              answer: "기본적으로 18-30세까지 신청 가능해요. 아르헨티나, 호주, 캐나다의 경우 35세(36번째 생일 전)까지 신청 가능해요. 🌍"
+            },
+            {
+              question: "프랑스 워킹홀리데이 비자로 근무 시간에 제한이 있나요? ⏰",
+              answer: "근무 시간에 제한이 없어요. 자유롭게 일할 수 있답니다! 💼"
+            },
+            {
+              question: "프랑스 워킹홀리데이 비자 소지자를 고용하는 고용주의 의무는 무엇인가요? 📋",
+              answer: "고용주는 프랑스 행정부에 고용 사실을 신고해야 해요. 하지만 별도의 취업 허가는 필요 없어요. 🏢"
+            },
+            {
+              question: "워킹홀리데이 비자 소지자는 사회보장혜택을 받을 수 있나요? 🏥",
+              answer: "아니요, 사회보장혜택을 받을 수 없어요. 🚫"
+            },
+            {
+              question: "프랑스에서 풀타임으로 일할 수 있나요? 💪",
+              answer: "프랑스 행정부의 사전 승인 없이 유료 근무를 할 수 있어요. 🌟"
             }
         ]
-    },
-    {
-        country:"netherlands",
+      },
+      {
+        country:"czeckia",
         qlist:[
             {
-              question: "What is the age range for a working holiday in the Netherlands?",
-              answer: "18-30 years old"
+              question: "체코 워킹홀리데이 비자 신청서에서 체류 목적은 어떻게 선택해야 하나요? 📝",
+              answer: "신청서에서 '기타(Ostatní/Other)'를 선택하고, 내용에 워킹홀리데이라고 구체적으로 적어야 해요. 🌍"
             },
             {
-              question: "What is the main goal of stay for a working holiday in the Netherlands?",
-              answer: "Cultural exchange, not paid employment"
+              question: "체코에서 워킹홀리데이 비자로 일할 때 취업 허가가 필요한가요? 💼",
+              answer: "아니요, 1년 동안은 취업 허가 없이 일할 수 있어요. 🆓"
             },
             {
-              question: "Is incidental work allowed to support the holiday financially in the Netherlands?",
-              answer: "Yes"
+              question: "체코 워킹홀리데이 비자 신청에 필요한 체류 목적 증명 서류는 무엇인가요? 📋",
+              answer: "목적 진술서(진술서)가 필요해요. 🖋️"
             },
             {
-              question: "How can I get more information about the working holiday policies in the Netherlands?",
-              answer: "Visit the official website of the Dutch Immigration and Naturalisation Service (IND) or contact the IND directly."
-            },
-            {
-              question: "What is required to apply for a working holiday residence permit in the Netherlands?",
-              answer: "Completed and signed application form, valid passport and copy of the holder page, 2 passport photographs meeting Dutch requirements."
+              question: "체코 워킹홀리데이 비자 신청에 필요한 건강보험은 어떤 것인가요? 🏥",
+              answer: "의료보험 가입 증명서가 필요해요. 💉"
             }
-          ]
-    },
-    {
-        country:"poland",
+        ]
+      },
+      {
+        country:"hungary",
         qlist:[
             {
-              question: "What is the main purpose of participation in the Working Holiday Programme?",
-              answer: "To holiday, for a period of up to 12 calendar months."
+              question: "대한민국 국민이 헝가리 워킹홀리데이 비자를 신청하는 주요 의도는 무엇인가요? 🇭🇺",
+              answer: "헝가리에서 휴가를 즐기는 것이 주된 목적이고, 취업은 부수적인 활동으로 간주돼요. 🏖️"
             },
             {
-              question: "What is the application fee for a working holiday visa in Poland?",
-              answer: "193,590 KRW (approximately 150 EUR)."
+              question: "헝가리 워킹홀리데이 비자 신청에 여권 유효기간은 어떻게 되나요? 🛂",
+              answer: "임시 거주 허가 기간 이상으로 유효한 대한민국 여권이 필요해요. 📘"
             },
             {
-              question: "What is the typical processing time for a working holiday visa application in Poland?",
-              answer: "15 days, but can take up to 30 days in some cases."
+              question: "헝가리 워킹홀리데이 비자 신청 시 동반 가족이 있어도 되나요? 👨‍👩‍👧",
+              answer: "안됩니다. 동반 가족 없이 혼자 신청해야 해요. 🚫"
             },
             {
-              question: "What is the required amount of funds for the stay in the Republic of Korea?",
-              answer: "USD 3,000."
-            },
-            {
-              question: "Where can you apply for a working holiday visa in Poland?",
-              answer: "In the Embassy of the Republic of Korea in Warsaw."
+              question: "대한민국 국민의 헝가리 임시 거주 허가 기간은 얼마나 되나요? ⏳",
+              answer: "발급일로부터 1년 동안 다중 입국이 가능한 임시 거주 허가를 받을 수 있어요. 🗓️"
             }
-          ]
-    },
-    {
-        country:"austria",
+        ]
+      },
+      {
+        country:"sweden",
         qlist:[
             {
-              question: "What are the objectives of the Working Holiday Programme (WHP) in Austria?",
-              answer: "The objectives of WHP are to promote young people's understanding of other countries and cultures, gather professional experience abroad, and acquire/improve foreign language skills."
+              question: "스웨덴 워킹홀리데이에 참여할 수 있는 나이 범위는 어떻게 되나요? 🇸🇪",
+              answer: "18-30세 사이의 젊은이들이 참여할 수 있어요. 🎂"
             },
             {
-              question: "Which countries have concluded WHP agreements with Austria?",
-              answer: "Austria has concluded WHP agreements with Argentina, Australia, Canada, Chile, Hong Kong, Israel, Japan, New Zealand, South Korea, Taiwan, and the United States of America."
+              question: "스웨덴 워킹홀리데이 허가 기간은 얼마나 되나요? ⏳",
+              answer: "1년 동안 허가되며, 여권 유효기간을 넘을 수 없어요. 🗓️"
             },
             {
-              question: "What is the application fee for the WHP in Austria?",
-              answer: "The application fee for the WHP is EUR 120 (approximately KRW 150,000)."
+              question: "스웨덴에서 워킹홀리데이로 초기에 필요한 최소 자금은 얼마인가요? 💰",
+              answer: "최소 15,000크로나가 필요해요. 💸"
             },
             {
-              question: "How long does the processing time for WHP applications take?",
-              answer: "The processing time for WHP applications can take up to 2 weeks."
+              question: "스웨덴 워킹홀리데이 허가를 연장할 수 있나요? 🔄",
+              answer: "아니요, 워킹홀리데이 허가는 연장이 불가능해요. 🚫"
             },
             {
-              question: "Where can applicants find information on required documents for the WHP in Austria?",
-              answer: "Applicants can find information on required documents for the WHP in Austria at https://www.bmeia.gv.at/fileadmin/user_upload/Vertretungen/Seoul/Dokumente/005_Visainformation_SV-D_Working_Holiday__D_K__2024.pdf"
-            },
-            {
-              question: "Where can applicants submit their WHP applications in person?",
-              answer: "Applicants must submit their WHP applications in person at the Austrian Embassy in Seoul."
+              question: "스웨덴 워킹홀리데이 비자 신청 비용은 얼마인가요? 💵",
+              answer: "1,500크로나예요. 💳"
             }
-          ]
-    },
-    {
-        country:"germany",
-        qlist:[
-            {
-              question: "What is the age limit for applying for a working holiday visa in Germany?",
-              answer: "The age limit for applying for a working holiday visa in Germany is 18-30 years old."
-            },
-            {
-              question: "Can I apply for a working holiday visa in Germany if I have already been to Germany before?",
-              answer: "Yes, you can apply for a working holiday visa in Germany even if you have already been to Germany before, but you must explain the purpose of your stay in your motivation letter."
-            },
-            {
-              question: "How long is the working holiday visa in Germany valid for?",
-              answer: "The working holiday visa in Germany is valid for a maximum of 12 months."
-            },
-            {
-              question: "Can I work full-time for a year on a working holiday visa in Germany?",
-              answer: "No, you cannot work full-time for a year on a working holiday visa in Germany. If you want to work full-time, you need to apply for a work visa."
-            },
-            {
-              question: "How much money do I need to have in my bank account to apply for a working holiday visa in Germany?",
-              answer: "You need to have at least 2,000 euros in your bank account to apply for a working holiday visa in Germany."
-            },
-            {
-              question: "Do I need to have health insurance to apply for a working holiday visa in Germany?",
-              answer: "Yes, you need to have health insurance that covers you for at least 30,000 euros in Germany, and the insurance must be valid for the entire duration of your stay."
-            }
-          ]
-    },
-    {
-        country:"argentina",
-        qlist:[
-            {
-              question: "What is the duration of the working holiday visa in Argentina?",
-              answer: "The working holiday visa shall be issued for a period of up to twelve (12) months, non-renewable."
-            },
-            {
-              question: "What is the annual quota for the working holiday visa in Argentina?",
-              answer: "The annual quota for the working holiday visa is 200 visas."
-            },
-            {
-              question: "What is the minimum amount of funds required for the applicant's maintenance during the initial period of stay in Argentina?",
-              answer: "A minimum of US dollars $2,500."
-            },
-            {
-              question: "What is the minimum amount of medical and accident insurance required for the working holiday visa in Argentina?",
-              answer: "A minimum of US dollar $30,000, including repatriation of human remains and sanitary repatriation."
-            },
-            {
-              question: "What is the age range for Korean nationals to be eligible for the working holiday visa in Argentina?",
-              answer: "Aged between eighteen (18) and thirty (30), both inclusive."
-            },
-            {
-              question: "Can dependent family members accompany the applicant on the working holiday visa in Argentina?",
-              answer: "No, unless they get their own visa."
-            }
-          ]
-    },
-    {
-        country:"uk",
-        qlist:[
-            {
-              question: "What is the required savings for a working holiday in the UK?",
-              answer: "£2,530 in savings."
-            },
-            {
-              question: "How long can I stay in the UK on a working holiday visa?",
-              answer: "Up to 24 months."
-            },
-            {
-              question: "Can I work as a professional sportsperson on a working holiday visa in the UK?",
-              answer: "No, you cannot work as a professional sportsperson."
-            },
-            {
-              question: "Can I extend my working holiday visa in the UK?",
-              answer: "If you are from Australia, Canada, or New Zealand, you can extend your visa by one year after the 2-year period ends."
-            },
-            {
-              question: "How much is the application fee for a working holiday visa in the UK?",
-              answer: "£298."
-            }
-          ]
-    },
-    {
+        ]
+      },
+      {
         country:"israel",
         qlist: [
             {
-              question: "What is the age requirement for applying for a working holiday visa in Israel?",
-              answer: "The applicant must be between 18 and 30 years old."
+              question: "이스라엘 워킹홀리데이 비자 신청 나이 제한이 어떻게 되나요? 🇮🇱",
+              answer: "18-30세 사이면 신청할 수 있어요. 🎂"
             },
             {
-              question: "What is the minimum amount of money required to be in the applicant's bank account for a working holiday visa in Israel?",
-              answer: "The applicant must have at least $3000 in their bank account."
+              question: "이스라엘 워킹홀리데이 비자 신청에 필요한 최소 은행 잔고는 얼마인가요? 💰",
+              answer: "최소 3,000달러가 은행 계좌에 있어야 해요. 💸"
             },
             {
-              question: "Is it necessary to submit proof of a job offer when applying for a working holiday visa in Israel?",
-              answer: "No, it is not necessary to submit proof of a job offer when applying for a working holiday visa in Israel."
+              question: "이스라엘 워킹홀리데이 비자 신청 시 구직 증명서가 필요한가요? 💼",
+              answer: "아니요, 구직 증명서는 필요 없어요. 🚫"
             },
             {
-              question: "How long is the working holiday visa in Israel valid for?",
-              answer: "The working holiday visa in Israel is valid for 12 months from the date of first entry into Israel."
+              question: "이스라엘 워킹홀리데이 비자 유효 기간은 얼마나 되나요? ⏳",
+              answer: "이스라엘 첫 입국일로부터 12개월 동안 유효해요. 🗓️"
             },
             {
-              question: "Can the working holiday visa in Israel be extended or changed to a different type of visa?",
-              answer: "No, the working holiday visa in Israel cannot be extended or changed to a different type of visa."
+              question: "이스라엘 워킹홀리데이 비자를 연장하거나 다른 비자로 변경할 수 있나요? 🔄",
+              answer: "아니요, 연장이나 다른 비자로의 변경이 불가능해요. 🚫"
             },
             {
-              question: "How long does it take to process a working holiday visa application in Israel?",
-              answer: "The processing time for a working holiday visa application in Israel is at least 4 weeks."
+              question: "이스라엘 워킹홀리데이 비자 신청 처리 기간은 얼마나 걸리나요? ⏰",
+              answer: "최소 4주 정도 소요됩니다. 📅"
             }
-          ]
+        ]
     },
     {
         country:"belgium",
         qlist:[
             {
-              question: 'What is the primary purpose of the stay for working holiday visa holders in Belgium?',
-              answer: 'The primary purpose of the stay must be tourism.'
+              question: "벨기에 워킹홀리데이 비자 소지자의 주요 체류 목적은 무엇인가요? 🇧🇪",
+              answer: "주된 체류 목적은 관광이에요. 🏖️"
             },
             {
-              question: 'How long is the working holiday visa for Belgium valid for?',
-              answer: 'The working holiday visa is valid for 1 year.'
+              question: "벨기에 워킹홀리데이 비자 유효 기간은 얼마나 되나요? ⏳",
+              answer: "1년 동안 유효해요. 🗓️"
             },
             {
-              question: 'What is the application fee for the working holiday visa in Belgium?',
-              answer: '€270 (approximately 320,000 KRW)'
+              question: "벨기에 워킹홀리데이 비자 신청 비용은 얼마인가요? 💸",
+              answer: "약 270유로(한화 32만원) 정도예요. 💰"
             },
             {
-              question: 'What is the minimum amount of financial resources required for the working holiday program in Belgium?',
-              answer: 'At least €2,500'
+              question: "벨기에 워킹홀리데이 프로그램에 필요한 최소 재정 자원은 얼마인가요? 💵",
+              answer: "최소 2,500유로가 필요해요. 🌟"
             },
             {
-              question: 'How long does the application process typically take for the working holiday visa in Belgium?',
-              answer: 'The application process typically takes 15 days, but may take longer if additional documents are required.'
+              question: "벨기에 워킹홀리데이 비자 신청 처리 기간은 얼마나 걸리나요? ⏰",
+              answer: "보통 15일 정도 걸리지만, 추가 서류가 필요한 경우 더 오래 걸릴 수 있어요. 📅"
             }
-          ]
+        ]
     },
     {
         country:"ireland",
         qlist: [
           {
-            question: "What is the duration of the Working Holiday Programme in Ireland?",
-            answer: "The Working Holiday Programme allows participants to work and live in Ireland for up to 12 months, with the opportunity to extend their stay for an additional 12 months."
+            question: "아일랜드 워킹홀리데이 프로그램 기간은 얼마나 되나요? 🇮🇪",
+            answer: "최대 12개월 동안 머무르며 일할 수 있고, 추가로 12개월 연장도 가능해요. 🗓️"
           },
           {
-            question: "Do participants need to pay a programme fee for the Working Holiday Programme in Ireland?",
-            answer: "There are no programme fees associated with the Working Holiday Programme."
+            question: "아일랜드 워킹홀리데이 프로그램에 참가비가 있나요? 💸",
+            answer: "프로그램 참가비는 없어요! 🆓"
           },
           {
-            question: "What is the primary language spoken in Ireland for the Working Holiday Programme?",
-            answer: "English is the primary language spoken in Ireland, and participants are expected to have a good understanding of English."
+            question: "아일랜드 워킹홀리데이 프로그램의 주요 언어는 무엇인가요? 🗣️",
+            answer: "영어가 주요 언어이며, 참가자들은 영어를 잘 이해할 수 있어야 해요. 🌍"
           },
           {
-            question: "Are participants allowed to work in Ireland during the Working Holiday Programme?",
-            answer: "Participants are allowed to work in Ireland, but they must comply with Irish employment laws and regulations."
+            question: "아일랜드에서 일할 수 있나요? 💼",
+            answer: "네, 일할 수 있지만 아일랜드 노동법과 규정을 반드시 따라야 해요. 📋"
           },
           {
-            question: "Who is responsible for finding accommodation in Ireland for the Working Holiday Programme?",
-            answer: "Participants are responsible for finding their own accommodation in Ireland."
+            question: "숙소는 누가 찾나요? 🏠",
+            answer: "참가자 본인이 직접 숙소를 찾아야 해요. 🔍"
           },
           {
-            question: "What is the requirement for health insurance for the Working Holiday Programme in Ireland?",
-            answer: "Participants are required to have health insurance that covers them for the duration of their stay in Ireland."
+            question: "건강보험은 필수인가요? 🏥",
+            answer: "네, 아일랜드 체류 기간 전체를 보장하는 건강보험에 가입해야 해요. 💉"
           }
         ]
-        
+    },
+    {
+      country:"australia",
+      qlist:[
+          {
+              question: "호주 워킹홀리데이의 나이 제한이 어떻게 되나요? 🇦🇺",
+              answer: "호주 워킹홀리데이 비자는 18-30세(일부 경우 18-35세) 지원자에게 열려 있어요. 🎂"
+          },
+          {
+              question: "호주 워킹홀리데이 비자에 대한 더 많은 정보는 어디서 찾을 수 있나요? 🌐",
+              answer: "최신 비자 및 워킹홀리데이 메이커 프로그램 정보는 호주 내무부 웹사이트에서 확인할 수 있어요. 💻"
+          },
+          {
+              question: "미국 여권 소지자는 어떤 호주 워킹홀리데이 비자를 신청해야 하나요? 🇺🇸",
+              answer: "미국 여권 소지자라면 워크 앤드 홀리데이 비자(서브클래스 462)를 신청하세요. ✈️"
+          },
+          {
+              question: "워킹홀리데이 중에 호주를 나갔다 다시 들어올 수 있나요? 🚪",
+              answer: "네, 비자가 유효한 동안 몇 번이든 호주를 나갔다 다시 들어올 수 있어요. 🌈"
+          },
+          {
+              question: "호주 워킹홀리데이 비자는 얼마나 오래 유효한가요? ⏰",
+              answer: "첫 워킹홀리데이 비자는 12개월 동안 유효해요. 2년, 심지어 3년까지 연장 가능한 옵션도 있어요! 🗓️"
+          },
+          {
+              question: "호주 워킹홀리데이 비자 신청에 필요한 것은 무엇인가요? 📋",
+              answer: "최신 요구 사항은 내무부 웹사이트에서 꼭 확인해보세요! 🕵️‍♀️"
+          }
+      ]
     },
     {
         country:"denmark",
         qlist:[
             {
-              question: 'What is the age limit for participating in the Korea-Denmark Working Holiday Program?',
-              answer: 'The age limit for participating in the Korea-Denmark Working Holiday Program has been adjusted from 18-30 years old to 18-34 years old, effective June 1, 2024.'
+              question: "한국-덴마크 워킹홀리데이 프로그램의 나이 제한이 어떻게 되나요? 🇩🇰",
+              answer: "2024년 6월 1일부터 나이 제한이 18-30세에서 18-34세로 조정됐어요. 🎂"
             },
             {
-              question: 'Which countries are eligible for the Korea-Denmark Working Holiday Program?',
-              answer: 'Argentina, Australia, Canada, Chile, Japan, New Zealand, and South Korea are eligible for the Korea-Denmark Working Holiday Program.'
+              question: "한국-덴마크 워킹홀리데이 프로그램에 참여할 수 있는 국가는 어디인가요? 🌍",
+              answer: "아르헨티나, 호주, 캐나다, 칠레, 일본, 뉴질랜드, 한국이 참여 가능해요. 🤝"
             },
             {
-              question: 'How can I apply for a Working Holiday residence permit in Denmark?',
-              answer: 'Citizens of eligible countries can click on the provided link to apply for a Working Holiday residence permit in Denmark.'
+              question: "덴마크 워킹홀리데이 거주 허가는 어떻게 신청하나요? 📝",
+              answer: "자격 있는 국가 시민들은 제공된 링크를 통해 신청할 수 있어요. 💻"
             },
             {
-              question: 'What is the purpose of the Korea-Denmark Working Holiday Program?',
-              answer: 'The Korea-Denmark Working Holiday Program allows young people from both countries to work and travel in each other\'s countries.'
+              question: "한국-덴마크 워킹홀리데이 프로그램의 목적은 무엇인가요? 🌈",
+              answer: "양국의 젊은이들이 서로의 나라에서 일하고 여행할 수 있는 프로그램이에요. ✈️"
             },
             {
-              question: 'When did the Korea-Denmark Working Holiday Program start?',
-              answer: 'The Korea-Denmark Working Holiday Program has been in operation since 2011.'
+              question: "한국-덴마크 워킹홀리데이 프로그램은 언제 시작됐나요? 📅",
+              answer: "2011년부터 운영되고 있어요. 🌟"
             },
             {
-              question: 'Where can I find more information on the Working Holiday Program?',
-              answer: 'For more information on the Working Holiday Program, you can contact the Embassy of the Republic of Korea in Denmark.'
+              question: "워킹홀리데이 프로그램에 대한 더 자세한 정보는 어디서 얻을 수 있나요? 🤔",
+              answer: "덴마크 주재 대한민국 대사관에 문의해보세요. 🏢"
             }
-          ]
-    },
-    {
-      country:"france",
-      qlist:[
-        {
-          question: 'How long is the working holiday visa valid for in France?',
-          answer: 'The working holiday visa is valid for one year and may not be extended, unless otherwise stipulated.'
-      },
-      {
-          question: 'What type of visa is required for a working holiday in France?',
-          answer: "The work holiday visa is a long-stay visa containing the statement 'vacances travail' (working holiday)."
-      },
-      {
-          question: 'Can the working holiday visa be extended in France?',
-          answer: 'The working holiday visa may not be extended, unless otherwise stipulated.'
-      },
-      {
-          question: 'What is the age limit for applying for a working holiday visa in France?',
-          answer: 'Applicants must be between 18 and 30 years of age (i.e., until the day before their 31st birthday), except for Argentina, Australia, and Canada, where the maximum age is 35 years (up to the date of 36th birthday).'
-      },
-      {
-          question: 'Is there a limit on the number of hours that can be worked on a working holiday visa in France?',
-          answer: 'There is no limit on the number of hours that can be worked on a working holiday visa in France.'
-      },
-      {
-          question: 'Do employers need to apply for a work permit for working holiday visa holders in France?',
-          answer: 'No, employers do not need to apply for a work permit for working holiday visa holders in France, but they must report the employment to the French administration.'
-      },
-      {
-          question: 'Are working holiday visa holders eligible for social security benefits in France?',
-          answer: 'No, working holiday visa holders are not eligible for social security benefits in France.'
-      },
-      {
-          question: 'Can working holiday visa holders work full-time in France?',
-          answer: 'The visa entitles the holder to undertake paid employment on a secondary basis, without prior approval from the French Administration.'
-      }
         ]
-  },
-  {
-    country:"czeckia",
-    qlist:[
-      {
-        question: 'What is the purpose of stay that should be selected in the application form for a working holiday visa in Czechia?',
-        answer: 'Other (Ostatní/Other) and specify Working Holiday in the content field.'
-      },
-      {
-        question: 'Is it necessary to have a work permit to work in Czechia on a working holiday visa?',
-        answer: 'No, it is not necessary to have a work permit to work in Czechia on a working holiday visa for up to 1 year.'
-      },
-      {
-        question: 'What is the required document to prove the purpose of stay for a working holiday visa application in Czechia?',
-        answer: 'A statement of purpose (진술서) is required to prove the purpose of stay.'
-      },
-      {
-        question: 'What is the requirement for health insurance for a working holiday visa application in Czechia?',
-        answer: 'A proof of health insurance (의료 보험 가입 증명서) is required for a working holiday visa application.'
-      }
-    ]
-},
-{
-  country:"hungary",
-  qlist:[
-    {
-      question: 'What is the primary intention of a national of the Republic of Korea applying for a working holiday visa in Hungary?',
-      answer: 'The primary intention is to holiday in Hungary, with employment being incidental rather than the primary reason for the visit.'
-    },
-    {
-      question: 'Does a national of the Republic of Korea need to have a passport valid for at least the validity of the temporary residence permit to apply for a working holiday visa in Hungary?',
-      answer: 'Yes, the applicant must possess a passport issued by the Republic of Korea valid for at least the validity of the temporary residence permit.'
-    },
-    {
-      question: 'Can a national of the Republic of Korea be accompanied by dependants when applying for a working holiday visa in Hungary?',
-      answer: 'No, the applicant must not be accompanied by dependants.'
-    },
-    {
-      question: 'How long is a temporary residence permit valid for a national of the Republic of Korea in Hungary?',
-      answer: 'A temporary residence permit is valid for multiple entries and valid in Hungary for a period of one (1) year from the date of issuance.'
     }
-  ]
-},
-{
-  country:"sweden",
-  qlist:[
-    {
-      question: 'What is the age range for young people to be eligible for a working holiday in Sweden?',
-      answer: '18 to 30 years old'
-    },
-    {
-      question: 'How long can a working holiday permit be granted for in Sweden?',
-      answer: 'One year, but never for longer than the passport is valid'
-    },
-    {
-      question: 'What is the minimum amount of money required to provide for oneself initially in Sweden for a working holiday?',
-      answer: 'At least SEK 15,000'
-    },
-    {
-      question: 'Can a working holiday permit be extended in Sweden?',
-      answer: 'No, a working holiday permit cannot be extended'
-    },
-    {
-      question: 'What is the application fee for a working holiday visa in Sweden?',
-      answer: 'SEK 1,500'
-    }
-  ]
-},
-{
-  country:"spain",
-  qlist:[
-    {
-      question: 'What are the age requirements for the Spanish Working Holiday Program?',
-      answer: 'The applicant must be between 18 and 30 years old (based on the passport birthdate).'
-    },
-    {
-      question: 'Can I participate in the Spanish Working Holiday Program if I have participated before?',
-      answer: 'No, the applicant cannot have participated in the Spanish Working Holiday Program before.'
-    },
-    {
-      question: 'Can I be accompanied by dependents during the Spanish Working Holiday Program?',
-      answer: 'No, the applicant cannot be accompanied by dependents.'
-    },
-    {
-      question: "What is the maximum duration of stay for the 'Residence – Temporary work' option in Spain?",
-      answer: 'Up to 9 months within a 1-year period.'
-    },
-    {
-      question: 'Do I need to have a job offer to participate in the Spanish Working Holiday Program?',
-      answer: 'Not necessarily, there are options available for individuals who want to work as an employee, start their own business, or participate in temporary work.'
-    }
-  ]
-},
-{
-  country:"taiwan",
-  qlist:[
-    {
-      question: 'What is the working holiday program in Taiwan?',
-      answer: 'The working holiday program is a program that allows foreign nationals to work in Taiwan for a short period of time while taking a holiday.'
-    },
-    {
-      question: 'How do I apply for a working holiday visa in Taiwan?',
-      answer: 'Applicants must submit their application in person at a Taiwanese embassy or consulate.'
-    },
-    {
-      question: 'What are the restrictions on the type of work I can do in Taiwan on a working holiday?',
-      answer: 'There are certain restrictions on the type of work that working holidaymakers can do in Taiwan, including not being allowed to work in places of ill repute and not engaging in full-time employment.'
-    },
-    {
-      question: "Do I need to participate in Taiwan's labor insurance scheme as a working holidaymaker?",
-      answer: "Yes, working holidaymakers are required to participate in Taiwan's labor insurance scheme."
-    },
-    {
-      question: 'Do I need to have health insurance to work in Taiwan on a working holiday?',
-      answer: 'Yes, working holidaymakers are required to have health insurance that covers them for the duration of their stay in Taiwan.'
-    }
-  ]
-}
-]
+];

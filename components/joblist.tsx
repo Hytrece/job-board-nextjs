@@ -30,9 +30,15 @@ import { cn, checkNullandCall, formatDate } from "@/lib/utils";
 interface Job {
   _id: string;
   url: string;
-  title: string;
+  title: {
+    en: String,
+    kr: String,
+  };
+  location: {
+    en: String,
+    kr: String,
+  };
   company: string;
-  location: string;
   date: string;
   salary: string;
   category: string;
@@ -151,7 +157,7 @@ const JobCard = ({
       <div className="flex mt-5 pb-5 px-4 justify-between items-start">
         <div className="flex flex-col">
           <div className="flex items-start group gap-x-4">
-            <h1 className="font-bold text-lg max-w-[500px]">{job.title}</h1>
+            <h1 className="font-bold text-lg max-w-[500px]">{job.title.en}</h1>
             <Dialog>
               <DialogTrigger>
                 <button className="z-10">
@@ -201,7 +207,7 @@ const JobCard = ({
           </div>
           <div className="flex gap-x-2 items-center">
             <Image src="/location.svg" width={20} height={20} alt="location" />
-            <p className="font-medium">{job.location}</p>
+            <p className="font-medium">{job.location.en}</p>
           </div>
           <Link
             href={job.url}
